@@ -1,0 +1,165 @@
+/* ==========================================
+   TERMS OF USE SECTION WRAPPER
+========================================== */
+.terms-section {
+  width: 100%;
+  min-height: 100vh;
+  /* 120px top padding ensures it never hides under your fixed header */
+  padding: 120px 24px 80px;
+  background: var(--bg);
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+.terms-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ==========================================
+   HEADER TITLE & BADGE
+========================================== */
+.terms-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.terms-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+}
+
+.terms-title {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.terms-title span {
+  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.terms-updated {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ==========================================
+   THE SHORT VERSION (SUMMARY CARD)
+========================================== */
+.terms-summary-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 26px;
+  border-radius: 18px;
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.summary-indicator {
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  background: linear-gradient(180deg, #06b6d4, #8b5cf6);
+}
+
+.terms-summary-card strong {
+  color: #06b6d4;
+}
+
+/* ==========================================
+   TERMS CONTENT CARDS
+========================================== */
+.terms-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.terms-card {
+  padding: 24px 28px;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.terms-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -8px rgba(6, 182, 212, 0.15);
+}
+
+.terms-card h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 10px 0;
+}
+
+.terms-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Special styling for the mandatory SEBI/AMFI Risk Quote */
+.terms-card.risk-card {
+  border-color: rgba(249, 115, 22, 0.35);
+  background: rgba(249, 115, 22, 0.04);
+}
+
+.terms-card .risk-quote {
+  color: #f97316 !important;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT
+========================================== */
+@media (max-width: 768px) {
+  .terms-section {
+    padding: 100px 16px 60px;
+  }
+
+  .terms-card {
+    padding: 20px;
+  }
+
+  .terms-summary-card {
+    padding: 18px 20px;
+  }
+}

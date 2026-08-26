@@ -1,0 +1,503 @@
+/* =========================================================
+   TRAIL COMMISSIONS — LUXURY REVENUE SIMULATOR
+   ========================================================= */
+
+.trail-section {
+  position: relative;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-family: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
+  padding: 0 24px;
+  max-width: 1440px;
+  width: min(94%, 1440px);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.trail-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 1200px 700px at center,
+    rgba(6, 182, 212, 0.06) 0%,
+    rgba(139, 92, 246, 0.03) 50%,
+    transparent 80%
+  );
+}
+
+.trail-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================================================
+   1. SECTION HEADER
+   ========================================================= */
+
+.trail-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto clamp(36px, 5vw, 56px);
+}
+
+.trail-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #06b6d4;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.trail-header h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.trail-header h2 span {
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trail-subtitle {
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+/* =========================================================
+   2. UNIFIED LUXURY CARD
+   ========================================================= */
+
+.trail-unified {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+
+  background: var(--bg-card);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid var(--card-border);
+  border-radius: 32px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Left Inputs Column */
+.trail-inputs-col {
+  padding: clamp(28px, 3.5vw, 48px);
+  border-right: 1px solid var(--card-border);
+  transition: padding 0.35s ease, border-color 0.35s ease;
+}
+
+.trail-mode-hint {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0 0 28px 0;
+  line-height: 1.6;
+}
+
+.trail-inputs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.trail-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.trail-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.trail-input-header label {
+  font-size: clamp(0.88rem, 1.2vw, 0.98rem);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.trail-value-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  background: transparent;
+}
+
+.trail-value-input {
+  min-width: 200px;
+  width: 100px;
+  color: var(--text-primary);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 99px;
+  padding: 8px 14px;
+  outline: none;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  -moz-appearance: textfield;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trail-value-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+}
+
+.trail-value-input::-webkit-inner-spin-button,
+.trail-value-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.trail-prefix {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.trail-unit {
+  min-width: 30px;
+  text-align: right;
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+/* Custom Range Slider */
+.trail-range-slider {
+  --range-progress: 0%;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  margin: 14px 0 10px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #06b6d4 0%,
+    #8b5cf6 var(--range-progress),
+    var(--card-border) var(--range-progress),
+    var(--card-border) 100%
+  );
+  outline: none;
+  cursor: pointer;
+}
+
+.trail-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border-color: black;
+  background: var(--bg);
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.25), 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: grabbing;
+  transform: scale(1.4) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.trail-range-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: var(--bg);
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.25), 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: grabbing;
+  transform: scale(1.4) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* =========================================================
+   3. CHART & RESULTS COLUMN
+   ========================================================= */
+
+.trail-chart-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(28px, 3.5vw, 48px);
+  transition: padding 0.35s ease, background-color 0.35s ease;
+}
+
+.trail-chart-circle {
+  position: relative;
+  width: clamp(280px, 28vw, 360px);
+  height: clamp(280px, 28vw, 360px);
+  margin: auto;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trail-chart-circle svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.trail-chart-bg {
+  fill: none;
+  stroke: var(--card-border);
+  stroke-linecap: round;
+  transition: r 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trail-chart-bg-outer,
+.trail-chart-bg-inner {
+  stroke: var(--card-border);
+  stroke-width: 10;
+}
+
+.trail-chart-trail {
+  fill: none;
+  stroke: #06b6d4;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: r 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              stroke-dasharray 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              stroke-dashoffset 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.trail-chart-aum {
+  fill: none;
+  stroke: #8b5cf6;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: r 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              stroke-dasharray 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              stroke-dashoffset 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.trail-chart-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.trail-chart-center h2 {
+  font-size: var(--trail-center-font-size, 1.75rem);
+  margin: 0;
+  color: var(--text-primary);
+  line-height: 1.15;
+  word-break: break-all;
+  white-space: nowrap;
+  transition: font-size 0.3s ease;
+}
+
+.trail-chart-center p {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* Donut Legend */
+.trail-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 25px;
+}
+
+.trail-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.trail-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.trail-legend-dot.trail-dot {
+  background-color: #06b6d4;
+}
+
+.trail-legend-dot.aum-dot {
+  background-color: #8b5cf6;
+}
+
+/* Breakdown Mini Tiles */
+.trail-chart-details {
+  width: 100%;
+  margin-top: 28px;
+}
+
+.trail-result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+.trail-mini-result {
+  padding: clamp(12px, 1.6vw, 18px) clamp(12px, 1.6vw, 18px);
+  border-radius: 18px;
+  background: var(--primary-gradient);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  overflow: visible;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trail-mini-result:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 24px -4px rgba(6, 182, 212, 0.15);
+}
+
+.trail-mini-result span {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.trail-mini-result strong {
+  color: var(--text-primary);
+  font-weight: 800;
+  line-height: 1.25;
+  display: block;
+  width: 100%;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  font-size: clamp(0.95rem, 1.35vw, 1.25rem);
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+.trail-mini-result strong motion.span,
+.trail-mini-result strong span {
+  font-size: inherit;
+  color: var(--text-primary);
+  font-weight: 800;
+  line-height: 1.25;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   4. RESPONSIVE BREAKPOINTS (IPAD & MOBILE)
+   ========================================================= */
+
+@media (max-width: 960px) {
+  .trail-unified {
+    grid-template-columns: 1fr;
+    border-radius: 24px;
+  }
+
+  .trail-inputs-col {
+    padding: clamp(24px, 4vw, 36px);
+    border-right: none;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .trail-chart-col {
+    padding: clamp(28px, 4vw, 40px);
+  }
+}
+
+@media (max-width: 540px) {
+  .trail-section {
+    padding: 0 16px;
+  }
+
+  .trail-unified {
+    border-radius: 20px;
+  }
+
+  .trail-inputs-col,
+  .trail-chart-col {
+    padding: 20px 16px;
+  }
+
+  .trail-input-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .trail-value-box {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .trail-value-input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .trail-chart-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .trail-result-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

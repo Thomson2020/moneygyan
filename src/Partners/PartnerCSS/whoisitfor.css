@@ -1,0 +1,41 @@
+/* Container for the lists */
+.carousel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Forces perfectly equal vertical spacing between every item */
+  padding: 16px; 
+}
+
+/* Individual list items */
+.audience-text-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  /* Text spacing rules */
+  word-spacing: 0.15em; /* Gives equal, breathable spacing between every word */
+  line-height: 1.4;
+  
+  /* Box model */
+  width: 100%;
+  min-height: 70px; /* Ensures items with 2 lines of text take up similar visual weight */
+  padding: 16px 24px;
+  box-sizing: border-box;
+  
+  /* Aesthetics */
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.05rem;
+  
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.audience-text-item:hover {
+  transform: scale(1.02); 
+  border-color: #06b6d4;
+}

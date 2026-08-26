@@ -1,0 +1,197 @@
+/* =========================
+   PARTNER HERO & CREDENTIAL RAIL
+ ========================= */
+
+.partner {
+  max-width: 1240px;
+  width: min(92%, 1240px);
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-left: auto;
+  margin-right: auto;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.partner-header {
+  max-width: 800px;
+  width: 100%;
+  margin: clamp(32px, 6vw, 72px) auto clamp(36px, 5vw, 60px) auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(60px, 8vw, 120px);
+}
+
+.partner-eyebrow {
+  display: inline-block;
+  margin-bottom: clamp(10px, 2vw, 16px);
+  color: var(--primary);
+  letter-spacing: 3px;
+  font-size: clamp(0.72rem, 1.2vw, 0.78rem);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.partner-header h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: clamp(14px, 2.5vw, 20px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.partner-header h1 span {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.partner-lead {
+  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================================================
+   PARTNER RAIL — 3 FOUNDATIONAL PILLARS
+   ========================================================= */
+
+.partner-rail-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: clamp(12px, 3vw, 24px);
+  z-index: 2;
+}
+
+.partner-rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: clamp(16px, 2.5vw, 24px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+.partner-rail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+  opacity: 0.8;
+}
+
+.partner-rail-item {
+  position: relative;
+  padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+  gap: 16px;
+  transition: background-color 0.35s ease, transform 0.35s ease;
+}
+
+.partner-rail-item + .partner-rail-item {
+  border-left: 1px solid var(--card-border);
+}
+
+.partner-rail-item:hover {
+  background: var(--btn-bg-hover);
+}
+
+.partner-rail-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.partner-rail-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  background: var(--btn-bg);
+  border: 1px solid var(--card-border);
+  transition: all 0.35s ease;
+}
+
+.partner-rail-item:hover .partner-rail-icon {
+  color: var(--primary);
+  border-color: rgba(6, 182, 212, 0.35);
+  transform: translateY(-2px);
+}
+
+.partner-text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.rail-item-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.partner-text-block h3 {
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.partner-rail-item:hover .partner-text-block h3 {
+  color: var(--primary);
+}
+
+.partner-text-block p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-size: clamp(0.85rem, 1.3vw, 0.92rem);
+  text-align: center;
+}
+
+/* Responsive Overrides */
+@media (max-width: 960px) {
+  .partner-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-rail-item + .partner-rail-item {
+    border-left: none;
+    border-top: 1px solid var(--card-border);
+  }
+}
+
+
+

@@ -1,0 +1,105 @@
+/* Container layout styling */
+.slidercalc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: sans-serif;
+  color: var(--text-primary);
+}
+
+.slidercalc-label {
+  align-self: flex-start;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+/* Perfected Value Box (now centered via flex) */
+.slidercalc-value-box {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 160px;
+  padding: 12px;
+  margin: 0 auto 20px;
+  border-radius: 14px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.slidercalc-value-input {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  width: 80px;
+  outline: none;
+  text-align: center;
+}
+
+/* Hide native arrows inside input number fields */
+.slidercalc-value-input::-webkit-outer-spin-button,
+.slidercalc-value-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.slidercalc-value-input {
+  -moz-appearance: textfield;
+}
+
+.slidercalc-value-unit {
+  opacity: 0.8;
+}
+
+/* The modern range slider track and thumb structure */
+.slidercalc-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+/* Webkit (Chrome, Safari, Edge) Thumb styling */
+.slidercalc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00d2ff;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.6), 0 0 20px rgba(0, 210, 255, 0.3);
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.slidercalc-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+  background: #ffffff;
+}
+
+/* Firefox Thumb styling */
+.slidercalc-slider::-moz-range-thumb {
+  border: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00d2ff;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.slidercalc-slider::-moz-range-thumb:hover {
+  transform: scale(1.25);
+  background: #ffffff;
+}

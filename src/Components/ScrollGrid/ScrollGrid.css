@@ -1,0 +1,23 @@
+.scroll-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.scroll-grid-pattern {
+  position: absolute;
+  /* oversized so the parallax translate never reveals a hard edge */
+  inset: -25% -10%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  will-change: transform;
+}
+
+/* Fades the dots toward the edges so it reads as atmosphere, not a hard grid */
+.scroll-grid-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 25%, transparent 0%, rgba(5, 5, 8, 0.75) 75%);
+}

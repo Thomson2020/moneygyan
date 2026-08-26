@@ -1,0 +1,165 @@
+/* =========================================================
+   PARTNER FEATURES GRID — MODERN GLASSERIE
+   ========================================================= */
+
+.partner-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 28px);
+  width: 100%;
+  margin: 0 auto clamp(32px, 5vw, 60px) auto;
+  position: relative;
+  z-index: 2;
+}
+
+.partner-feature-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  min-height: auto;
+  padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 28px);
+  border-radius: clamp(16px, 2.5vw, 24px);
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.4s ease;
+}
+
+.partner-feature-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.18), var(--card-shadow);
+}
+
+.card-ambient-glow {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 180px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.partner-feature-card:hover .card-ambient-glow {
+  opacity: 1;
+}
+
+.card-top-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.card-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+}
+
+.partner-feature-card:hover .card-icon-box {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.card-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--primary);
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.card-body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.card-description {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.card-footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--card-border);
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-highlight-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card-highlight-pill .check-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .partner-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .partner-features-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

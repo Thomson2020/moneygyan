@@ -1,0 +1,129 @@
+/* =========================
+   TRUST CHIPS (flip cards)
+   Small credibility strip under the hero lead — deliberately
+   lighter-weight than the credential rail below it.
+ ========================= */
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+
+.flip-card {
+  perspective: 1000px;
+  width: 220px;
+  height: 92px;
+  flex: 0 0 auto;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  border-radius: 14px;
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14px 16px;
+  box-sizing: border-box;
+  box-shadow: var(--card-shadow);
+}
+
+.flip-card-front {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  gap: 8px;
+}
+
+.flip-card-front::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+  flex-shrink: 0;
+}
+
+.flip-card-front strong {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  letter-spacing: 0.2px;
+}
+
+.flip-card-back {
+  background: var(--bg-card-hover);
+  border-color: var(--primary);
+  transform: rotateY(180deg);
+}
+
+.flip-card-back p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .flip-card {
+    width: calc(50% - 7px);
+  }
+}
+
+@media (max-width: 420px) {
+  .flip-card {
+    width: 100%;
+  }
+}
+
+/* Reduced motion: crossfade instead of a 3D flip */
+@media (prefers-reduced-motion: reduce) {
+  .flip-card-inner {
+    transition: none;
+  }
+  .flip-card-front,
+  .flip-card-back {
+    transition: opacity 0.3s ease;
+    backface-visibility: visible;
+  }
+  .flip-card-back {
+    transform: none;
+    opacity: 0;
+  }
+  .flip-card:hover .flip-card-back,
+  .flip-card:focus-within .flip-card-back {
+    opacity: 1;
+  }
+  .flip-card:hover .flip-card-front,
+  .flip-card:focus-within .flip-card-front {
+    opacity: 0;
+  }
+  .flip-card:hover .flip-card-inner,
+  .flip-card:focus-within .flip-card-inner {
+    transform: none;
+  }
+}

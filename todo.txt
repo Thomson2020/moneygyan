@@ -1,0 +1,15 @@
+1. change faqpage question answers
+2. change disclosure content (above and this are copy pasted from etica site)
+
+      color1={isLight ? "#38bdf8" : "#025ec4"}   /* Vibrant sky blue in light, cyan in dark */
+      color2={isLight ? "#818cf8" : "#020764"}   /* Soft indigo in light, navy in dark */
+      color3={isLight ? "#c084fc" : "#030812"} 
+
+      color1={isLight ? "#edf2fb" : "#025ec4"}   /* Vibrant sky blue in light, cyan in dark */
+      color2={isLight ? "#adbed9" : "#020764"}   /* Soft indigo in light, navy in dark */
+      color3={isLight ? "#546380" : "#030812"} 
+
+
+         color1={isLight ? "#000000" : "#025ec4"}   /* Vibrant sky blue in light, cyan in dark */
+      color2={isLight ? "#838383" : "#020764"}   /* Soft indigo in light, navy in dark */
+      color3={isLight ? "#ffffff" : "#030812"}  

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner With MoneyGYAN | AMFI-Registered Mutual Fund Distribution Partnership</title>
+<meta name="description" content="Become a MoneyGYAN partner. Distribute mutual funds across India with paperless onboarding, ARN support, a fund-neutral platform and trail-only commissions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;0,9..144,700;1,9..144,450&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12181B;
+    --ink-soft:#33413E;
+    --paper:#E8E3D4;
+    --paper-2:#DED7C3;
+    --card:#F4F1E7;
+    --gold:#A9832A;
+    --gold-deep:#7C5F1D;
+    --teal:#1F4A41;
+    --teal-soft:#DCE7E1;
+    --noise:#8B3A2B;
+    --line:rgba(18,24,27,0.14);
+    --max:1180px;
+    --radius:2px;
+    --serif:'Fraunces', Georgia, serif;
+    --sans:'IBM Plex Sans', -apple-system, sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    display:flex;align-items:center;gap:10px;
+    margin:0 0 18px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--gold-deep);display:inline-block;}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;letter-spacing:-.01em;}
+  h2{font-size:clamp(28px,3.6vw,44px);line-height:1.08;}
+  h3{font-size:20px;line-height:1.25;}
+  p{margin:0;}
+  .lead{font-size:18px;color:var(--ink-soft);max-width:52ch;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase;
+    padding:15px 26px;border-radius:var(--radius);text-decoration:none;
+    border:1px solid var(--ink);cursor:pointer;transition:all .2s ease;
+  }
+  .btn-solid{background:var(--ink);color:var(--paper);}
+  .btn-solid:hover{background:var(--teal);border-color:var(--teal);}
+  .btn-ghost{background:transparent;color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .btn-gold{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+  .btn-gold:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:var(--paper);}
+
+  /* MANDATORY AMFI REGULATORY STRIP */
+  .reg-strip{background:var(--ink);color:#C7CFCB;font-family:var(--mono);font-size:12px;letter-spacing:.02em;padding:7px 0;}
+  .reg-strip .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+  .reg-strip strong{color:var(--paper);font-weight:500;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(232,227,212,0.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:var(--max);margin:0 auto;}
+  .logo-block{display:flex;flex-direction:column;line-height:1.1;text-decoration:none;}
+  .logo{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.02em;color:var(--ink);}
+  .logo-tag{font-family:var(--mono);font-size:11px;color:var(--ink-soft);letter-spacing:.02em;margin-top:2px;}
+  .nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:14.5px;}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);transition:color .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{display:flex;gap:12px;align-items:center;}
+  .nav-cta .btn{padding:11px 18px;font-size:12px;}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;}
+  @media(max-width:960px){
+    .nav-links{position:fixed;top:97px;left:0;right:0;background:var(--paper);flex-direction:column;padding:20px 32px;border-bottom:1px solid var(--line);display:none;gap:16px;}
+    .nav-links.mobile-open{display:flex;}
+    .nav-cta .btn-ghost{display:none;}
+    .burger{display:block;}
+  }
+
+  .hero{padding:70px 0 40px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .hero h1{font-size:clamp(38px,5.6vw,66px);line-height:1.04;margin-bottom:24px;}
+  .hero h1 em{font-style:italic;color:var(--teal);font-weight:450;}
+  .hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+  .hero-chart{background:var(--card);border:1px solid var(--line);padding:28px;position:relative;}
+  .chart-label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);margin-bottom:16px;}
+  .chart-legend{display:flex;gap:18px;margin-top:14px;font-family:var(--mono);font-size:11.5px;}
+  .chart-legend div{display:flex;align-items:center;gap:6px;}
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block;}
+  #indexPath,#noisePath{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.2s ease-out forwards .3s;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+
+  .stat-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2);}
+  .stat-strip .wrap{display:flex;justify-content:space-between;padding:22px 32px;flex-wrap:wrap;gap:18px;}
+  .stat-strip div{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);}
+  .stat-strip strong{display:block;font-family:var(--serif);font-size:26px;color:var(--ink);font-weight:600;letter-spacing:0;text-transform:none;}
+
+  section{padding:100px 0;}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px;flex-wrap:wrap;}
+  .section-head .lead{margin:0;}
+
+  .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .value-card{background:var(--card);padding:38px 32px;}
+  .value-card .vnum{font-family:var(--mono);font-size:12px;color:var(--gold-deep);margin-bottom:20px;}
+  .value-card p.desc{margin-top:12px;color:var(--ink-soft);font-size:15px;}
+
+  .path{background:var(--paper-2);}
+  .step-row{display:grid;grid-template-columns:70px 1fr 1.6fr;gap:24px;padding:30px 0;border-top:1px solid var(--line);align-items:start;}
+  .step-row:last-child{border-bottom:1px solid var(--line);}
+  .step-num{font-family:var(--serif);font-size:32px;color:var(--gold);font-weight:600;}
+  .step-title{font-family:var(--serif);font-size:21px;font-weight:600;padding-top:4px;}
+  .step-desc{color:var(--ink-soft);font-size:15px;padding-top:4px;max-width:56ch;}
+  .step-desc a{color:var(--gold-deep);text-decoration:underline;}
+  .path-note{font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:24px;}
+
+  .why-now{background:var(--ink);color:var(--paper);}
+  .why-now .eyebrow{color:var(--gold);}
+  .why-now .eyebrow::before{background:var(--gold);}
+  .why-now .lead{color:#B9C2BE;}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.12);margin-top:20px;}
+  .stat-card{background:var(--ink);padding:34px 26px;}
+  .stat-card .num{font-family:var(--serif);font-size:40px;color:var(--gold);font-weight:600;}
+  .stat-card .cap{font-size:14px;color:#B9C2BE;margin-top:10px;line-height:1.4;}
+  .stat-note{font-family:var(--mono);font-size:11.5px;color:#8B948F;margin-top:20px;}
+
+  .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .who-card{border:1px solid var(--line);padding:22px 20px;background:var(--card);display:flex;align-items:center;gap:12px;}
+  .who-card .wnum{font-family:var(--mono);font-size:11px;color:var(--gold-deep);}
+  .who-card h3{font-size:15.5px;line-height:1.3;}
+  .who-note{margin-top:30px;padding:22px 26px;background:var(--teal-soft);border:1px solid var(--line);font-size:14.5px;color:var(--ink-soft);}
+  .who-note strong{color:var(--ink);}
+
+  .earn{background:var(--teal);color:var(--teal-soft);}
+  .earn .eyebrow{color:#9FCBB8;}
+  .earn .eyebrow::before{background:#9FCBB8;}
+  .earn h2{color:#F4F1E7;}
+  .earn-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:40px;}
+  .earn-table{background:rgba(244,241,231,0.06);border:1px solid rgba(244,241,231,0.18);padding:30px;}
+  .earn-row{display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid rgba(244,241,231,0.15);font-size:15px;}
+  .earn-row:first-child{border-top:none;}
+  .earn-row span:last-child{font-family:var(--mono);color:#F4F1E7;}
+  .earn-result{margin-top:22px;padding-top:22px;border-top:1px solid rgba(244,241,231,0.25);}
+  .earn-result .big{font-family:var(--serif);font-size:36px;color:#EFC65C;}
+  .earn-disclaimer{font-size:13px;color:#DCE7E1;margin-top:24px;line-height:1.65;background:rgba(244,241,231,0.08);padding:16px 18px;border-left:2px solid #EFC65C;}
+
+  .platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .platform-card{background:var(--card);padding:30px 26px;}
+  .platform-card .pnum{font-family:var(--mono);font-size:11px;color:var(--gold-deep);}
+  .platform-card h3{font-size:17px;margin-top:14px;}
+  .platform-card p{font-size:14px;color:var(--ink-soft);margin-top:8px;}
+
+  .philosophy{text-align:center;padding:120px 0;}
+  .philosophy blockquote{
+    font-family:var(--serif);font-size:clamp(26px,3.4vw,42px);font-style:italic;font-weight:450;
+    max-width:900px;margin:0 auto;line-height:1.28;color:var(--ink);
+  }
+  .philosophy cite{display:block;font-style:normal;font-family:var(--mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold-deep);margin-top:28px;}
+
+  .faq-item{border-top:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;padding:26px 0;cursor:pointer;font-family:var(--serif);font-size:18px;font-weight:600;}
+  .faq-q .plus{font-family:var(--mono);font-size:20px;color:var(--gold-deep);transition:transform .25s;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .faq-a p{padding-bottom:24px;color:var(--ink-soft);font-size:15px;max-width:70ch;}
+
+  .cta{background:var(--ink);color:var(--paper);}
+  .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;}
+  .cta h2{color:var(--paper);}
+  .cta .lead{color:#B9C2BE;}
+  .contact-links{margin-top:30px;display:flex;flex-direction:column;gap:14px;}
+  .contact-links a{text-decoration:none;font-family:var(--mono);font-size:14px;color:#E8E3D4;border-bottom:1px solid rgba(232,227,212,0.3);padding-bottom:4px;width:fit-content;}
+  form{display:flex;flex-direction:column;gap:16px;}
+  .field{display:flex;flex-direction:column;gap:8px;}
+  label{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:#9AA6A2;}
+  input,select,textarea{
+    background:transparent;border:none;border-bottom:1px solid rgba(232,227,212,0.35);
+    color:var(--paper);font-family:var(--sans);font-size:15px;padding:10px 2px;outline:none;
+  }
+  input:focus,select:focus,textarea:focus{border-color:var(--gold);}
+  select option{color:var(--ink);}
+  textarea{resize:vertical;min-height:70px;}
+  .form-foot{display:flex;justify-content:space-between;align-items:center;margin-top:8px;flex-wrap:wrap;gap:14px;}
+  .form-note{font-size:12px;color:#8B948F;max-width:38ch;}
+
+  footer{background:var(--ink);color:#9AA6A2;border-top:1px solid rgba(232,227,212,0.12);padding:56px 0 30px;}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(232,227,212,0.12);}
+  .foot-logo{font-family:var(--serif);font-size:22px;color:var(--paper);font-weight:700;}
+  .foot-tag{font-family:var(--mono);font-size:12px;color:#9AA6A2;margin-top:6px;}
+  .foot-social{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap;}
+  .foot-social a{color:#B9C2BE;font-family:var(--mono);font-size:12px;text-decoration:none;border:1px solid rgba(232,227,212,0.2);padding:6px 10px;}
+  .foot-social a:hover{color:var(--paper);border-color:var(--paper);}
+  .foot-grid h4{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:#6E7773;margin:0 0 16px;}
+  .foot-grid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .foot-grid a{text-decoration:none;color:#B9C2BE;font-size:14px;}
+  .foot-grid a:hover{color:var(--paper);}
+  .foot-legal{padding-top:26px;font-size:12.5px;line-height:1.75;color:#9AA6A2;}
+  .foot-legal strong{color:var(--paper);}
+  .foot-legal p+p{margin-top:10px;}
+  .foot-bottom{display:flex;justify-content:space-between;padding-top:22px;font-size:12px;flex-wrap:wrap;gap:10px;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;}
+    .stat-grid{grid-template-columns:repeat(2,1fr);}
+    .values-grid{grid-template-columns:1fr;}
+    .who-grid{grid-template-columns:1fr 1fr;}
+    .earn-grid{grid-template-columns:1fr;gap:36px;}
+    .platform-grid{grid-template-columns:1fr;}
+    .cta-grid{grid-template-columns:1fr;gap:40px;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .step-row{grid-template-columns:44px 1fr;}
+    .step-row .step-desc{grid-column:2/3;}
+    section{padding:64px 0;}
+    .stat-strip .wrap{justify-content:flex-start;gap:30px;}
+    .reg-strip .wrap{flex-direction:column;gap:2px;}
+  }
+  @media(prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    #indexPath,#noisePath{animation:none;stroke-dashoffset:0;}
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="reg-strip">
+  <div class="wrap">
+    <span><strong>MoneyGYAN</strong> — AMFI-registered Mutual Fund Distributor</span>
+    <span>ARN: <strong>ARN-144200</strong> &nbsp;|&nbsp; Valid Till: 24/04/2027 &nbsp;|&nbsp; AMFI Certified</span>
+  </div>
+</div>
+
+<header>
+  <nav class="nav">
+    <a href="https://moneygyan.com" class="logo-block">
+      <span class="logo">MoneyGYAN</span>
+      <span class="logo-tag">AMFI-registered Mutual Fund Distributor</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://moneygyan.com/about-us/">About Us</a></li>
+      <li><a href="https://moneygyan.com/knowmutualfund/">Mutual Fund</a></li>
+      <li><a href="#why-us">Why Partner</a></li>
+      <li><a href="#path">How It Works</a></li>
+      <li><a href="#faq">Questions</a></li>
+      <li><a href="https://moneygyan.com/contact/">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://moneygyan.investwell.app/" target="_blank" rel="noopener" class="btn btn-ghost">Partner Login</a>
+      <a href="#apply" class="btn btn-solid">Become a Partner</a>
+    </div>
+    <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">MoneyGYAN Partner Program</p>
+        <h1>Sell discipline.<br>Not <em>predictions.</em></h1>
+        <p class="lead">Partner with MoneyGYAN to distribute mutual funds across India on a fund-neutral, paperless platform — and build a business on trail commissions, not churn.</p>
+        <div class="hero-actions">
+          <a href="#apply" class="btn btn-gold">Become a Partner →</a>
+          <a href="#path" class="btn btn-ghost">See How It Works</a>
+        </div>
+      </div>
+      <div class="hero-chart reveal">
+        <div class="chart-label"><span>Held vs. Chased, Over Time</span><span>Illustrative</span></div>
+        <svg viewBox="0 0 460 220" width="100%" height="220">
+          <line x1="0" y1="55" x2="460" y2="55" stroke="var(--line)" stroke-width="1"/>
+          <line x1="0" y1="110" x2="460" y2="110" stroke="var(--line)" stroke-width="1"/>
+          <line x1="0" y1="165" x2="460" y2="165" stroke="var(--line)" stroke-width="1"/>
+          <path id="noisePath" d="M0,150 L40,90 L70,175 L100,70 L130,190 L160,60 L190,200 L220,80 L250,185 L280,50 L310,195 L340,100 L370,180 L400,90 L430,160 L460,120" fill="none" stroke="var(--noise)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+          <path id="indexPath" d="M0,175 C120,150 180,140 230,110 C300,72 380,45 460,20" fill="none" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div class="chart-legend">
+          <div><span class="dot" style="background:var(--gold)"></span> Stayed invested</div>
+          <div><span class="dot" style="background:var(--noise)"></span> Chased the market</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stat-strip">
+    <div class="wrap">
+      <div><strong>AMFI-Registered</strong>Distribution Partner</div>
+      <div><strong>Fund-Neutral</strong>Platform, All AMCs</div>
+      <div><strong>Paperless</strong>Onboarding &amp; Transactions</div>
+      <div><strong>Trail-Only</strong>No Upfront Commission Bias</div>
+    </div>
+  </div>
+
+  <section id="why-us">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Why Partner With Us</p>
+          <h2>We built the business we<br>wished existed as new distributors.</h2>
+        </div>
+        <p class="lead reveal">MoneyGYAN is a mutual-fund-only distribution partnership. No insurance, no loans, no bundled products to explain away — one product category, understood properly.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="vnum">01</div>
+          <h3>Intelligence Over Convenience</h3>
+          <p class="desc">We don't chase the fund of the month. Our practice leans on low-cost, evidence-backed, index-first investing — a philosophy you can defend to any client, anytime.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="vnum">02</div>
+          <h3>No Mis-Selling Incentive</h3>
+          <p class="desc">We earn trail commissions, not upfront pushes. There's no internal pressure to switch a client's portfolio for a bigger payout. Your reputation compounds along with your clients' wealth.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="vnum">03</div>
+          <h3>Content, Not Just Compliance</h3>
+          <p class="desc">Every partner gets access to our ready-to-use content library — reels, carousels, articles — to help you grow an audience without becoming a full-time content creator.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="vnum">04</div>
+          <h3>Full-Stack Onboarding</h3>
+          <p class="desc">From NISM-V-A exam prep to ARN registration to your first client meeting — we walk the entire path with you, not just the parts that are easy to automate.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="vnum">05</div>
+          <h3>A Founder-Led Team</h3>
+          <p class="desc">MoneyGYAN is run by practitioners, not a call centre. You'll work directly with the people who built the platform — not a rotating support queue.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="vnum">06</div>
+          <h3>Built for the Long Game</h3>
+          <p class="desc">Good investing rewards patience. So does this business. We're building a network of partners who are in this for a decade, not a quarter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="path" id="path">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">How It Works</p>
+          <h2>From curious to<br>fully certified.</h2>
+        </div>
+        <p class="lead reveal">All persons involved in selling mutual fund schemes are required to hold an AMFI Registration Number (ARN). We help you get there.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step-row reveal">
+          <div class="step-num">01</div>
+          <div class="step-title">Register Interest</div>
+          <div class="step-desc">Fill the partner form below. We'll set up a short call to understand your background, city, and how much time you can commit.</div>
+        </div>
+        <div class="step-row reveal">
+          <div class="step-num">02</div>
+          <div class="step-title">NISM-V-A Prep</div>
+          <div class="step-desc">We guide you through the NISM-Series-V-A Mutual Fund Distributors exam syllabus with structured study material and mock tests.</div>
+        </div>
+        <div class="step-row reveal">
+          <div class="step-num">03</div>
+          <div class="step-title">Certification &amp; ARN</div>
+          <div class="step-desc">Clear the NISM exam, then register for your ARN with AMFI — the official licence to distribute mutual funds in India. If you already hold a valid ARN, you can skip straight to empanelment. <a href="https://www.amfiindia.com/distributor-corner/become-mutual-fund-distributor" target="_blank" rel="noopener">See AMFI's official process →</a></div>
+        </div>
+        <div class="step-row reveal">
+          <div class="step-num">04</div>
+          <div class="step-title">Empanel With MoneyGYAN</div>
+          <div class="step-desc">Get onboarded onto the MoneyGYAN platform — a paperless, mobile-and-web transaction system covering all mutual fund schemes and fund houses.</div>
+        </div>
+        <div class="step-row reveal">
+          <div class="step-num">05</div>
+          <div class="step-title">Learn the Playbook</div>
+          <div class="step-desc">Get access to research-backed scheme buckets, client conversation guides, and our content library for investor communication.</div>
+        </div>
+        <div class="step-row reveal">
+          <div class="step-num">06</div>
+          <div class="step-title">Launch</div>
+          <div class="step-desc">Start onboarding your first clients with hands-on support from the MoneyGYAN team for your first ten conversations.</div>
+        </div>
+      </div>
+      <p class="path-note">Certification and registration are conducted directly through NISM and AMFI. MoneyGYAN provides guidance and study support but does not issue ARNs itself.</p>
+    </div>
+  </section>
+
+  <section class="why-now" id="why-now">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">The Opportunity</p>
+          <h2>India is still under-served<br>on mutual fund distribution.</h2>
+        </div>
+        <p class="lead reveal">Most Indians still don't invest through the market. Of those who do, most are sold products, not taught principles. That gap is where a MoneyGYAN partner earns their living — and their reputation.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card reveal">
+          <div class="num">&lt;5%</div>
+          <div class="cap">of India's population invests in mutual funds — among the lowest MF-to-population ratios of any major economy.</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="num">1 : 10,000</div>
+          <div class="cap">approximate ratio of registered mutual fund distributors to India's population today.</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="num">↑</div>
+          <div class="cap">SIP accounts and mutual fund folios have grown steadily across India over the last several years.</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="num">₹0</div>
+          <div class="cap">capital required to start. This is a 100% digital, mutual-fund-only distribution business.</div>
+        </div>
+      </div>
+      <p class="stat-note">Figures are directional and should be verified against the latest AMFI / SEBI data before publishing. Mutual fund investments are subject to market risk.</p>
+    </div>
+  </section>
+
+  <section id="who">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Who This Is For</p>
+          <h2>You don't need a<br>finance degree. You need trust.</h2>
+        </div>
+        <p class="lead reveal">MoneyGYAN itself deals only in mutual funds — no insurance, no loans, no cross-selling. But the people who succeed as partners often come from adjacent, trust-based professions:</p>
+      </div>
+      <div class="who-grid">
+        <div class="who-card reveal"><span class="wnum">01</span><h3>Investment Advisors</h3></div>
+        <div class="who-card reveal"><span class="wnum">02</span><h3>Insurance Agents</h3></div>
+        <div class="who-card reveal"><span class="wnum">03</span><h3>Chartered Accountants</h3></div>
+        <div class="who-card reveal"><span class="wnum">04</span><h3>Cost Accountants</h3></div>
+        <div class="who-card reveal"><span class="wnum">05</span><h3>Direct Selling Agents (Loans)</h3></div>
+        <div class="who-card reveal"><span class="wnum">06</span><h3>Postal &amp; Chit-Fund Agents</h3></div>
+        <div class="who-card reveal"><span class="wnum">07</span><h3>Stock Brokers</h3></div>
+        <div class="who-card reveal"><span class="wnum">08</span><h3>Retired Bank Managers</h3></div>
+        <div class="who-card reveal"><span class="wnum">09</span><h3>Financial Services Professionals Going Independent</h3></div>
+      </div>
+      <div class="who-note reveal"><strong>Note on scope:</strong> Anyone distributing mutual fund schemes is required to hold a valid AMFI Registration Number (ARN). MoneyGYAN's role is limited to mutual fund distribution — we don't offer insurance, lending, or other financial products through this partnership, regardless of what a partner's other business lines may include.</div>
+    </div>
+  </section>
+
+  <section class="earn" id="earnings">
+    <div class="wrap">
+      <p class="eyebrow">Illustrative Earning Potential</p>
+      <h2>Trail commissions<br>compound quietly.</h2>
+      <div class="earn-grid">
+        <div class="earn-table reveal">
+          <div class="earn-row"><span>Sample client portfolio</span><span>₹10,00,000</span></div>
+          <div class="earn-row"><span>New SIP added / month</span><span>₹25,000</span></div>
+          <div class="earn-row"><span>Time period</span><span>15 years</span></div>
+          <div class="earn-row"><span>Illustrative trail commission</span><span>[X.XX]% p.a.</span></div>
+          <div class="earn-result">
+            <div class="big">₹[X] Lakh+</div>
+            <p style="font-size:14px;color:#B7CFC5;margin-top:6px;">Estimated cumulative trail commission over 15 years, across a growing client book — for an ARN-registered MoneyGYAN partner.</p>
+          </div>
+        </div>
+        <div>
+          <p class="lead" style="color:#DCE7E1;">You don't earn a commission for a sale. You earn a small, ongoing share of assets you help someone hold onto — year after year. The incentive is aligned: the longer your client stays invested, the more you both benefit.</p>
+        </div>
+      </div>
+      <p class="earn-disclaimer">This illustration is for explanatory purposes only and does not represent guaranteed or assured income. Actual commissions depend on AUM retained, individual AMC payout structures, and applicable SEBI/AMFI regulations (including the revised TER and commission framework effective April 2026), and are subject to change without notice. Commission is payable only to holders of a valid ARN/EUIN, in accordance with SEBI and AMFI guidelines. Mutual fund investments are subject to market risk — read all scheme-related documents carefully. Past performance is not indicative of future returns.</p>
+    </div>
+  </section>
+
+  <section id="platform">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">What You Get</p>
+          <h2>The platform and<br>back office, ready-made.</h2>
+        </div>
+        <p class="lead reveal">MoneyGYAN.com is an online platform — mobile app and web — built for paperless mutual fund transactions, end to end.</p>
+      </div>
+      <div class="platform-grid">
+        <div class="platform-card reveal">
+          <div class="pnum">/01</div>
+          <h3>Paperless Transactions</h3>
+          <p>Execute purchases, redemptions, switches and Systematic Transfer Plans (STPs) for your clients in a few clicks — no physical forms to fill or deposit.</p>
+        </div>
+        <div class="platform-card reveal">
+          <div class="pnum">/02</div>
+          <h3>Portfolio Reports</h3>
+          <p>Access every client report from one dashboard. Clients can log in and track their own portfolios too, which cuts down your servicing load.</p>
+        </div>
+        <div class="platform-card reveal">
+          <div class="pnum">/03</div>
+          <h3>Easy Scheme Selection</h3>
+          <p>Researched schemes organised into simple, goal-linked buckets — Build Wealth, Save Taxes, Regular Income Plan — so recommending the right fund doesn't take a research desk.</p>
+        </div>
+        <div class="platform-card reveal">
+          <div class="pnum">/04</div>
+          <h3>All Fund Houses, Fund-Neutral</h3>
+          <p>Every AMC on the platform, including boutique names like Mirae, Axis, Edelweiss, Canara Robeco and Invesco — you're never limited to a narrow shelf.</p>
+        </div>
+        <div class="platform-card reveal">
+          <div class="pnum">/05</div>
+          <h3>Content Marketing Support</h3>
+          <p>A constant stream of investor-awareness articles and ready-to-share content, so client education doesn't rest entirely on you.</p>
+        </div>
+        <div class="platform-card reveal">
+          <div class="pnum">/06</div>
+          <h3>Alerts &amp; Business Dashboard</h3>
+          <p>Automated alerts for upcoming SIPs and SIP bounces, plus a business dashboard so nothing slips through the cracks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <div class="wrap">
+      <blockquote class="reveal">"A good fund doesn't try to be clever. It just refuses to be distracted. That's the whole business we're inviting you into."</blockquote>
+      <cite>— The MoneyGYAN Philosophy</cite>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap" style="max-width:800px;">
+      <p class="eyebrow">Questions</p>
+      <h2 style="margin-bottom:36px;">Before you apply.</h2>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Do I need a finance background?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>No. Many of our strongest partners started outside finance — insurance agents, chartered accountants, retired bank managers, and independent professionals have all built distribution businesses through MoneyGYAN. What matters more is trust with the people around you and the discipline to clear the NISM syllabus.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Is NISM-V-A certification and an ARN mandatory?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Yes. As per SEBI and AMFI regulations, anyone engaged in selling or marketing mutual fund schemes must pass the NISM-Series-V-A exam and hold a valid AMFI Registration Number (ARN). We guide you through this process; if you already hold a valid ARN from elsewhere, you can move straight to empanelment.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Can I do this part-time?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Most partners start part-time alongside a job, business, or existing practice like insurance or accounting. It's a relationship-driven business, so consistency matters more than hours.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>How and when am I paid?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Through trail commissions paid by AMCs on assets under management, disbursed as per the standard AMFI-governed commission cycle, directly to your ARN. There are no client fees and no upfront charges to your clients. Commission structures are governed by SEBI/AMFI rules and may change from time to time.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Is there any cost to join MoneyGYAN?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Joining MoneyGYAN as a partner is free. Standard third-party costs — the NISM exam fee and ARN registration fee set by AMFI — apply as per regulatory norms and are payable to NISM/AMFI directly, not to MoneyGYAN.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Does MoneyGYAN offer investment advice?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>No. MoneyGYAN operates as an AMFI-registered Mutual Fund Distributor, not a SEBI-registered Investment Adviser. Guidance provided to partners and their clients is incidental to distribution, in line with AMFI's Code of Conduct, and should not be read as personalised investment advice.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="apply">
+    <div class="wrap cta-grid">
+      <div>
+        <p class="eyebrow">Become a Partner</p>
+        <h2>The index doesn't chase headlines.<br>Neither should you.</h2>
+        <p class="lead" style="margin-top:18px;">Tell us a little about yourself. We reply to every serious enquiry within 2 working days.</p>
+        <div class="contact-links">
+          <a href="mailto:partners@moneygyan.com">partners@moneygyan.com</a>
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp: +91 XXXXX XXXXX</a>
+          <a href="https://moneygyan.investwell.app/" target="_blank" rel="noopener">Already a partner? Log in →</a>
+        </div>
+      </div>
+      <form id="partnerForm" action="mailto:partners@moneygyan.com" method="post" enctype="text/plain">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="Name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="Phone" required>
+        </div>
+        <div class="field">
+          <label for="city">City</label>
+          <input type="text" id="city" name="City" required>
+        </div>
+        <div class="field">
+          <label for="occ">Current Occupation</label>
+          <select id="occ" name="Occupation">
+            <option>Working Professional</option>
+            <option>Insurance Agent</option>
+            <option>Chartered / Cost Accountant</option>
+            <option>Loan DSA</option>
+            <option>Stock Broker</option>
+            <option>Retired Bank Manager</option>
+            <option>Existing Mutual Fund Distributor</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="arn">Do you already hold an ARN?</label>
+          <select id="arn" name="Has ARN">
+            <option>No — I need help getting one</option>
+            <option>Yes — I hold a valid ARN</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Anything you'd like us to know?</label>
+          <textarea id="msg" name="Message"></textarea>
+        </div>
+        <div class="form-foot">
+          <button type="submit" class="btn btn-gold">Submit Application →</button>
+          <p class="form-note">By submitting, you agree to be contacted by MoneyGYAN regarding the partner program.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">MoneyGYAN</div>
+        <p class="foot-tag">AMFI-registered Mutual Fund Distributor · ARN: [XXXXXX]</p>
+        <p style="font-size:13.5px;color:#8B948F;margin-top:14px;max-width:32ch;">An online platform for paperless mutual fund transactions across India, available on mobile app and web.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/moneygyaan/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://twitter.com/moneygyan" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://www.instagram.com/moneygyaan/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.youtube.com/channel/UClaXqdsXU4S1hn_jwvFYDGQ" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://moneygyan.com/about-us/">About Us</a></li>
+          <li><a href="https://moneygyan.com/knowmutualfund/">Mutual Fund</a></li>
+          <li><a href="https://moneygyan.com">Home</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partners</h4>
+        <ul>
+          <li><a href="#path">How It Works</a></li>
+          <li><a href="#faq">Questions</a></li>
+          <li><a href="#apply">Apply Now</a></li>
+          <li><a href="https://moneygyan.investwell.app/" target="_blank" rel="noopener">Partner Login</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://moneygyan.com/terms-of-use/">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="https://moneygyan.com/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p><strong>MoneyGYAN</strong> is an AMFI-registered Mutual Fund Distributor. ARN: ARN-144200, valid till 24/04/2027. Registration granted by AMFI does not constitute a guarantee of performance and is no indication of the AMFI's views on the distributor.</p>
+      <p>Mutual fund investments are subject to market risks, read all scheme related documents carefully. MoneyGYAN does not guarantee returns, and past performance is not indicative of future results.</p>
+      <p>MoneyGYAN operates solely as a mutual fund distributor and is not a SEBI-registered Investment Adviser. This page is intended to inform prospective distribution partners and does not constitute investment advice or an offer to sell any scheme. Commission is payable only to persons holding a valid ARN, in accordance with SEBI and AMFI regulations in force from time to time.</p>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> MoneyGYAN. All rights reserved.</span>
+      <span>Made for people who'd rather be right for ten years than clever for ten minutes.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function toggleFaq(el){
+    const item = el.parentElement;
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o=>{
+      o.classList.remove('open');
+      o.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

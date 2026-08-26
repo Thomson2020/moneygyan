@@ -1,0 +1,80 @@
+
+/* =========================================================
+   FAQ SECTION — PARTNER INQUIRIES
+   ========================================================= */
+
+.partner-faq-section {
+  max-width: 1000px;
+  width: min(92%, 1000px);
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.partner-faq-eyebrow {
+  display: flex;
+  justify-content: center;
+  color: var(--primary);
+  letter-spacing: 3px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.partner-faq-section h2 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin: 0 0 clamp(32px, 5vw, 56px) 0;
+  color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.partner-faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-faq-item {
+  border-bottom: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+
+.partner-faq-question {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-weight: 600;
+  padding: clamp(20px, 3vw, 28px) 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.partner-faq-question:hover {
+  color: var(--primary);
+}
+
+.partner-faq-answer {
+  padding-bottom: clamp(20px, 3vw, 36px);
+}
+
+.partner-faq-answer p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: clamp(0.9rem, 1.3vw, 0.98rem);
+}
+
+.partner-faq-icon {
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.partner-faq-icon-open {
+  transform: rotate(90deg);
+}

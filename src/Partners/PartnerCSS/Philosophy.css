@@ -1,0 +1,46 @@
+/* =========================================================
+   PHILOSOPHY SECTION — QUOTE & CREED
+   ========================================================= */
+
+.philosophy-section {
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.philosophy-content {
+  max-width: 1050px;
+  width: min(92%, 1050px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.philosophy-content blockquote {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.75rem);
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--text-primary);
+  width: 100%;
+  margin: 0 0 clamp(20px, 3vw, 32px) 0;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.philosophy-label {
+  color: var(--primary);
+  font-size: clamp(0.72rem, 1.2vw, 0.8rem);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}

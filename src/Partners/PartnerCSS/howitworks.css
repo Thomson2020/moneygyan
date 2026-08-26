@@ -1,0 +1,106 @@
+/* =========================================================
+   HOW IT WORKS — STEP BY STEP ROADMAP
+   ========================================================= */
+
+.hiw {
+  padding: 0 24px;
+  max-width: 1240px;
+  width: min(92%, 1240px);
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.hiw-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 5vw, 80px);
+  margin-bottom: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.hiw-tag {
+  letter-spacing: 3px;
+  font-size: 0.78rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.hiw-header h1 {
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  line-height: 1.1;
+  margin-top: 16px;
+  color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hiw-header p {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.hiw-step {
+  display: grid;
+  grid-template-columns: 70px 240px 1fr;
+  gap: clamp(20px, 4vw, 64px);
+  padding: clamp(24px, 3.5vw, 36px) 0;
+  border-top: 1px solid var(--card-border);
+  align-items: start;
+  transition: background-color 0.25s ease;
+}
+
+.hiw-step span {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.hiw-step h3 {
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  color: var(--text-primary);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.hiw-step p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  margin: 0;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+  .hiw-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hiw-step {
+    grid-template-columns: 50px 1fr;
+    gap: 16px 20px;
+  }
+
+  .hiw-step p {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 540px) {
+  .hiw-step {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .hiw-step p {
+    grid-column: 1 / -1;
+  }
+}

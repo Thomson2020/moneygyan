@@ -1,0 +1,330 @@
+/* =========================================================
+   AWWWARDS-GRADE IMMERSIVE HERO OVERLAY
+========================================================= */
+
+.vos-hero-container {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  padding: 40px;
+  box-sizing: border-box;
+
+  background: #030812;
+  color: #fff;
+
+  perspective: 1200px;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.vos-hero-container.light {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+html.welcome-locked,
+body.welcome-locked {
+  overflow: hidden !important;
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+/* =========================================================
+   FILM GRAIN
+========================================================= */
+
+/* .noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+} */
+
+/* =========================================================
+   AMBIENT GLOWS
+========================================================= */
+/* =========================================================
+   AURORA GLOWS
+========================================================= */
+
+/* .ambient-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  opacity: 0.35;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+
+.glow-1 {
+  top: -20%;
+  left: -20%;
+  background: linear-gradient(15deg, #06b6d4 0%, #3b82f6 50%, #10b981 100%);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: auroraFlow1 5s ease-in-out infinite alternate;
+}
+
+.glow-2 {
+  right: 0%;
+  bottom: -20%;
+  background: linear-gradient(15deg, #8b5cf6 0%, #ec4899 50%, #06b6d4 100%);
+  border-radius: 60% 40% 30% 70% / 50% 30% 70% 50%;
+  animation: auroraFlow2 5s ease-in-out infinite alternate;
+} */
+
+/* Wavy Organic Morphing Keyframes */
+@keyframes auroraFlow1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  50% {
+    transform: translate(80px, 60px) scale(1.25) rotate(45deg);
+    border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+  }
+  100% {
+    transform: translate(-30px, 90px) scale(1.1) rotate(90deg);
+    border-radius: 50% 50% 30% 70% / 40% 40% 60% 60%;
+  }
+}
+
+@keyframes auroraFlow2 {
+  0% {
+    transform: translate(0, 0) scale(1.1) rotate(0deg);
+    border-radius: 60% 40% 30% 70% / 50% 30% 70% 50%;
+  }
+  50% {
+    transform: translate(-70px, -80px) scale(0.9) rotate(-45deg);
+    border-radius: 30% 70% 60% 40% / 60% 40% 50% 50%;
+  }
+  100% {
+    transform: translate(50px, -40px) scale(1.2) rotate(-90deg);
+    border-radius: 50% 50% 70% 30% / 50% 50% 40% 60%;
+  }
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.vos-center-hero {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  gap: 0;
+
+  max-width: 1000px;
+  transform-style: preserve-3d;
+}
+
+.vos-title {
+  margin: 0;
+  font-size: clamp(2.6rem, 8vw, 8.5rem);
+  font-weight: 900;
+  letter-spacing: clamp(-1.5px, -0.4vw, -3px);
+  line-height: .95;
+}
+
+.vos-title span {
+  background: linear-gradient(
+      135deg,
+      #06b6d4,
+      #8b5cf6
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(
+      0 15px 35px rgba(6,182,212,.25)
+  );
+}
+
+/* =========================================================
+   FOG BUTTON
+========================================================= */
+
+.vos-btn-wrapper {
+  position: absolute;
+  top: calc(100% + clamp(40px, 8vh, 120px));
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 200px;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  overflow: visible;
+  z-index: 10;
+}
+
+/* =========================================================
+   FOG / SHADER AREA
+========================================================= */
+
+.shape-blur-container {
+  position: absolute;
+  inset: -15px;
+  border-radius: 999px;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle,
+    rgba(248, 248, 248, 0.45) 0%,
+    rgba(2, 94, 196, 0.3) 45%,
+    rgba(139, 92, 246, 0.2) 70%,
+    transparent 85%
+  );
+  filter: blur(24px);
+  opacity: 0.5;
+
+  transition: transform 0.8s cubic-bezier(.16, 1, .3, 1), opacity 0.5s ease;
+  z-index: 1;
+}
+
+.vos-hero-container.light .shape-blur-container {
+  background: radial-gradient(
+    circle,
+    rgba(2, 132, 199, 0.35) 0%,
+    rgba(124, 58, 237, 0.25) 45%,
+    rgba(56, 189, 248, 0.15) 70%,
+    transparent 85%
+  );
+}
+
+.vos-btn-wrapper:hover .shape-blur-container {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.btn-text{
+
+    position:relative;
+
+    z-index:10;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    color:#fff;
+
+    font-size:.90rem;
+    font-weight:700;
+
+    line-height:1;
+
+    text-transform:uppercase;
+
+    user-select:none;
+
+    text-shadow:
+        0 0 12px rgba(255,255,255,.25),
+        0 0 30px rgba(158, 156, 154, 0.15);
+
+    transition:
+        transform .45s cubic-bezier(.22,1,.36,1),
+        text-shadow .45s ease,
+        letter-spacing .45s ease,
+        color .35s ease;
+}
+
+.vos-hero-container.light .btn-text {
+    color: #0f172a;
+    text-shadow:
+        0 0 12px rgba(2, 132, 199, 0.25),
+        0 0 30px rgba(124, 58, 237, 0.15);
+}
+
+.vos-hero-container.light .vos-btn-wrapper:hover .btn-text {
+    text-shadow:
+        0 0 18px rgba(2, 132, 199, 0.55),
+        0 0 45px rgba(124, 58, 237, 0.4);
+}
+
+.btn-text span:first-child{
+
+    letter-spacing:0.85em;
+}
+
+.btn-text span:last-child{
+    padding-right: 5px;
+
+    letter-spacing:1.6em;
+
+    padding-left:.95em;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+/* .vos-btn-wrapper:hover .shape-blur-container{
+
+    opacity:1;
+
+    transform:scale(1.18);
+} */
+
+.vos-btn-wrapper:hover .btn-text{
+
+    transform:translateY(-2px) scale(1.03);
+
+    text-shadow:
+        0 0 18px rgba(255,255,255,.55),
+        0 0 45px rgba(255, 255, 255, 0.935);
+}
+
+/* =========================================================
+   CLICK
+========================================================= */
+
+.vos-btn-wrapper:active .btn-text{
+    transform:scale(.85);
+}
+
+@media (max-width: 640px) {
+  .vos-hero-container {
+    padding: 20px 16px;
+  }
+
+  .btn-text {
+    font-size: 0.8rem;
+  }
+}

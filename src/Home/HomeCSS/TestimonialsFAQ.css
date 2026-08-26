@@ -1,0 +1,275 @@
+/* =========================================
+   COMMON CONTAINER & TYPOGRAPHY
+========================================= */
+.tf-wrapper {
+  width: 100%;
+  /* background: var(--bg); */
+  position: relative;
+  overflow: hidden;
+}
+
+.tf-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+.tf-title {
+  font-weight: 800;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 100px;
+  line-height: 1.2;
+}
+
+.tf-title span {
+  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================================
+   TESTIMONIALS GRID
+========================================= */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  box-shadow: var(--card-shadow);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
+}
+
+/* Avatar Initials */
+.avatar-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.avatar-orange {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+}
+
+.avatar-green {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.avatar-blue {
+  background: linear-gradient(135deg, #06b6d4, #0284c7);
+}
+
+.testimonial-quote {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.testimonial-author h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.testimonial-author span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  opacity: 0.9;
+}
+
+/* =========================================
+   FAQ ACCORDION
+========================================= */
+.faq-section {
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.faq-container {
+  max-width: 900px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 22px 26px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--card-shadow);
+  transition: all 0.25s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--primary);
+}
+
+.faq-item.open {
+  border-color: var(--primary);
+  background: var(--primary-gradient);
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.faq-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.faq-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 4px;
+}
+
+.faq-item.open .faq-toggle-btn {
+  color: var(--secondary);
+  transform: rotate(180deg);
+}
+
+.faq-body {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--card-border);
+}
+
+.faq-body p {
+  color: var(--text-secondary);
+  font-weight: 500;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* =========================================
+   FAQ SMOOTH EXPAND / COLLAPSE ANIMATION
+========================================= */
+.faq-body-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: 
+    grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease;
+}
+
+.faq-body-wrapper.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.faq-body-inner {
+  overflow: hidden; /* Critical for smooth height hiding */
+}
+
+.faq-body {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+}
+
+.faq-body p {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@keyframes faqFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS (IPAD & MOBILE)
+========================================= */
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 680px) {
+  .tf-container {
+    padding: clamp(40px, 8vw, 60px) 16px;
+  }
+
+  .tf-title {
+    margin-bottom: 40px;
+    font-size: clamp(2rem, 7vw, 2.8rem);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .testimonial-card {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .faq-item {
+    padding: 18px 20px;
+    border-radius: 14px;
+  }
+
+  .faq-header h3 {
+    font-size: 0.95rem;
+  }
+}
