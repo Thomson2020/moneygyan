@@ -11,8 +11,8 @@ body[data-theme="dark"],
   --bg: #030812;
   --bg-primary: #030812;
   --bg-secondary: rgba(10, 18, 32, 0.75);
-  --bg-card: rgba(10, 18, 32, 0.80);
-  --bg-card-hover: rgba(18, 28, 48, 0.90);
+  --bg-card: transparent;
+  --bg-card-hover: rgba(18, 28, 48, 0.40);
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --text-muted: #94a3b8;
@@ -32,6 +32,7 @@ body[data-theme="dark"],
   --nav-border: rgba(255, 255, 255, 0.14);
   --input-bg: rgba(255, 255, 255, 0.04);
   --input-border: rgba(255, 255, 255, 0.18);
+  --dropdown-bg: #070d18;
   --label-color: rgba(255, 255, 255, 0.6);
   color-scheme: dark;
 }
@@ -45,8 +46,8 @@ body.light,
   --bg: #f8fafc;
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
-  --bg-card: rgba(255, 255, 255, 0.88);
-  --bg-card-hover: #ffffff;
+  --bg-card: transparent;
+  --bg-card-hover: rgba(15, 23, 42, 0.05);
   --text-primary: #0f172a; /* Slate 900 - crisp, high-contrast dark charcoal */
   --text-secondary: #334155; /* Slate 700 - clear readability */
   --text-muted: #64748b; /* Slate 500 */
@@ -64,15 +65,16 @@ body.light,
   --btn-bg-hover: rgba(15, 23, 42, 0.08);
   --nav-bg: rgba(255, 255, 255, 0.92);
   --nav-border: rgba(15, 23, 42, 0.12);
-  --input-bg: #ffffff;
+  --input-bg:  rgba(233, 229, 229, 0.616);
   --input-border: rgba(15, 23, 42, 0.18);
+  --dropdown-bg: #ffffff;
   --label-color: rgba(15, 23, 42, 0.65);
   color-scheme: light;
 }
 
 /* Theme fade transition */
 *, *::before, *::after {
-  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  transition: background-color 0.7s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 html {
@@ -97,19 +99,27 @@ body {
 
 .card,
 .calculator-unified,
+.calc-card,
+.calc-container,
 .feature-card,
 .feature-card-appshowcase,
+.appshowcase-card,
 .partner-feature-card,
 .opportunity-card,
 .testimonial-card,
 .faq-item,
+.faq-card,
 .faqpage-item,
 .form-right,
+.form-card,
 .partner-rail,
+.partner-rail-item,
 .about-info-card,
+.about-stats,
 .story-quote,
 .value-card,
 .audience-grid,
+.audience-card,
 .regulation-top,
 .location-card,
 .contact-card,
@@ -119,11 +129,25 @@ body {
 .terms-summary-card,
 .disclosure-card,
 .metric-card,
-.trail-card {
-  background: var(--bg-card) !important;
+.trail-card,
+.about-cta,
+.howitworks-step,
+.philosophy-card,
+.partner-program-card,
+.whatyouget-card,
+.privacy-card,
+.spotlight-card,
+.flip-card-front,
+.flip-card-back,
+.contact-form,
+.contact-form-card,
+.hero-stat-card {
+  background: transparent !important;
   border: 1px solid var(--card-border) !important;
   color: var(--text-primary) !important;
   box-shadow: var(--card-shadow) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
 }
 
 /* =========================================================
@@ -397,16 +421,16 @@ p {
   mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    black 20%,
-    black 80%,
+    black 22%,
+    black 78%,
     transparent 100%
   );
 
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    black 20%,
-    black 80%,
+    black 22%,
+    black 78%,
     transparent 100%
   );
 }
@@ -434,38 +458,8 @@ p {
   text-align: center;
   letter-spacing: -0.01em;
   color: var(--text-primary);
-}
-
-.carousel-blur-overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-
-  height: 8%;
-  z-index: 5;
-
-  pointer-events: none;
-
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-}
-
-.top-blur {
-  top: 0;
-  background: linear-gradient(
-    to bottom,
-    var(--bg-primary) 0%,
-    transparent 100%
-  );
-}
-
-.bottom-blur {
-  bottom: 0;
-  background: linear-gradient(
-    to top,
-    var(--bg-primary) 0%,
-    transparent 100%
-  );
+  border: none;
+  outline: none;
 }
 
 
@@ -654,19 +648,34 @@ p {
 @media (max-width: 992px) {
   .audience-container {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
+    align-items: center;
+    text-align: center;
+    gap: 36px;
+    padding: 0 16px;
   }
 
-  .audience-left,
+  .audience-left {
+    max-width: 680px;
+    width: 100%;
+    flex: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .audience-right {
     max-width: 100%;
+    width: 100%;
     flex: none;
+    display: flex;
+    justify-content: center;
   }
 
   .carousel-viewport {
     max-width: 100%;
-    height: 300px;
+    width: 100%;
+    height: 280px;
   }
 
   .audience-text-item {
@@ -679,11 +688,64 @@ p {
 @media (max-width: 768px) {
   .calculator-section,
   .app-showcase-section {
-    padding: 40px 16px;
+    padding: clamp(40px, 8vw, 60px) 16px;
   }
 
   .calculator-inputs-col,
   .calculator-chart-col {
-    padding: 20px 10px;
+    padding: 20px 12px;
   }
+
+  /* Universal touch improvements for handheld devices */
+  button, 
+  a, 
+  input, 
+  select, 
+  textarea {
+    touch-action: manipulation;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-viewport {
+    height: 250px;
+  }
+
+  .audience-text-item h3 {
+    font-size: 1.55rem !important;
+  }
+}
+
+/* =========================================================
+   GLOBAL DROPDOWNS: OPAQUE BACKGROUND & SMOOTH ANIMATION
+   ========================================================= */
+
+@keyframes dropdownSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.custom-select-menu,
+.dropdown-menu,
+.select-menu,
+div[class*="-menu"] {
+  background-color: var(--dropdown-bg) !important;
+  animation: dropdownSlideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  transform-origin: top center;
+}
+
+select {
+  background-color: var(--dropdown-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+select option {
+  background-color: var(--dropdown-bg) !important;
+  color: var(--text-primary) !important;
 }

@@ -7,9 +7,12 @@
 .features {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 14px;
   margin-top: 28px;
   margin-bottom: 8px;
+  width: 100%;
 }
 
 .flip-card {

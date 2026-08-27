@@ -165,10 +165,39 @@
 @media (max-width: 900px) {
   .form-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
+  }
+
+  .form-left {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-lead-desc {
+    margin: 0 auto;
+  }
+
+  .form-contact {
+    align-items: center;
   }
 
   .form-right {
     max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-section {
+    padding: 0 16px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .form-right {
+    padding: 24px 18px;
+    border-radius: 20px;
   }
 }

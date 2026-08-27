@@ -868,6 +868,48 @@
 }
 
 @media (max-width: 640px) {
+  .about-hero,
+  .story-section,
+  .values-section,
+  .audience-section,
+  .regulation-section,
+  .location-section {
+    padding: 0 16px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+
+  .about-left,
+  .story-left,
+  .location-left {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-description,
+  .story-description,
+  .location-description {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .about-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .about-primary-btn,
+  .about-secondary-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .about-right {
+    justify-content: center;
+  }
+
   .about-stats,
   .values-grid,
   .regulation-details {
@@ -883,6 +925,10 @@
     border-right: none;
     border-bottom: 1px solid var(--card-border);
     padding-bottom: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .reg-item:last-child {
@@ -892,5 +938,18 @@
   .location-row {
     grid-template-columns: 1fr;
     gap: 8px;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .about-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-cta-buttons a,
+  .about-cta-buttons button {
+    width: 100%;
+    max-width: 320px;
   }
 }

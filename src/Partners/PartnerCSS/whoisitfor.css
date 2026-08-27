@@ -24,10 +24,10 @@
   box-sizing: border-box;
   
   /* Aesthetics */
-  background: var(--bg-card);
-  border: 1px solid var(--card-border);
-  border-radius: 16px;
-  box-shadow: var(--card-shadow);
+  background: transparent;
+  /* border: 1px solid var(--card-border); */
+  /* border-radius: 16px; */
+  /* box-shadow: var(--card-shadow); */
   color: var(--text-primary);
   font-weight: 600;
   font-size: 1.05rem;

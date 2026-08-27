@@ -3,12 +3,15 @@ import { gsap } from "gsap";
 import LineWaves from "./LineWaves";
 import "./HomeCSS/WelcomeHero.css";
 import { cn } from "@/lib/utils";
+import { playWelcomeTransitionSound } from "@/lib/sound";
 
 export default function WelcomeHero({ onStart, isLight }) {
   const overlayRef = useRef(null);
   const cardRef = useRef(null);
 
   const handleStart = () => {
+    playWelcomeTransitionSound(0.4);
+
     const tl = gsap.timeline({
       onComplete: () => {
         if (onStart) onStart();

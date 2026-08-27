@@ -54,13 +54,21 @@ export default function Form() {
     }),
     menu: (provided) => ({
       ...provided,
-      background: "var(--bg-card)",
+      backgroundColor: "var(--dropdown-bg)",
       border: "1px solid var(--card-border)",
       borderRadius: "14px",
-      boxShadow: "var(--card-shadow)",
+      boxShadow: "0 16px 40px rgba(0, 0, 0, 0.45)",
       overflow: "hidden",
-      padding: "4px 0",
-      zIndex: 10
+      padding: "6px",
+      marginTop: "8px",
+      zIndex: 100,
+      transformOrigin: "top center",
+      animation: "dropdownSlideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards"
+    }),
+    menuList: (provided) => ({
+      ...provided,
+      padding: "0",
+      backgroundColor: "transparent"
     }),
     option: (provided, state) => ({
       ...provided,
@@ -70,9 +78,12 @@ export default function Form() {
         ? "var(--btn-bg-hover)" 
         : "transparent",
       color: state.isSelected ? "#ffffff" : "var(--text-primary)",
-      padding: "10px 16px",
+      borderRadius: "8px",
+      padding: "10px 14px",
+      margin: "2px 0",
       fontSize: "0.9rem",
       cursor: "pointer",
+      transition: "all 0.15s ease"
     }),
     indicatorSeparator: () => ({ display: "none" }),
     dropdownIndicator: (provided) => ({

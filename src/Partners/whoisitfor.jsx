@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import clsx from "clsx";
 
 const audiences = [
   "Investment Advisors",
@@ -63,11 +62,6 @@ export default function Whoisitfor() {
         {/* Right Side Carousel Window */}
         <div className="audience-right">
           <div className="carousel-viewport">
-            
-            {/* Blurring layers overlay */}
-            <div className={clsx('carousel-blur-overlay', 'top-blur')} />
-            <div className={clsx('carousel-blur-overlay', 'bottom-blur')} />
-            
             <div className="carousel-track" ref={trackRef}>
               <div className="carousel-list">
                 {audiences.map((name, i) => (

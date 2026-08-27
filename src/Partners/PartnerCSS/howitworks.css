@@ -82,6 +82,11 @@
   .hiw-header {
     grid-template-columns: 1fr;
     gap: 20px;
+    text-align: center;
+  }
+
+  .hiw-header h1 {
+    margin-top: 8px;
   }
 
   .hiw-step {
@@ -94,13 +99,37 @@
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 640px) {
+  .hiw {
+    padding: 0 16px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .hiw-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .hiw-step {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 12px;
+  }
+
+  .hiw-step span {
+    font-size: 1.6rem;
   }
 
   .hiw-step p {
     grid-column: 1 / -1;
+    text-align: center;
+    max-width: 480px;
   }
 }

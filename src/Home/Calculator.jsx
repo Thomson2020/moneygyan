@@ -3,25 +3,7 @@ import "./HomeCSS/Calculator.css";
 import clsx from "clsx";
 import { motion, useSpring, useTransform } from "framer-motion";
 
-// ---------- GLOBAL SOUND MANAGER ----------
-// This prevents multiple numbers from overlapping sounds and destroying performance
-const tickSound = typeof window !== "undefined" ? new Audio("/tick.mp3") : null;
-if (tickSound) {
-  tickSound.volume = 0.15; // Keep it subtle so it's not annoying
-}
-
-let lastTickTime = 0;
-const playTickSound = () => {
-  const now = Date.now();
-  // Throttle to play at most once every 60 milliseconds
-  if (now - lastTickTime > 30 && tickSound) {
-    tickSound.currentTime = 0;
-    // .catch() prevents the app from crashing if the browser blocks autoplay 
-    // before the user has clicked anywhere on the page.
-    tickSound.play().catch(() => {}); 
-    lastTickTime = now;
-  }
-};
+import { playTickSound } from "@/lib/sound";
 
 // ---------- HELPERS ----------
 
@@ -51,7 +33,7 @@ function AnimatedNumber({ value, format = true }) {
   // ADD THIS NEW useEffect:
   // Listens to the changing display value and plays the sound
   useEffect(() => {
-    const unsubscribe = display.on("change", (latest) => {
+    const unsubscribe = display.on("change", () => {
       // If the spring is close enough to the target value, stop making noise
       if (Math.abs(spring.get() - value) > 1) {
         playTickSound();

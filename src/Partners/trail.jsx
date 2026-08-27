@@ -3,21 +3,7 @@ import clsx from "clsx";
 import { motion, useSpring, useTransform } from "framer-motion";
 import "./trail.css";
 
-// ---------- GLOBAL SOUND MANAGER ----------
-const tickSound = typeof window !== "undefined" ? new Audio("/tick.mp3") : null;
-if (tickSound) {
-  tickSound.volume = 0.15; // Subtle sound
-}
-
-let lastTickTime = 0;
-const playTickSound = () => {
-  const now = Date.now();
-  if (now - lastTickTime > 30 && tickSound) {
-    tickSound.currentTime = 0;
-    tickSound.play().catch(() => {});
-    lastTickTime = now;
-  }
-};
+import { playTickSound } from "@/lib/sound";
 
 // ---------- HELPERS ----------
 const clamp = (val, min, max) => Math.min(max, Math.max(min, val));

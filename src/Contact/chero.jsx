@@ -23,6 +23,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 const userRoles = [
   {
@@ -196,7 +197,7 @@ export default function ContactHero() {
                 </div>
 
                 {/* CUSTOM SELECT DROPDOWN */}
-                <div className="form-field custom-select-wrapper" ref={dropdownRef}>
+                <div className={cn('form-field', 'custom-select-wrapper')} ref={dropdownRef}>
                   <label>I Am An</label>
                   <button
                     type="button"
@@ -255,7 +256,6 @@ export default function ContactHero() {
                 <button type="submit" className="send-btn">
                   <span>SEND MESSAGE →</span>
                 </button>
-
                 <p className="response-time-note">
                   Reply within 2 working days
                 </p>
