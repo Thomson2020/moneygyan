@@ -2,6 +2,7 @@ import { useState } from "react";
 import Select from "react-select";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { sendToGoogleSheets } from "@/lib/webhook";
 
 import "./PartnerCSS/Form.css";
 import "./PartnerCSS/arn.css";
@@ -43,18 +44,27 @@ export default function Form() {
     setSubmitStatus({ loading: true, success: false, error: null });
 
     try {
-      await addDoc(collection(db, "partner_applications"), {
+      const payload = {
+        formType: "Partner Application",
         fullName: formData.fullName.trim(),
         phone: formData.phone.trim(),
         city: formData.city.trim(),
         profession: profession?.label || "Not specified",
+        hasArn: hasArn?.value === "yes" ? `Yes (${arnNumber.trim()})` : "No",
+        notes: formData.notes.trim() || "None",
+      };
+
+      await addDoc(collection(db, "partner_applications"), {
+        ...payload,
         hasArn: hasArn?.value === "yes",
         arnNumber: hasArn?.value === "yes" ? arnNumber.trim() : null,
-        notes: formData.notes.trim(),
         agreedToContact: agree,
         createdAt: serverTimestamp(),
         status: "pending",
       });
+
+      // Forward to Google Sheets + Instant Email Notification
+      sendToGoogleSheets(payload);
 
       setSubmitStatus({ loading: false, success: true, error: null });
       setFormData({ fullName: "", phone: "", city: "", notes: "" });

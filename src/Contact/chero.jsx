@@ -26,6 +26,7 @@ import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { sendToGoogleSheets } from "@/lib/webhook";
 
 const userRoles = [
   {
@@ -81,16 +82,24 @@ export default function ContactHero() {
     setSubmitStatus({ loading: true, success: false, error: null });
 
     try {
-      await addDoc(collection(db, "contact_submissions"), {
+      const payload = {
+        formType: "Contact Inquiry",
         fullName: formData.fullName.trim(),
         phone: formData.phone.trim(),
         email: formData.email.trim(),
         role: selectedRole.label,
-        roleId: selectedRole.id,
         message: formData.message.trim(),
+      };
+
+      await addDoc(collection(db, "contact_submissions"), {
+        ...payload,
+        roleId: selectedRole.id,
         createdAt: serverTimestamp(),
         status: "unread",
       });
+
+      // Forward to Google Sheets + Instant Email Notification
+      sendToGoogleSheets(payload);
 
       setSubmitStatus({ loading: false, success: true, error: null });
       setFormData({ fullName: "", phone: "", email: "", message: "" });
