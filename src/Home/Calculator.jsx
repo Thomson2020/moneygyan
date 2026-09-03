@@ -351,10 +351,10 @@ export default function Calculator() {
                     type="range"
                     className="calc-range-slider"
                     min="0"
-                    max="100000"
+                    max="100000000"
                     step="500"
                     value={monthlyInvestment}
-                    style={rangeStyle(monthlyInvestment, 0, 100000)}
+                    style={rangeStyle(monthlyInvestment, 0, 100000000)}
                     onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
                   />
                 </div>

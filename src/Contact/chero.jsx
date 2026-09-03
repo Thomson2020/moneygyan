@@ -24,6 +24,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 const userRoles = [
   {
@@ -56,6 +58,51 @@ export default function ContactHero() {
   const [selectedRole, setSelectedRole] = useState(userRoles[0]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  const [submitStatus, setSubmitStatus] = useState({
+    loading: false,
+    success: false,
+    error: null,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitStatus({ loading: true, success: false, error: null });
+
+    try {
+      await addDoc(collection(db, "contact_submissions"), {
+        fullName: formData.fullName.trim(),
+        phone: formData.phone.trim(),
+        email: formData.email.trim(),
+        role: selectedRole.label,
+        roleId: selectedRole.id,
+        message: formData.message.trim(),
+        createdAt: serverTimestamp(),
+        status: "unread",
+      });
+
+      setSubmitStatus({ loading: false, success: true, error: null });
+      setFormData({ fullName: "", phone: "", email: "", message: "" });
+    } catch (err) {
+      console.error("Error submitting contact form:", err);
+      setSubmitStatus({
+        loading: false,
+        success: false,
+        error: "Unable to send message right now. Please check your network and try again.",
+      });
+    }
+  };
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -165,14 +212,52 @@ export default function ContactHero() {
               <h3>Write to our desk</h3>
             </div>
 
-            <form className="contact-form-body" onSubmit={(e) => e.preventDefault()}>
+            <form className="contact-form-body" onSubmit={handleSubmit}>
+              {submitStatus.success && (
+                <div
+                  style={{
+                    padding: "12px 16px",
+                    borderRadius: "10px",
+                    background: "rgba(16, 185, 129, 0.12)",
+                    border: "1px solid rgba(16, 185, 129, 0.35)",
+                    color: "#10b981",
+                    fontSize: "0.88rem",
+                    fontWeight: 500,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  ✓ Thank you! Your message has been sent. We'll reply within 2 working days.
+                </div>
+              )}
+
+              {submitStatus.error && (
+                <div
+                  style={{
+                    padding: "12px 16px",
+                    borderRadius: "10px",
+                    background: "rgba(239, 68, 68, 0.12)",
+                    border: "1px solid rgba(239, 68, 68, 0.35)",
+                    color: "#ef4444",
+                    fontSize: "0.88rem",
+                    fontWeight: 500,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  ✕ {submitStatus.error}
+                </div>
+              )}
+
               <div className="form-row-2">
                 <div className="form-field">
                   <label>Full Name</label>
                   <input
                     type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
                     placeholder="e.g. Rahul Sharma"
                     required
+                    disabled={submitStatus.loading}
                   />
                 </div>
 
@@ -180,8 +265,12 @@ export default function ContactHero() {
                   <label>Phone Number</label>
                   <input
                     type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     placeholder="+91 98765 43210"
                     required
+                    disabled={submitStatus.loading}
                   />
                 </div>
               </div>
@@ -191,8 +280,12 @@ export default function ContactHero() {
                   <label>Email Address</label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="name@example.com"
                     required
+                    disabled={submitStatus.loading}
                   />
                 </div>
 
@@ -247,14 +340,23 @@ export default function ContactHero() {
                 <label>Message</label>
                 <textarea
                   rows="4"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="How can we assist you with mutual funds or partnership?"
                   required
+                  disabled={submitStatus.loading}
                 ></textarea>
               </div>
 
               <div className="form-bottom-bar">
-                <button type="submit" className="send-btn">
-                  <span>SEND MESSAGE →</span>
+                <button
+                  type="submit"
+                  className="send-btn"
+                  disabled={submitStatus.loading}
+                  style={{ opacity: submitStatus.loading ? 0.7 : 1, cursor: submitStatus.loading ? "not-allowed" : "pointer" }}
+                >
+                  <span>{submitStatus.loading ? "SENDING..." : "SEND MESSAGE →"}</span>
                 </button>
                 <p className="response-time-note">
                   Reply within 2 working days

@@ -154,6 +154,13 @@ export default function Header() {
 
   return (
     <>
+      <div className={`progressive-blur ${headerHidden ? "menu-open" : ""}`} aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <header className={`site-header ${headerHidden ? "menu-open" : ""}`}>
         <div className="header-logo">
           <Link to="/" onClick={() => menuOpen && toggleMenu()}>

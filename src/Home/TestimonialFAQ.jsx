@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa";
 import "./HomeCSS/TestimonialsFAQ.css";
 import { cn } from "@/lib/utils";
 
@@ -97,33 +96,41 @@ export default function TestimonialsFAQ() {
       {/* =========================================
           SECTION 2: FAQ ACCORDION (HOVER TO OPEN)
       ========================================= */}
-      <section className="faq-section">
-        <div className={cn('tf-container', 'faq-container')}>
+      <section className="home-faq-section">
+        <div className={cn('tf-container', 'home-faq-container')}>
           <h2 className="tf-title">
             Questions? <br />We&apos;ve got <span>answers.</span>
           </h2>
 
-  <div className="faq-list">
+  <div className="home-faq-list">
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
               return (
                 <div
                   key={index}
-                  className={`faq-item ${isOpen ? "open" : ""}`}
+                  className={`home-faq-item ${isOpen ? "open" : ""}`}
                   onMouseEnter={() => setOpenFaq(index)}
                   onMouseLeave={() => setOpenFaq(null)}
                 >
-                  <div className="faq-header">
+                  <div className="home-faq-header">
                     <h3>{faq.question}</h3>
-                    <div className="faq-toggle-btn" aria-hidden="true">
-                      {isOpen ? <FaMinus /> : <FaPlus />}
-                    </div>
+                    <span
+                      className="home-faq-toggle-btn"
+                      aria-hidden="true"
+                      style={{
+                        transform: isOpen ? "rotate(90deg)" : "rotate(0deg)",
+                        transition: "transform 0.2s ease",
+                        display: "inline-block",
+                      }}
+                    >
+                      ›
+                    </span>
                   </div>
 
                   {/* Smooth expanding grid wrapper */}
-                  <div className={`faq-body-wrapper ${isOpen ? "open" : ""}`}>
-                    <div className="faq-body-inner">
-                      <div className="faq-body">
+                  <div className={`home-faq-body-wrapper ${isOpen ? "open" : ""}`}>
+                    <div className="home-faq-body-inner">
+                      <div className="home-faq-body">
                         <p>{faq.answer}</p>
                       </div>
                     </div>

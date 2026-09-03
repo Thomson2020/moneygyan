@@ -17,7 +17,7 @@
   padding: 40px;
   box-sizing: border-box;
 
-  background: #030812;
+  background: transparent;
   color: #fff;
 
   perspective: 1200px;
@@ -41,84 +41,6 @@ body.welcome-locked {
   overflow: hidden !important;
   height: 100%;
   overscroll-behavior: none;
-}
-
-/* =========================================================
-   FILM GRAIN
-========================================================= */
-
-/* .noise-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
-} */
-
-/* =========================================================
-   AMBIENT GLOWS
-========================================================= */
-/* =========================================================
-   AURORA GLOWS
-========================================================= */
-
-/* .ambient-glow {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  opacity: 0.35;
-  filter: blur(140px);
-  pointer-events: none;
-  z-index: 1;
-  mix-blend-mode: screen;
-}
-
-.glow-1 {
-  top: -20%;
-  left: -20%;
-  background: linear-gradient(15deg, #06b6d4 0%, #3b82f6 50%, #10b981 100%);
-  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  animation: auroraFlow1 5s ease-in-out infinite alternate;
-}
-
-.glow-2 {
-  right: 0%;
-  bottom: -20%;
-  background: linear-gradient(15deg, #8b5cf6 0%, #ec4899 50%, #06b6d4 100%);
-  border-radius: 60% 40% 30% 70% / 50% 30% 70% 50%;
-  animation: auroraFlow2 5s ease-in-out infinite alternate;
-} */
-
-/* Wavy Organic Morphing Keyframes */
-@keyframes auroraFlow1 {
-  0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  }
-  50% {
-    transform: translate(80px, 60px) scale(1.25) rotate(45deg);
-    border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
-  }
-  100% {
-    transform: translate(-30px, 90px) scale(1.1) rotate(90deg);
-    border-radius: 50% 50% 30% 70% / 40% 40% 60% 60%;
-  }
-}
-
-@keyframes auroraFlow2 {
-  0% {
-    transform: translate(0, 0) scale(1.1) rotate(0deg);
-    border-radius: 60% 40% 30% 70% / 50% 30% 70% 50%;
-  }
-  50% {
-    transform: translate(-70px, -80px) scale(0.9) rotate(-45deg);
-    border-radius: 30% 70% 60% 40% / 60% 40% 50% 50%;
-  }
-  100% {
-    transform: translate(50px, -40px) scale(1.2) rotate(-90deg);
-    border-radius: 50% 50% 70% 30% / 50% 50% 40% 60%;
-  }
 }
 
 /* =========================================================
@@ -204,8 +126,8 @@ body.welcome-locked {
     rgba(139, 92, 246, 0.2) 70%,
     transparent 85%
   );
-  filter: blur(24px);
-  opacity: 0.5;
+  filter: blur(30px);
+  opacity: 0.9;
 
   transition: transform 0.8s cubic-bezier(.16, 1, .3, 1), opacity 0.5s ease;
   z-index: 1;

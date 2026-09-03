@@ -60,35 +60,18 @@
 }
 
 /* ==========================================
-   FAQ LIST & CARDS (Dedicated FAQ Page)
+   FAQ LIST — Partners-style clean line separator
 ========================================== */
 .faqpage-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 .faqpage-item {
-  /* background: var(--bg-card);
-  border: 1px solid var(--card-border); */
-  border-radius: 10px;
-  padding: 22px 26px;
+  border-bottom: 1px solid var(--card-border);
   cursor: pointer;
-  backdrop-filter: blur(1px);
-  /* -webkit-backdrop-filter: blur(12px); */
-  /* box-shadow: var(--card-shadow); */
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.faqpage-item:hover {
-  border-color: rgba(6, 182, 212, 0.4);
-  background: rgba(6, 182, 212, 0.03);
-  transform: translateY(-2px);
-}
-
-.faqpage-item.open {
-  border-color: rgba(139, 92, 246, 0.4);
-  background: rgba(139, 92, 246, 0.04);
+  transition: all 0.3s ease;
+  padding-bottom: 8px;
 }
 
 .faqpage-item-header {
@@ -96,35 +79,36 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  padding: clamp(20px, 3vw, 28px) 0;
 }
 
 .faqpage-item-header h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-weight: 600;
   color: var(--text-primary);
   margin: 0;
   transition: color 0.2s ease;
 }
 
 .faqpage-item:hover .faqpage-item-header h3 {
-  color: #06b6d4;
+  color: var(--primary);
 }
 
 .faqpage-toggle-btn {
   background: transparent;
   border: none;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+  color: var(--primary);
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
   padding: 4px;
 }
 
 .faqpage-item.open .faqpage-toggle-btn {
-  color: #8b5cf6;
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 }
 
 /* =========================================
@@ -149,14 +133,12 @@
 }
 
 .faqpage-body {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border-color);
+  padding-bottom: clamp(20px, 3vw, 36px);
 }
 
 .faqpage-body p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: clamp(0.9rem, 1.3vw, 0.98rem);
   line-height: 1.7;
   margin: 0;
 }
@@ -171,11 +153,6 @@
 
   .faqpage-header {
     margin-bottom: 40px;
-  }
-
-  .faqpage-item {
-    padding: 18px 20px;
-    border-radius: 14px;
   }
 
   .faqpage-item-header h3 {

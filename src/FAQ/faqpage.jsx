@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa";
 import "./faqpage.css";
 
 const faqs = [
@@ -141,9 +140,17 @@ export default function FaqPage() {
               >
                 <div className="faqpage-item-header">
                   <h3>{faq.question}</h3>
-                  <div className="faqpage-toggle-btn" aria-hidden="true">
-                    {isOpen ? <FaMinus /> : <FaPlus />}
-                  </div>
+                  <span
+                    className="faqpage-toggle-btn"
+                    aria-hidden="true"
+                    style={{
+                      transform: isOpen ? "rotate(90deg)" : "rotate(0deg)",
+                      transition: "transform 0.2s ease",
+                      display: "inline-block",
+                    }}
+                  >
+                    ›
+                  </span>
                 </div>
 
                 {/* Smooth expanding grid wrapper */}

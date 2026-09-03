@@ -19,8 +19,8 @@ export default function WelcomeHero({ onStart, isLight }) {
     });
 
     tl.to(cardRef.current, {
-      scale: 1,
-      z: 50,
+      scale: 1.5,
+      z: 300,
       opacity: 0,
       filter: "blur(30px)",
       duration: 0.9,

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function CFAQ() {
@@ -57,7 +56,7 @@ export default function CFAQ() {
                 <span>{item.question}</span>
 
                 <span className={`contact-faq-icon ${isOpen ? "contact-faq-icon-open" : ""}`}>
-                  <ChevronDown size={18} />
+                  ›
                 </span>
               </button>
 

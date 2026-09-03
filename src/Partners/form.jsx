@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Select from "react-select";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 import "./PartnerCSS/Form.css";
 import "./PartnerCSS/arn.css";
@@ -9,6 +11,66 @@ export default function Form() {
   const [hasArn, setHasArn] = useState(null);
   const [arnNumber, setArnNumber] = useState("");
   const [agree, setAgree] = useState(false);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phone: "",
+    city: "",
+    notes: "",
+  });
+  const [submitStatus, setSubmitStatus] = useState({
+    loading: false,
+    success: false,
+    error: null,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!agree) {
+      setSubmitStatus({
+        loading: false,
+        success: false,
+        error: "Please check the agreement box before submitting.",
+      });
+      return;
+    }
+
+    setSubmitStatus({ loading: true, success: false, error: null });
+
+    try {
+      await addDoc(collection(db, "partner_applications"), {
+        fullName: formData.fullName.trim(),
+        phone: formData.phone.trim(),
+        city: formData.city.trim(),
+        profession: profession?.label || "Not specified",
+        hasArn: hasArn?.value === "yes",
+        arnNumber: hasArn?.value === "yes" ? arnNumber.trim() : null,
+        notes: formData.notes.trim(),
+        agreedToContact: agree,
+        createdAt: serverTimestamp(),
+        status: "pending",
+      });
+
+      setSubmitStatus({ loading: false, success: true, error: null });
+      setFormData({ fullName: "", phone: "", city: "", notes: "" });
+      setProfession(null);
+      setHasArn(null);
+      setArnNumber("");
+      setAgree(false);
+    } catch (err) {
+      console.error("Error submitting partner application:", err);
+      setSubmitStatus({
+        loading: false,
+        success: false,
+        error: "Unable to submit your application. Please check your network and try again.",
+      });
+    }
+  };
 
   const professionOptions = [
     { value: "student", label: "Student" },
@@ -119,10 +181,70 @@ export default function Form() {
 
         {/* Right Side: Form Core */}
         <div className="form-right">
-          <form onSubmit={(e) => e.preventDefault()}>
-            <input type="text" placeholder="FULL NAME" required />
-            <input type="tel" placeholder="PHONE NUMBER" required />
-            <input type="text" placeholder="CITY" required />
+          <form onSubmit={handleSubmit}>
+            {submitStatus.success && (
+              <div
+                style={{
+                  padding: "12px 16px",
+                  borderRadius: "10px",
+                  background: "rgba(16, 185, 129, 0.12)",
+                  border: "1px solid rgba(16, 185, 129, 0.35)",
+                  color: "#10b981",
+                  fontSize: "0.88rem",
+                  fontWeight: 500,
+                  lineHeight: 1.5,
+                  marginBottom: "16px",
+                }}
+              >
+                ✓ Application received! Our team will contact you within 2 working days.
+              </div>
+            )}
+
+            {submitStatus.error && (
+              <div
+                style={{
+                  padding: "12px 16px",
+                  borderRadius: "10px",
+                  background: "rgba(239, 68, 68, 0.12)",
+                  border: "1px solid rgba(239, 68, 68, 0.35)",
+                  color: "#ef4444",
+                  fontSize: "0.88rem",
+                  fontWeight: 500,
+                  lineHeight: 1.5,
+                  marginBottom: "16px",
+                }}
+              >
+                ✕ {submitStatus.error}
+              </div>
+            )}
+
+            <input
+              type="text"
+              name="fullName"
+              placeholder="FULL NAME"
+              value={formData.fullName}
+              onChange={handleChange}
+              required
+              disabled={submitStatus.loading}
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="PHONE NUMBER"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              disabled={submitStatus.loading}
+            />
+            <input
+              type="text"
+              name="city"
+              placeholder="CITY"
+              value={formData.city}
+              onChange={handleChange}
+              required
+              disabled={submitStatus.loading}
+            />
 
             <div className="select-row-wrapper">
               <Select
@@ -132,6 +254,7 @@ export default function Form() {
                 value={profession}
                 onChange={setProfession}
                 isSearchable={false}
+                isDisabled={submitStatus.loading}
               />
             </div>
 
@@ -143,6 +266,7 @@ export default function Form() {
                 value={hasArn}
                 onChange={setHasArn}
                 isSearchable={false}
+                isDisabled={submitStatus.loading}
               />
             </div>
 
@@ -155,13 +279,18 @@ export default function Form() {
                   onChange={(e) => setArnNumber(e.target.value)}
                   className="arn-input"
                   required={hasArn?.value === "yes"}
+                  disabled={submitStatus.loading}
                 />
               </div>
             </div>
 
             <textarea
               rows="2"
+              name="notes"
               placeholder="ANYTHING YOU'D LIKE US TO KNOW?"
+              value={formData.notes}
+              onChange={handleChange}
+              disabled={submitStatus.loading}
             />
 
             <label className="agreement-row">
@@ -170,6 +299,7 @@ export default function Form() {
                 checked={agree}
                 onChange={(e) => setAgree(e.target.checked)}
                 required
+                disabled={submitStatus.loading}
               />
               <span className="checkmark"></span>
               <span className="agreement-text">
@@ -178,8 +308,13 @@ export default function Form() {
             </label>
 
             <div className="form-submit-row">
-              <button type="submit" className="submit-btn">
-                SUBMIT APPLICATION
+              <button
+                type="submit"
+                className="submit-btn"
+                disabled={submitStatus.loading}
+                style={{ opacity: submitStatus.loading ? 0.7 : 1, cursor: submitStatus.loading ? "not-allowed" : "pointer" }}
+              >
+                {submitStatus.loading ? "SUBMITTING..." : "SUBMIT APPLICATION"}
               </button>
             </div>
           </form>

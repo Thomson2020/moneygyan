@@ -808,14 +808,15 @@ html.light .custom-select-menu {
 
 .contact-faq-icon {
   color: var(--primary);
-  transition: transform 0.3s ease;
+  font-size: 1.3rem;
+  transition: transform 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .contact-faq-icon-open {
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 }
 
 .contact-faq-answer {
