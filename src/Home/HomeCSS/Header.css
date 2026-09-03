@@ -174,17 +174,41 @@
 }
 
 @media (max-width: 640px) {
+  .radiance-backdrop {
+    padding: 12px;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 54px);
+    justify-content: center;
+    align-items: flex-start;
+  }
+
   .radiance-card {
     width: 325px;
     max-width: calc(100vw - 24px);
     height: 500px;
+    max-height: calc(100dvh - 70px);
     margin-top: 0;
-    padding: 20px 18px 16px;
+    padding: 22px 20px 18px;
+    border-radius: 20px;
+    overflow-y: auto;
   }
 
-  .radiance-backdrop {
-    padding: 12px;
-    align-items: flex-start;
+  .radiance-nav {
+    gap: 7px;
+    padding-top: 0;
+  }
+
+  .radiance-link {
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+
+  .radiance-contacts {
+    padding-top: 10px;
+    gap: 10px;
+  }
+
+  .radiance-contact-item {
+    font-size: 0.8rem;
   }
 }
 
