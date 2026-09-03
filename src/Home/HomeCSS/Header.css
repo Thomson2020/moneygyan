@@ -425,32 +425,32 @@ body.light .progressive-blur::before {
 
 /* Progressive blur: strongest blur at top (0%), smoothly fading to transparent at bottom */
 .progressive-blur span:nth-child(1) {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 60%);
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 60%);
 }
 .progressive-blur span:nth-child(2) {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
   mask-image: linear-gradient(to bottom, transparent 15%, #000 35%, #000 50%, transparent 70%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 15%, #000 35%, #000 50%, transparent 70%);
 }
 .progressive-blur span:nth-child(3) {
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   mask-image: linear-gradient(to bottom, transparent 35%, #000 50%, #000 65%, transparent 80%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 35%, #000 50%, #000 65%, transparent 80%);
 }
 .progressive-blur span:nth-child(4) {
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
   mask-image: linear-gradient(to bottom, transparent 50%, #000 65%, #000 80%, transparent 92%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 50%, #000 65%, #000 80%, transparent 92%);
 }
 .progressive-blur span:nth-child(5) {
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   mask-image: linear-gradient(to bottom, transparent 65%, #000 80%, #000 90%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 65%, #000 80%, #000 90%, transparent 100%);
 }
