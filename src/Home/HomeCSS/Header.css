@@ -154,29 +154,32 @@
 ========================================================= */
 .radiance-card {
   position: relative;
-  margin-top: -10px;
-  width: min(450px);
+  margin-top: 0;
+  width: 325px;
+  max-width: calc(100vw - 32px);
+  height: 400px;
   background: var(--bg) !important;
   color: var(--text-primary) !important;
   border: 1px solid var(--card-border) !important;
-  border-radius: 24px;
-  padding: 35px 35px 35px;
+  border-radius: 20px;
+  padding: 24px 24px 20px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  justify-content: space-between;
   box-shadow: var(--card-shadow) !important;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  box-sizing: border-box;
 }
 
 @media (max-width: 640px) {
   .radiance-card {
-    width: 100%;
-    max-width: 100%;
+    width: 325px;
+    max-width: calc(100vw - 24px);
+    height: 500px;
     margin-top: 0;
-    padding: 24px 20px 28px;
-    gap: 20px;
+    padding: 20px 18px 16px;
   }
 
   .radiance-backdrop {
@@ -239,23 +242,23 @@
 }
 
 .radiance-nav {
-  display: grid;
+  display: flex;
   flex-direction: column;
-  padding-top: 20px;
-  padding-left: 13px;
-  gap: 20px;
-  margin: auto 0;
+  padding-top: 4px;
+  padding-left: 2px;
+  gap: 8px;
+  margin: 0;
   opacity: 1 !important;
   visibility: visible !important;
 }
 
 .radiance-link {
-  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-size: clamp(1.18rem, 1.8vw, 1.32rem);
   font-weight: 600;
   color: var(--text-primary) !important;
   text-decoration: none;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
   opacity: 1 !important;
   visibility: visible !important;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, color 0.2s ease;
@@ -263,29 +266,30 @@
 
 .radiance-link:hover {
   color: var(--primary) !important;
-  transform: translateX(8px);
+  transform: translateX(6px);
 }
 
 .radiance-contacts {
   border-top: 1px solid var(--card-border);
-  padding-top: 20px;
+  padding-top: 12px;
+  margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .radiance-contact-links {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .radiance-contact-item {
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 600;
   color: var(--text-secondary) !important;
   text-decoration: none;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   transition: color 0.1s ease, opacity 0.2s ease;
 }
 
@@ -297,7 +301,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 6px;
+  padding-top: 2px;
 }
 
 .radiance-theme-label {
@@ -425,8 +429,8 @@ body.light .progressive-blur::before {
 
 /* Progressive blur: strongest blur at top (0%), smoothly fading to transparent at bottom */
 .progressive-blur span:nth-child(1) {
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
   mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 60%);
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 60%);
 }
