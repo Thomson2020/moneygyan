@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "What does MoneyGYAN not do?",
-    answer: "We don’t predict daily market swings, promise unrealistic guaranteed returns, churn portfolios for transaction commissions, or push proprietary in-house products. As a fund-neutral platform, our recommendations are driven purely by suitability, research, and your long-term financial goals."
+    answer: "We don’t predict daily market swings, promise unrealistic guaranteed returns, churn portfolios for transaction commissions, or push proprietary in-house products. As a fund neutral platform, our recommendations are driven purely by suitability, research, and your long-term financial goals."
   },
   {
     question: "Do you serve clients and partners outside Mumbai?",
@@ -68,7 +68,7 @@ const faqs = [
   },
   {
     question: "How is MoneyGYAN different from traditional banks and brokerages?",
-    answer: "Unlike banks driven by high monthly sales quotas and rotating relationship managers, MoneyGYAN is a dedicated, fund-neutral platform with zero product bias. We do not push proprietary products, and our trail-based alignment means we only thrive when your portfolio continues to grow over the long term."
+    answer: "Unlike banks driven by high monthly sales quotas and rotating relationship managers, MoneyGYAN is a dedicated, fund neutral platform with zero product bias. We do not push proprietary products, and our trail-based alignment means we only thrive when your portfolio continues to grow over the long term."
   },
   {
     question: "What is your business model? How does MoneyGYAN earn?",

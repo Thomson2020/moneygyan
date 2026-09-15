@@ -37,7 +37,7 @@ export default function AboutHero() {
           <p className="about-description">
             MoneyGYAN is an AMFI-registered Mutual Fund Distributor helping
             investors and distribution partners build wealth through a transparent,
-            fund-neutral platform.
+            fund neutral platform.
           </p>
 
           <div className="about-buttons">
@@ -118,7 +118,7 @@ export default function AboutHero() {
           <div className="about-stat-icon-wrapper">
             <Landmark size={20} />
           </div>
-          <h3>Fund-Neutral</h3>
+          <h3>Fund Neutral</h3>
           <span>EVERY MAJOR AMC AVAILABLE</span>
         </div>
 
@@ -161,11 +161,11 @@ export default function AboutHero() {
 
         <div className="story-right">
           <div className="story-quote">
-            <div className="quote-icon">“</div>
+            
             <p>
-              Whether you're investing your own money or helping someone else
+              “Whether you're investing your own money or helping someone else
               invest theirs, the job is the same: understand it well enough to
-              hold it steady.
+              hold it steady.”
             </p>
             <span>THE MONEYGYAN APPROACH</span>
           </div>
@@ -196,7 +196,7 @@ export default function AboutHero() {
             </div>
             <h3>Gyan Before Product</h3>
             <p>
-              We believe education comes first. Better-informed investors naturally
+              We believe education comes first. Better informed investors naturally
               make better investment decisions.
             </p>
           </div>
@@ -207,7 +207,7 @@ export default function AboutHero() {
                 <Compass size={20} />
               </div>
             </div>
-            <h3>Fund-Neutral, Always</h3>
+            <h3>Fund Neutral, Always</h3>
             <p>
               Every major AMC is available on our platform. We have no incentive
               to favour one fund house over another.

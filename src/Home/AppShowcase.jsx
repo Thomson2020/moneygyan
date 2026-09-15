@@ -18,11 +18,11 @@ export default function AppShowcase() {
 
   // Array of app screenshots located in the public/ folder
   const screenshots = [
+    "/mgapp1.png",
+    "/mgapp2.png",
+    "/mgapp3.png",
     "/mgapp4.png",
-    "/mgapp.png",
     "/mgapp5.png",
-    "/mgapp6.png",
-    "/mgapp7.png",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

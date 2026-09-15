@@ -8,7 +8,7 @@ A1: MoneyGYAN is an AMFI-registered Mutual Fund Distributor providing an intelli
 --------------------------------------------------------------------------------
 
 Q2: Who does MoneyGYAN work with?
-A2: We serve two key audiences across India and globally: 1) Individual Investors (salaried professionals, business owners, retirees, and NRIs) seeking disciplined, research-backed mutual fund wealth creation without demat complexities; and 2) Distribution Partners (insurance advisors, CAs, tax consultants, and aspiring distributors) looking to build or scale a modern, paperless distribution business.
+A2: We serve two key audiences across India and globally:  1) Individual Investors (salaried professionals, business owners, retirees, and NRIs) seeking disciplined, research-backed mutual fund wealth creation without demat complexities; and 2) Distribution Partners (insurance advisors, CAs, tax consultants, and aspiring distributors) looking to build or scale a modern, paperless distribution business.
 
 --------------------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ A4: We are not the right fit for speculative traders chasing overnight riches, d
 --------------------------------------------------------------------------------
 
 Q5: What does MoneyGYAN not do?
-A5: We don’t predict daily market swings, promise unrealistic guaranteed returns, churn portfolios for transaction commissions, or push proprietary in-house products. As a fund-neutral platform, our recommendations are driven purely by suitability, research, and your long-term financial goals.
+A5: We don’t predict daily market swings, promise unrealistic guaranteed returns, churn portfolios for transaction commissions, or push proprietary in-house products. As a fund neutral platform, our recommendations are driven purely by suitability, research, and your long-term financial goals.
 
 --------------------------------------------------------------------------------
 
@@ -83,7 +83,7 @@ A16: You receive access to a modern digital dashboard for real-time portfolio tr
 --------------------------------------------------------------------------------
 
 Q17: How is MoneyGYAN different from traditional banks and brokerages?
-A17: Unlike banks driven by high monthly sales quotas and rotating relationship managers, MoneyGYAN is a dedicated, fund-neutral platform with zero product bias. We do not push proprietary products, and our trail-based alignment means we only thrive when your portfolio continues to grow over the long term.
+A17: Unlike banks driven by high monthly sales quotas and rotating relationship managers, MoneyGYAN is a dedicated, fund neutral platform with zero product bias. We do not push proprietary products, and our trail-based alignment means we only thrive when your portfolio continues to grow over the long term.
 
 --------------------------------------------------------------------------------
 

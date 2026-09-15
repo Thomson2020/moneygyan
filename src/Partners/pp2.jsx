@@ -5,10 +5,10 @@ import "./PartnerCSS/Features.css";
 const FEATURE_CARDS = [
   {
     icon: ShieldCheck,
-    tag: "Fund-Neutral",
+    tag: "Fund Neutral",
     title: "AMFI-Registered",
     highlight: "100% AMC Agnostic",
-    desc: "A fund-neutral distribution platform with zero bias towards any single AMC. Built for absolute objectivity and client trust.",
+    desc: "A fund neutral distribution platform with zero bias towards any single AMC. Built for absolute objectivity and client trust.",
     glowColor: "rgba(6, 182, 212, 0.22)",
     iconBg: "linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(14, 165, 233, 0.08))",
     iconColor: "var(--primary)",

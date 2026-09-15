@@ -14,7 +14,7 @@ export default function Opportunity() {
       </h2>
 
       <p className="opportunity-lead">
-        Most Indian households still hold wealth in low-yield savings.
+        Most Indian households still hold wealth in low yield savings.
         Of those who invest, many are sold opaque products rather than sound principles.
         Bridging that gap with transparency is where a MoneyGYAN partner builds an enduring, high-trust practice.
       </p>
@@ -24,7 +24,7 @@ export default function Opportunity() {
           <h3>&lt;5%</h3>
           <p>
             of India's population invests in mutual funds,
-            among the lowest MF-to-population ratios of any major economy.
+            among the lowest MF to population ratios of any major economy.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function Opportunity() {
           <h3>₹0</h3>
           <p>
             capital required to start.
-            This is a 100% digital, mutual-fund-only
+            This is a 100% digital, mutual fund only
             distribution business.
           </p>
         </div>

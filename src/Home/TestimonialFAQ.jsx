@@ -51,17 +51,17 @@ export default function TestimonialsFAQ() {
     {
       question: "What documents are required to complete the 60-second KYC?",
       answer:
-        "Since most users in India are already KYC-compliant via Aadhaar and PAN database integration, you only need your PAN card number and Aadhaar-linked mobile number for quick OTP verification.",
+        "Since most users in India are already KYC compliant via Aadhaar and PAN database integration, you only need your PAN card number and Aadhaar-linked mobile number for quick OTP verification.",
     },
     {
       question: "Can I invest in lump sum instead of a monthly SIP?",
       answer:
-        "Yes, you can choose either a monthly SIP or a one-time lump sum investment depending on your financial goals and available capital.",
+        "Yes, you can choose either a monthly SIP or a one time lump sum investment depending on your financial goals and available capital.",
     },
     {
       question: "Is my money safe?",
       answer:
-        "Yes. All mutual fund transactions are processed directly via SEBI-regulated depositories and Asset Management Companies (AMCs). We never hold your investment funds directly.",
+        "Yes. All mutual fund transactions are processed directly via SEBI regulated depositories and Asset Management Companies (AMCs). We never hold your investment funds directly.",
     },
   ];
 

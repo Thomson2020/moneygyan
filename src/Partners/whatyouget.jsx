@@ -14,7 +14,7 @@ const features = [
     desc: "Discover and compare funds with intelligent recommendations."
   },
   {
-    title: "Fund-Neutral Platform",
+    title: "Fund Neutral Platform",
     desc: "Access all major fund houses without bias."
   },
   {

@@ -16,7 +16,7 @@ const PILLARS = [
     tag: "Core Focus",
     icon: Compass,
     title: "One Product, Understood Properly",
-    body: "No insurance, no loans, no cross-selling clutter. Just mutual funds executed with institutional discipline.",
+    body: "No insurance, no loans, no cross selling clutter. Just mutual funds executed with institutional discipline.",
   },
   {
     tag: "Certification",
@@ -28,7 +28,7 @@ const PILLARS = [
     tag: "Technology",
     icon: Cpu,
     title: "A Ready-Made Platform",
-    body: "Paperless onboarding, live client portfolio analytics, automated reporting, and complete back-office ready on day one.",
+    body: "Paperless onboarding, live client portfolio analytics, automated reporting, and complete back office ready on day one.",
   },
 ];
 

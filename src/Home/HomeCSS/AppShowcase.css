@@ -693,7 +693,7 @@
 
 .widget-bottom-right {
   bottom: 80px;
-  right: -20px;
+  right: -10px;
   display: flex;
   flex-direction: column;
   gap: 3px;
