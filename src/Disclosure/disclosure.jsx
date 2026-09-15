@@ -33,7 +33,7 @@ export default function Disclosure() {
             <ul>
               <li>
                 <strong>Registered Office:</strong> 308, 3rd Floor, Thacker Tower,
-                Sector 17, Vashi, Navi Mumbai, Maharashtra – 400703.
+                Sector 17, Vashi, Navi Mumbai, Maharashtra - 400703.
               </li>
               <li>
                 <strong>Entity Category:</strong> AMFI-Registered Mutual Fund
@@ -195,12 +195,12 @@ export default function Disclosure() {
             </p>
             <ul>
               <li>
-                <strong>Level 1 — Support Desk:</strong> Email{" "}
+                <strong>Level 1 - Support Desk:</strong> Email{" "}
                 <a href="mailto:info@moneygyan.com">info@moneygyan.com</a> or call{" "}
-                <strong>022-4454-4475</strong> (Mon–Sat, 10 AM – 7 PM).
+                <strong>022-4454-4475</strong> (Mon-Sat, 10 AM - 7 PM).
               </li>
               <li>
-                <strong>Level 2 — Regulatory Escalation:</strong> If your grievance remains
+                <strong>Level 2 - Regulatory Escalation:</strong> If your grievance remains
                 unresolved, you may lodge a complaint with SEBI through the centralized{" "}
                 <strong>SEBI SCORES</strong> portal (
                 <a

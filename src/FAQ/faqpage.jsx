@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "Where is MoneyGYAN located and how can I reach you?",
-    answer: "Our registered office is located at 308, 3rd Floor, Thacker Tower, Sector 17, Vashi, Navi Mumbai – 400703. You can reach our dedicated support desk via phone at 022-4454-4475, email at info@moneygyan.com, or schedule an online session directly through our website."
+    answer: "Our registered office is located at 308, 3rd Floor, Thacker Tower, Sector 17, Vashi, Navi Mumbai - 400703. You can reach our dedicated support desk via phone at 022-4454-4475, email at info@moneygyan.com, or schedule an online session directly through our website."
   },
   {
     question: "Can I invest in direct stocks through MoneyGYAN?",
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     question: "What kind of returns can I expect on mutual fund investments?",
-    answer: "Equity mutual funds in India have historically delivered inflation-beating annualized returns of 12%–15% over 7 to 10+ year horizons, while debt funds provide stability. Returns depend on chosen asset classes, market cycles, and staying power. We focus on maximizing net real returns tailored to your risk appetite."
+    answer: "Equity mutual funds in India have historically delivered inflation-beating annualized returns of 12% to 15% over 7 to 10+ year horizons, while debt funds provide stability. Returns depend on chosen asset classes, market cycles, and staying power. We focus on maximizing net real returns tailored to your risk appetite."
   },
   {
     question: "How safe is my money when investing via MoneyGYAN?",
@@ -100,7 +100,7 @@ const faqs = [
   },
   {
     question: "What AMCs and mutual fund schemes are available on MoneyGYAN?",
-    answer: "We offer complete access to every SEBI-registered Asset Management Company (AMC) in India—including SBI, HDFC, ICICI Prudential, Nippon India, Kotak, Axis, Mirae Asset, Parag Parikh, UTI, Tata, and more—across Equity, Debt, Hybrid, ELSS Tax-Saver, and Index categories."
+    answer: "We offer complete access to every SEBI-registered Asset Management Company (AMC) in India, including SBI, HDFC, ICICI Prudential, Nippon India, Kotak, Axis, Mirae Asset, Parag Parikh, UTI, Tata, and more, across Equity, Debt, Hybrid, ELSS Tax-Saver, and Index categories."
   },
   {
     question: "What is the MoneyGYAN Partner Program and how do I join?",

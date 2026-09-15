@@ -5,7 +5,7 @@ export default function Howitworks() {
     <section className="hiw">
       <div className="hiw-header">
         <div>
-          <span className="hiw-tag">— HOW IT WORKS</span>
+          <span className="hiw-tag">HOW IT WORKS</span>
 
           <h1>
             From curious to

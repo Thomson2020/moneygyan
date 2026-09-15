@@ -3,7 +3,7 @@ import * as RadixSlider from "@radix-ui/react-slider";
 import clsx from "clsx";
 
 /**
- * Drag-value bubble easing — a snappy overshoot-then-settle curve.
+ * Drag-value bubble easing - a snappy overshoot-then-settle curve.
  * Same curve as the original component; kept as a named constant so it's
  * easy to reuse/tune in one place.
  */

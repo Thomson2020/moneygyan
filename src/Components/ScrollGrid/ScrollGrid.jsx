@@ -3,7 +3,7 @@ import "./ScrollGrid.css";
 
 /**
  * Fixed, full-viewport dot-grid background that drifts vertically as the
- * page scrolls, at a fraction of scroll speed — a classic parallax "the
+ * page scrolls, at a fraction of scroll speed - a classic parallax "the
  * background is further away than the content" effect.
  *
  * Mount this ONCE near the root of the app (e.g. directly inside <App />,

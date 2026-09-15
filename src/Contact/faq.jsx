@@ -30,7 +30,7 @@ export default function CFAQ() {
   return (
     <section className="contact-faq-section">
       <div className="contact-faq-header">
-        <span className="contact-faq-eyebrow">— FREQUENTLY ASKED</span>
+        <span className="contact-faq-eyebrow">FREQUENTLY ASKED</span>
         <h2>Before you write in</h2>
         <p className="contact-faq-subtitle">
           Quick answers to common questions about accounts, appointments, and servicing.

@@ -28,7 +28,7 @@ export default function Footer() {
             </div>
 
             <p className="footer-tagline">
-              Moneygyan.com — AMFI Registered Mutual Fund Distributor. <br />
+              Moneygyan.com is an AMFI Registered Mutual Fund Distributor. <br />
               ARN-144200 | Initial Reg: 25th April 2018 | Valid Till: 24th April 2027.
             </p>
 

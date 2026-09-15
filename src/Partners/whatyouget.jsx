@@ -40,7 +40,7 @@ export default function WhatYouGet() {
         </h2>
 
         <p>
-          A turnkey, paperless ecosystem for mutual fund distributors — from instant client onboarding
+          A turnkey, paperless ecosystem for mutual fund distributors, from instant client onboarding
           and KYC to live portfolio analytics, automated reporting, and revenue tracking.
         </p>
       </div>

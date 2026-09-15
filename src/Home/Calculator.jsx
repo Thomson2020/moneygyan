@@ -428,7 +428,7 @@ export default function Calculator() {
             {mode === "goal" && (
               <>
                 <p className="mode-hint">
-                  Tell us your target and timeframe — we'll work out the monthly SIP needed.
+                  Tell us your target and timeframe, and we'll work out the monthly SIP needed.
                 </p>
 
                 <div className="calc-input-group">
@@ -511,7 +511,7 @@ export default function Calculator() {
                   <div className={clsx("calc-result-card", "primary")}>
                     <span className="calc-result-label">Required Monthly SIP</span>
                     <h2>
-                      {goalSip.valid ? <AnimatedNumber value={goalSip.monthlySip} /> : "—"}
+                      {goalSip.valid ? <AnimatedNumber value={goalSip.monthlySip} /> : "-"}
                     </h2>
                   </div>
                 </div>
@@ -603,7 +603,7 @@ export default function Calculator() {
                   <div className="empty-state">
                     {duration.reason === "empty"
                       ? "Enter a monthly amount above to calculate the time needed."
-                      : "This target isn't reachable at the current monthly amount and return rate — try increasing one of them."}
+                      : "This target isn't reachable at the current monthly amount and return rate. Try increasing one of them."}
                   </div>
                 ) : (
                   <div className="calc-results">

@@ -89,8 +89,8 @@ export default function Form() {
   ];
 
   const arnOptions = [
-    { value: "no", label: "No — I need help getting one" },
-    { value: "yes", label: "Yes — I already have an ARN" }
+    { value: "no", label: "No, I need help getting one" },
+    { value: "yes", label: "Yes, I already have an ARN" }
   ];
 
   const customSelectStyles = {

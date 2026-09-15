@@ -128,7 +128,7 @@ export default function ContactHero() {
     <>
       <section className="contact-hero">
         <div className="contact-heading">
-          <span className="contact-tag">— CONTACT US</span>
+          <span className="contact-tag">CONTACT US</span>
 
           <h1>
             Questions about wealth
@@ -147,7 +147,7 @@ export default function ContactHero() {
           {/* LEFT SIDE: Direct Reach */}
           <div className="contact-info">
             <div className="contact-card-header">
-              <span className="contact-card-eyebrow">— REACH US DIRECTLY</span>
+              <span className="contact-card-eyebrow">REACH US DIRECTLY</span>
               <h3>Get in touch</h3>
             </div>
 
@@ -190,7 +190,7 @@ export default function ContactHero() {
                 </div>
                 <div className="info-text">
                   <span className="info-label">DESK HOURS</span>
-                  <p>Monday – Saturday • 10:00 AM – 7:00 PM</p>
+                  <p>Monday - Saturday • 10:00 AM - 7:00 PM</p>
                 </div>
               </div>
             </div>
@@ -217,7 +217,7 @@ export default function ContactHero() {
           {/* RIGHT SIDE: Message Form */}
           <div className="contact-form-side">
             <div className="contact-card-header">
-              <span className="contact-card-eyebrow">— SEND A MESSAGE</span>
+              <span className="contact-card-eyebrow">SEND A MESSAGE</span>
               <h3>Write to our desk</h3>
             </div>
 
@@ -435,7 +435,7 @@ export default function ContactHero() {
 
       {/* 3RD SECTION: REGISTERED OFFICE */}
       <section className="office-section">
-        <span className="office-tag">— VISIT US</span>
+        <span className="office-tag">VISIT US</span>
 
         <h2>Our registered office.</h2>
 
@@ -451,14 +451,14 @@ export default function ContactHero() {
 
           {/* OFFICE HOURS */}
           <div className="office-hours">
-            <h4>— OFFICE HOURS</h4>
+            <h4>OFFICE HOURS</h4>
 
             <div className="hour">
               <div className="hour-label">
                 <Calendar size={14} />
-                <span>Monday – Friday</span>
+                <span>Monday - Friday</span>
               </div>
-              <p>10:00 AM – 7:00 PM</p>
+              <p>10:00 AM - 7:00 PM</p>
             </div>
 
             <div className="hour">
@@ -466,7 +466,7 @@ export default function ContactHero() {
                 <Calendar size={14} />
                 <span>Saturday</span>
               </div>
-              <p>10:00 AM – 5:00 PM</p>
+              <p>10:00 AM - 5:00 PM</p>
             </div>
 
             <div className="hour">

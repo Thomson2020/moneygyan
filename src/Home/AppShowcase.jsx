@@ -16,15 +16,13 @@ export default function AppShowcase() {
     "perspective(1000px) rotateX(0deg) rotateY(0deg)"
   );
 
-  // Array of 5 app screenshots located in the public/ folder
+  // Array of app screenshots located in the public/ folder
   const screenshots = [
-    "/mgapp2.png",
     "/mgapp4.png",
     "/mgapp.png",
-    "/mgapp3.png",
     "/mgapp5.png",
     "/mgapp6.png",
-    "/mgapp7.png"
+    "/mgapp7.png",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -95,7 +93,7 @@ export default function AppShowcase() {
           </h2>
 
           <p className="app-subtitle">
-            Say goodbye to clunky spreadsheets and outdated dashboards. Experience seamless mutual fund execution, instant XIRR tracking, and complete control over your wealth—anytime, anywhere.
+            Say goodbye to clunky spreadsheets and outdated dashboards. Experience seamless mutual fund execution, instant XIRR tracking, and complete control over your wealth, anytime, anywhere.
           </p>
 
           <div className="app-feature-grid">

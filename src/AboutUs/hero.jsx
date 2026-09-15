@@ -167,7 +167,7 @@ export default function AboutHero() {
               invest theirs, the job is the same: understand it well enough to
               hold it steady.
             </p>
-            <span>— THE MONEYGYAN APPROACH</span>
+            <span>THE MONEYGYAN APPROACH</span>
           </div>
         </div>
       </section>
@@ -311,8 +311,8 @@ export default function AboutHero() {
               </h3>
 
               <p>
-                Financial professionals—from insurance advisors and CAs to
-                independent distributors—can onboard clients digitally, manage
+                Financial professionals, from insurance advisors and CAs to
+                independent distributors, can onboard clients digitally, manage
                 investments efficiently and build recurring trail income on the
                 MoneyGYAN platform.
               </p>
@@ -425,7 +425,7 @@ export default function AboutHero() {
               <Clock size={15} />
               <span>HOURS</span>
             </div>
-            <p>Monday – Saturday • 10 AM – 7 PM</p>
+            <p>Monday - Saturday • 10 AM - 7 PM</p>
           </div>
         </div>
       </section>
@@ -441,7 +441,7 @@ export default function AboutHero() {
 
         <p>
           Start investing on your own, or build a distribution business on our
-          platform — either way, it begins with the same knowledge-first approach.
+          platform. Either way, it begins with the same knowledge-first approach.
         </p>
       </section>
     </>

@@ -205,10 +205,10 @@ export default function Privacy() {
                 <strong>Email:</strong> <a href="mailto:info@moneygyan.com">info@moneygyan.com</a>
               </li>
               <li>
-                <strong>Telephone:</strong> 022-4454-4475 (Mon–Sat, 10:00 AM – 7:00 PM IST)
+                <strong>Telephone:</strong> 022-4454-4475 (Mon-Sat, 10:00 AM - 7:00 PM IST)
               </li>
               <li>
-                <strong>Office Address:</strong> MoneyGYAN, 308, 3rd Floor, Thacker Tower, Sector 17, Vashi, Navi Mumbai, Maharashtra – 400703.
+                <strong>Office Address:</strong> MoneyGYAN, 308, 3rd Floor, Thacker Tower, Sector 17, Vashi, Navi Mumbai, Maharashtra - 400703.
               </li>
             </ul>
           </section>

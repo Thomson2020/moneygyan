@@ -23,7 +23,7 @@ export default function Opportunity() {
         <div className="opportunity-card">
           <h3>&lt;5%</h3>
           <p>
-            of India's population invests in mutual funds —
+            of India's population invests in mutual funds,
             among the lowest MF-to-population ratios of any major economy.
           </p>
         </div>

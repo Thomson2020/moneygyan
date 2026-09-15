@@ -12,7 +12,7 @@ export default function Philosophy() {
         </blockquote>
 
         <div className="philosophy-label">
-          — THE MONEYGYAN PHILOSOPHY
+          THE MONEYGYAN PHILOSOPHY
         </div>
       </div>
     </section>
