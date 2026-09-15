@@ -391,9 +391,9 @@ export default function ContactHero() {
             No demat account needed. Start a SIP or lump-sum mutual fund investment with full research guidance in a few clicks.
           </p>
 
-          <Link to="/" className="help-link">
+          {/* <Link to="/" className="help-link">
             Start Investing →
-          </Link>
+          </Link> */}
         </div>
 
         <div className="help-card">
@@ -409,9 +409,9 @@ export default function ContactHero() {
             Build an enduring mutual fund distribution practice on our paperless, AMFI-registered platform.
           </p>
 
-          <Link to="/partners" className="help-link">
+          {/* <Link to="/partners" className="help-link">
             Learn More →
-          </Link>
+          </Link> */}
         </div>
 
         <div className="help-card">
@@ -427,9 +427,9 @@ export default function ContactHero() {
             Already investing with us? Log in to your dashboard or call our desk directly for seamless servicing.
           </p>
 
-          <Link to="/" className="help-link">
+          {/* <Link to="/" className="help-link">
             Client Portal →
-          </Link>
+          </Link> */}
         </div>
       </section>
 

@@ -298,10 +298,6 @@ export default function AboutHero() {
                 experience.
               </p>
             </div>
-
-            <div className="audience-footer">
-              <Link to="/">Start Investing →</Link>
-            </div>
           </div>
 
           <div className="audience-card">
@@ -320,10 +316,6 @@ export default function AboutHero() {
                 investments efficiently and build recurring trail income on the
                 MoneyGYAN platform.
               </p>
-            </div>
-
-            <div className="audience-footer">
-              <Link to="/partners">Become a Partner →</Link>
             </div>
           </div>
         </div>
@@ -451,20 +443,6 @@ export default function AboutHero() {
           Start investing on your own, or build a distribution business on our
           platform — either way, it begins with the same knowledge-first approach.
         </p>
-
-        <div className="about-cta-buttons">
-          <Link to="/" className="about-primary-btn" style={{ textDecoration: "none" }}>
-            START INVESTING
-          </Link>
-
-          <Link
-            to="/partners"
-            className="about-secondary-btn"
-            style={{ textDecoration: "none" }}
-          >
-            BECOME A PARTNER
-          </Link>
-        </div>
       </section>
     </>
   );
