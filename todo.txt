@@ -13,3 +13,8 @@
          color1={isLight ? "#000000" : "#025ec4"}   /* Vibrant sky blue in light, cyan in dark */
       color2={isLight ? "#838383" : "#020764"}   /* Soft indigo in light, navy in dark */
       color3={isLight ? "#ffffff" : "#030812"}  
+
+check size of radiance card
+remove the slight stutter for elements when transition
+check card blurs 
+fix mobile elements align and size

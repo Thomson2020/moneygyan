@@ -114,7 +114,7 @@ export default function AppShowcase() {
             <button className="modern-store-btn">
               <FaApple className="store-icon" />
               <div className="store-text">
-                <span>Download on the</span>
+                <span>GET IT ON</span>
                 <strong>App Store</strong>
               </div>
             </button>
@@ -122,7 +122,7 @@ export default function AppShowcase() {
             <button className="modern-store-btn">
               <FaGooglePlay className="store-icon" />
               <div className="store-text">
-                <span>GET IT ON</span>
+                <span>Download on the</span>
                 <strong>Google Play</strong>
               </div>
             </button>
