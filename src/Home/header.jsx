@@ -43,6 +43,15 @@ export default function Header() {
     }
   };
 
+useEffect(() => {
+  if (menuOpen) {
+    document.body.classList.add('menu-open');
+  } else {
+    document.body.classList.remove('menu-open');
+  }
+  return () => document.body.classList.remove('menu-open');
+}, [menuOpen]);
+
   const menuOpenRef = useRef(false);
   menuOpenRef.current = menuOpen;
 

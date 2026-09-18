@@ -620,93 +620,152 @@ body.light .progressive-blur::before {
   }
 }
 
-/* Small Mobile */
-@media (max-width: 480px) {
+/* Lock scroll chaining through the overlay */
+.radiance-backdrop {
+  overscroll-behavior: contain;
+  touch-action: none;
+}
+
+.radiance-card {
+  overscroll-behavior: contain;
+  touch-action: pan-y; /* Allows scrolling only inside the menu card */
+}
+
+/* Full document lock when menu is active */
+body.menu-open,
+html.menu-open {
+  overflow: hidden !important;
+  height: 100dvh;
+  touch-action: none;
+}
+
+/* =========================================================
+   8. MOBILE DEVICES (CLEANED & TOUCH-OPTIMIZED)
+   ========================================================= */
+@media (max-width: 640px) {
   .site-header {
-    padding: 10px 14px;
+    padding: 14px 20px;
   }
 
   .progressive-blur {
-    height: 54px;
+    height: 64px;
   }
 
   .header-logo a {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
 
-  .header-right {
-    gap: 8px;
-  }
-
+  /* Make header buttons easy to tap (min 40px) */
   .card-get-app {
-    height: 30px;
-    padding: 0 11px;
-    font-size: 0.72rem;
-  }
-
-  .card-get-app span {
-    transform: translateY(-1px);
+    height: 38px;
+    padding: 0 16px;
+    font-size: 0.8rem;
   }
 
   .menu-button {
-    width: 30px;
-    height: 30px;
-    gap: 4px;
+    width: 40px;
+    height: 40px;
+    gap: 5px;
   }
 
   .menu-button span {
-    width: 16px;
+    width: 18px;
   }
 
-  .menu-button.active span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
-
-  .menu-button.active span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-  }
-
+  /* Floating Card Positioning */
   .radiance-backdrop {
-    padding: 54px 10px 14px;
+    padding: 70px 16px 20px;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .radiance-card {
-    padding: 18px 16px 16px;
-    gap: 14px;
-    border-radius: 18px;
-    max-height: calc(100dvh - 68px);
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 24px 22px 20px;
+    gap: 18px;
+    border-radius: 22px;
+    max-height: calc(100dvh - 86px);
   }
 
-  .radiance-nav {
-    gap: 6px;
+  /* Navigation Links: Generous spacing & touch areas */
+/* Reset containers to share the exact same left anchor */
+.radiance-nav,
+.radiance-contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+/* Flush-left alignment with generous vertical tap targets */
+.radiance-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 0; /* Keep vertical tap target, remove left/right offset */
+  margin: 0;
+}
+
+.radiance-contact-item {
+  display: inline-flex;
+  align-items: center;
+  text-align: left;
+  padding: 6px 0; /* Match left flush alignment */
+  margin: 0;
+}
+  .radiance-link:active {
+    opacity: 0.7;
+    transform: translateX(4px);
   }
 
-  .radiance-link {
-    font-size: 1.08rem;
-  }
-
+  Contact Links
   .radiance-contacts {
-    padding-top: 12px;
-    gap: 10px;
+    padding-top: 14px;
+    gap: 12px;
+  }
+
+  .radiance-contact-links {
+    gap: 4px;
   }
 
   .radiance-contact-item {
-    font-size: 0.76rem;
+    font-size: 0.88rem;
+    padding: 6px 4px;   /* Expands touch hit area */
+  }
+
+  /* Card Footer Actions */
+  .radiance-card-footer {
+    padding-top: 6px;
   }
 
   .radiance-card-footer .card-get-app {
-    height: 32px;
-    padding: 0 14px;
-    font-size: 0.72rem;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 0.82rem;
   }
 
   .theme-toggle-btn {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
   }
 
   .theme-toggle-btn svg {
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Extra small devices (narrow width adjustments only) */
+@media (max-width: 360px) {
+  .radiance-card {
+    padding: 18px 16px;
+  }
+
+  .radiance-link {
+    font-size: 1.2rem;
+    padding: 8px 2px;
   }
 }
