@@ -25,25 +25,23 @@ export function getAudioContext() {
   return audioCtx;
 }
 
-// Generate a clean tactile mechanical click buffer as an instant fallback
+// Generate a clean, subtle tactile mechanical click buffer as an instant fallback
 function createSyntheticTickBuffer(ctx) {
   if (!ctx) return null;
   const sampleRate = ctx.sampleRate || 44100;
-  const duration = 0.025; // 25ms
+  const duration = 0.018; // 18ms - crisp and subtle
   const frameCount = Math.floor(sampleRate * duration);
   const buffer = ctx.createBuffer(1, frameCount, sampleRate);
   const channelData = buffer.getChannelData(0);
 
   for (let i = 0; i < frameCount; i++) {
     const t = i / sampleRate;
-    // Exponential decay envelope
-    const env = Math.exp(-t * 180);
-    // Pitch drop for mechanical click feel
-    const freq = 1200 * Math.exp(-t * 80);
+    // Fast exponential decay envelope
+    const env = Math.exp(-t * 220);
+    // Warm low-mid frequency drop for a soft tactile "tock" rather than sharp high-pitched click
+    const freq = 420 * Math.exp(-t * 120);
     const sine = Math.sin(2 * Math.PI * freq * t);
-    // Subtle noise for tactile texture
-    const noise = (Math.random() * 2 - 1) * 0.15 * Math.exp(-t * 250);
-    channelData[i] = (sine * 0.85 + noise) * env;
+    channelData[i] = sine * env * 0.6;
   }
   return buffer;
 }
@@ -160,8 +158,8 @@ if (typeof window !== "undefined") {
   }
 }
 
-// Play tick sound with throttling and cross-browser Web Audio support
-export function playTickSound(volume = 0.15, throttleMs = 30) {
+// Play tick sound with throttling, lowpass filtering, and cross-browser Web Audio support
+export function playTickSound(volume = 0.04, throttleMs = 60) {
   if (typeof window === "undefined") return;
 
   const now = Date.now();
@@ -184,10 +182,16 @@ export function playTickSound(volume = 0.15, throttleMs = 30) {
     const source = ctx.createBufferSource();
     source.buffer = bufferToPlay;
 
+    // Gentle low-pass filter to eliminate harsh high-frequency clicks
+    const filter = ctx.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(2000, ctx.currentTime);
+
     const gainNode = ctx.createGain();
     gainNode.gain.setValueAtTime(volume, ctx.currentTime);
 
-    source.connect(gainNode);
+    source.connect(filter);
+    filter.connect(gainNode);
     gainNode.connect(ctx.destination);
 
     source.start(0);

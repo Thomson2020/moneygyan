@@ -70,8 +70,8 @@
   grid-template-columns: 1fr 1.25fr;
   border: 1px solid var(--card-border);
   background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border-radius: clamp(20px, 3vw, 28px);
   overflow: hidden;
   box-shadow: var(--card-shadow);
@@ -523,8 +523,8 @@ html.light .custom-select-menu {
 .help-card {
   background: var(--bg-card);
   border: 1px solid var(--card-border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border-radius: clamp(16px, 2.5vw, 24px);
   padding: clamp(28px, 3.5vw, 36px) clamp(20px, 2.5vw, 28px);
   display: flex;
@@ -659,8 +659,8 @@ html.light .custom-select-menu {
   overflow: hidden;
   border: 1px solid var(--card-border);
   background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   box-shadow: var(--card-shadow);
 }
 
@@ -861,10 +861,11 @@ html.light .custom-select-menu {
 @media (max-width: 640px) {
   .contact-hero,
   .quick-help,
-  .direct-offices {
+  .office-section,
+  .contact-faq-section {
     padding: 0 16px;
-    margin-top: 48px;
-    margin-bottom: 48px;
+    margin-top: clamp(60px, 8vw, 120px);
+    margin-bottom: clamp(60px, 8vw, 120px);
   }
 
   .contact-info,

@@ -4,7 +4,7 @@
 .faqpage-section {
   width: 100%;
   min-height: 100vh;
-  padding: 140px 24px 100px;
+  padding: clamp(60px, 8vw, 120px) 24px clamp(60px, 8vw, 120px);
   background: transparent;
   position: relative;
 }
@@ -148,11 +148,11 @@
 ========================================= */
 @media (max-width: 768px) {
   .faqpage-section {
-    padding: clamp(90px, 12vw, 120px) 16px 60px;
+    padding: clamp(60px, 8vw, 120px) 16px clamp(60px, 8vw, 120px);
   }
 
   .faqpage-header {
-    margin-bottom: 40px;
+    margin-bottom: clamp(36px, 6vw, 60px);
   }
 
   .faqpage-item-header h3 {

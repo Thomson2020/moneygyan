@@ -1,4 +1,3 @@
-import React from "react";
 import { Compass, GraduationCap, Cpu } from "lucide-react";
 import Features from "./pp2";
 import Howitworks from "./howitworks"; 

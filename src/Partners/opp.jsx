@@ -8,15 +8,14 @@ export default function Opportunity() {
       </span>
 
       <h2>
-        India is vast, growing, and
-        <br />
-        under-penetrated in mutual funds.
+        {/* A vast, growing India.
+        <br /> */}
+        A market still untapped in mutual funds.
       </h2>
 
       <p className="opportunity-lead">
-        Most Indian households still hold wealth in low yield savings.
-        Of those who invest, many are sold opaque products rather than sound principles.
-        Bridging that gap with transparency is where a MoneyGYAN partner builds an enduring, high-trust practice.
+        Most Indians save in low-return accounts. Those who invest often get sold confusing products. 
+        A MoneyGYAN partner offers honest advice instead  and builds real trust over time.
       </p>
 
       <div className="opportunity-stats">

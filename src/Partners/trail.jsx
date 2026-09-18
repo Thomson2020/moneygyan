@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import clsx from "clsx";
-import { motion, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import "./trail.css";
 
 import { playTickSound } from "@/lib/sound";
@@ -14,8 +14,8 @@ const rangeStyle = (value, min, max) => ({
 
 // ---------- ANIMATED COUNTER COMPONENT ----------
 function AnimatedNumber({ value, format = true, suffix = "" }) {
-  const spring = useSpring(value, { mass: 0.5, stiffness: 120, damping: 20 });
-  const display = useTransform(spring, (current) => {
+  const count = useMotionValue(value);
+  const display = useTransform(count, (current) => {
     const rounded = Math.round(current) || 0;
     const formatted = format
       ? rounded.toLocaleString("en-IN", {
@@ -28,17 +28,18 @@ function AnimatedNumber({ value, format = true, suffix = "" }) {
   });
 
   useEffect(() => {
-    spring.set(value);
-  }, [value, spring]);
+    if (count.get() === value) return;
 
-  useEffect(() => {
-    const unsubscribe = display.on("change", () => {
-      if (Math.abs(spring.get() - value) > 1) {
-        playTickSound();
-      }
+    const controls = animate(count, value, {
+      duration: 0.35,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: () => {
+        playTickSound(0.035, 60);
+      },
     });
-    return () => unsubscribe();
-  }, [display, value, spring]);
+
+    return () => controls.stop();
+  }, [value, count]);
 
   return <motion.span>{display}</motion.span>;
 }

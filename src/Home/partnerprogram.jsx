@@ -11,11 +11,13 @@ export default function PartnerProgram() {
         <h1>
           Build an Income Stream With
           <br /><br />
-          Money<span className="gradient-text">GYAN</span>
+          <span className="title-money">Money</span>{" "}
+          <span className="title-gyan">GYAN</span>
+        
         </h1>
 
         <h2>
-          Sell discipline, Not predictions.
+          Sell discipline <br /> Not predictions.
         </h2>
 
         <p className="subtitle">

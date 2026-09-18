@@ -42,10 +42,10 @@ export default function Features() {
         const Icon = card.icon;
         return (
           <div className="partner-feature-card" key={idx}>
-            <div
+            {/* <div
               className="card-ambient-glow"
               style={{ background: `radial-gradient(circle at 50% 0%, ${card.glowColor}, transparent 70%)` }}
-            />
+            /> */}
             
             <div className="card-top-row">
               <div className="card-icon-box" style={{ background: card.iconBg, color: card.iconColor }}>

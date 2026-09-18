@@ -26,12 +26,12 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(
+  /* background: radial-gradient(
     ellipse 1200px 700px at center,
     rgba(6, 182, 212, 0.06) 0%,
     rgba(139, 92, 246, 0.03) 50%,
     transparent 80%
-  );
+  ); */
 }
 
 .trail-container {
@@ -106,19 +106,16 @@
   margin: 0 auto;
 
   background: var(--bg-card);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
   border-radius: 32px;
-  box-shadow: var(--card-shadow);
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Left Inputs Column */
 .trail-inputs-col {
   padding: clamp(28px, 3.5vw, 48px);
-  border-right: 1px solid var(--card-border);
+  border-right: 1px solid var(--border-color);
   transition: padding 0.35s ease, border-color 0.35s ease;
 }
 
@@ -557,7 +554,7 @@ html.light .trail-range-slider:active::-moz-range-thumb {
   .trail-inputs-col {
     padding: clamp(24px, 4vw, 36px);
     border-right: none;
-    border-bottom: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .trail-chart-col {
@@ -569,7 +566,7 @@ html.light .trail-range-slider:active::-moz-range-thumb {
   .trail-section {
     padding: 0 16px;
     margin-top: 48px;
-    margin-bottom: 48px;
+    /* margin-bottom: 48px; */
   }
 
   .trail-unified {

@@ -3,13 +3,17 @@
 ========================================= */
 .app-showcase-section {
   width: 100%;
-  padding: 100px 32px;
+  padding: 60px 32px;
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
   /* background: var(--bg); */
   position: relative;
   overflow: hidden;
 }
 
 .app-showcase-container {
+  position: relative;
+  z-index: 1;
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
@@ -223,51 +227,6 @@
 }
 
 /* ==========================================
-   SECTION & AMBIENT LIGHTS
-========================================== */
-/* .app-showcase-section {
-  position: relative;
-  width: 100%;
-  padding: 120px 32px;
-  background: var(--bg);
-  overflow: hidden;
-  border-top: 1px solid var(--nav-border);
-}
-
-.ambient-glow {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.glow-cyan {
-  top: 10%;
-  left: -10%;
-  background: rgba(6, 182, 212, 0.15);
-}
-
-.glow-purple {
-  bottom: 10%;
-  right: -10%;
-  background: rgba(139, 92, 246, 0.15);
-}
-
-.app-showcase-container {
-  position: relative;
-  z-index: 1;
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 80px;
-} */
-
-/* ==========================================
    LEFT COLUMN: COPY & FEATURES
 ========================================== */
 .app-content-col {
@@ -333,27 +292,27 @@
 }
 
 .feature-card-appshowcase {
-  position: relative;
-  background: var(--bg-card);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border: 1px solid var(--card-border);
-  border-radius: 20px;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 16px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: var(--card-shadow);
+	position: relative;
+	background: var(--bg);
+	/* backdrop-filter: blur(30px); */
+	border: 1px solid var(--border-color);
+	border-radius: 20px;
+	padding: 32px 28px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 16px;
+	overflow: hidden;
+	/* transition: all 0.3s ease; */
+	box-shadow: var(--card-shadow);
+	/* transform: translateZ(0); */
 }
 
-.feature-card-appshowcase:hover {
+/* .feature-card-appshowcase:hover {
   border-color: var(--primary);
   transform: translateY(-4px);
   box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.2);
-}
+} */
 
 .feature-icon-wrapper {
   display: flex;
@@ -396,20 +355,19 @@
   padding: 12px 24px;
   border-radius: 14px;
   border: 1px solid var(--btn-border);
-  background: var(--btn-bg);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
+  /* backdrop-filter: blur(30px); */
   color: var(--text-primary);
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); */
   box-shadow: var(--card-shadow);
+  background: var(--bg-card);
 }
 
 .modern-store-btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-1px);
   background: var(--btn-bg-hover);
   border-color: var(--primary);
-  box-shadow: 0 15px 30px rgba(6, 182, 212, 0.25);
+  box-shadow: var(--card-shadow);
 }
 
 .store-icon {
@@ -459,13 +417,14 @@
   max-width: 300px;
   height: 600px; /* Or your existing height */
   background: #ffffff; /* White background fills the top notch area */
-  border: 10px solid #1e293b; /* Dark sleek phone bezel */
+  border: 10px solid var(--app-border); /* Dark sleek phone bezel */
   border-radius: 46px;
   overflow: hidden;
   box-shadow: 
-    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 25px 50px -12px rgb(31, 24, 24),
     0 0 0 1px rgba(255, 255, 255, 0.1);
-  transition: transform 0.15s ease-out;
+  will-change: transform;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 
   /* THE FIX: Add 28px top padding so the image starts BELOW the notch */
   /* padding-top: 28px;  */
@@ -744,14 +703,12 @@
 
 @keyframes smoothFade {
   0% {
-    opacity: 0.3;
-    transform: scale(1.03);
-    filter: blur(4px);
+    opacity: 0.35;
+    transform: scale(1.02);
   }
   100% {
     opacity: 1;
     transform: scale(1);
-    filter: blur(0px);
   }
 }
 

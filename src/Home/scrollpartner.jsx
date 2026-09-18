@@ -10,11 +10,13 @@ export default function ScrollPartners() {
       <ScrollVelocity
         texts={[fundHouses]}
         velocity={25}
+        numCopies={3}
       />
 
       <ScrollVelocity
         texts={[fundHouses]}
         velocity={-25}
+        numCopies={3}
       />
     </section>
   );

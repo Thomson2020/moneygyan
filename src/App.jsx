@@ -79,7 +79,6 @@ useEffect(() => {
 
   return (
     <div style={{ position: "relative", width: "100%", minHeight: "100vh", backgroundColor: "var(--bg-primary)", color: "var(--text-primary)" }}>
-      
 {/* BACKGROUND LINE WAVES */}
 <div
   style={{
@@ -122,7 +121,7 @@ useEffect(() => {
           <ScrollToTop />
           <Header />
 
-          <main className={cn("min-h-screen relative z-10 bg-transparent transition-colors duration-300")}>
+          <main className={cn("min-h-screen relative z-10 bg-transparent transition-colors duration-300 pt-[50px]")}>
             <Routes>
               <Route path="/"         element={<Home />} />
               <Route path="/about"    element={<About />} />

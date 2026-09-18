@@ -4,8 +4,7 @@
 .terms-section {
   width: 100%;
   min-height: 100vh;
-  /* 120px top padding ensures it never hides under your fixed header */
-  padding: 120px 24px 80px;
+  padding: clamp(60px, 8vw, 120px) 24px clamp(60px, 8vw, 120px);
   background: var(--bg);
   color: var(--text);
   position: relative;
@@ -17,7 +16,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: clamp(28px, 4vw, 40px);
 }
 
 /* ==========================================
@@ -152,7 +151,15 @@
 ========================================== */
 @media (max-width: 768px) {
   .terms-section {
-    padding: 100px 16px 60px;
+    padding: clamp(60px, 8vw, 120px) 16px clamp(60px, 8vw, 120px);
+  }
+
+  .terms-container {
+    gap: clamp(28px, 6vw, 44px);
+  }
+
+  .terms-content {
+    gap: clamp(16px, 3.5vw, 24px);
   }
 
   .terms-card {

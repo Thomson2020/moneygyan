@@ -3,6 +3,8 @@
 ========================================= */
 .tf-wrapper {
   width: 100%;
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
   /* background: var(--bg); */
   position: relative;
   overflow: hidden;
@@ -29,8 +31,12 @@
 }
 
 /* =========================================
-   TESTIMONIALS GRID
+   TESTIMONIALS SECTION
 ========================================= */
+.testimonials-section {
+  margin-bottom: clamp(60px, 8vw, 100px);
+}
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

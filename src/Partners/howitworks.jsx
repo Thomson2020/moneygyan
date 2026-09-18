@@ -21,7 +21,7 @@ export default function Howitworks() {
       </div>
 
       <div className="hiw-step">
-        <span>01</span>
+        <span>1</span>
         <h3>Register Interest</h3>
         <p>
           Fill the partner form below. We'll set up a short call
@@ -30,7 +30,7 @@ export default function Howitworks() {
       </div>
 
       <div className="hiw-step">
-        <span>02</span>
+        <span>2</span>
         <h3>NISM-V-A Prep</h3>
         <p>
           We guide you through the NISM syllabus with study
@@ -39,7 +39,7 @@ export default function Howitworks() {
       </div>
 
       <div className="hiw-step">
-        <span>03</span>
+        <span>3</span>
         <h3>Certification & ARN</h3>
         <p>
           Clear the NISM exam and obtain your ARN registration.
@@ -47,7 +47,7 @@ export default function Howitworks() {
       </div>
 
       <div className="hiw-step">
-        <span>04</span>
+        <span>4</span>
         <h3>Empanel With MoneyGYAN</h3>
         <p>
           Get onboarded onto the MoneyGYAN platform and begin
@@ -56,7 +56,7 @@ export default function Howitworks() {
       </div>
 
       <div className="hiw-step">
-        <span>05</span>
+        <span>5</span>
         <h3>Learn the Playbook</h3>
         <p>
           Access scheme buckets, client communication guides,
@@ -65,7 +65,7 @@ export default function Howitworks() {
       </div>
 
       <div className="hiw-step">
-        <span>06</span>
+        <span>6</span>
         <h3>Launch</h3>
         <p>
           Start onboarding your first clients with support

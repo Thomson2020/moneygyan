@@ -23,11 +23,11 @@
   perspective: 1200px;
   transition: background-color 0.35s ease, color 0.35s ease;
 }
-
+/* 
 .vos-hero-container.light {
   background: #f8fafc;
   color: #0f172a;
-}
+} */
 
 html,
 body {
@@ -69,176 +69,207 @@ body.welcome-locked {
   font-size: clamp(2.6rem, 8vw, 8.5rem);
   font-weight: 900;
   letter-spacing: clamp(-1.5px, -0.4vw, -3px);
-  line-height: .95;
+  line-height: 1.3;
 }
 
+/* Base styling for both words */
 .vos-title span {
-  background: linear-gradient(
-      135deg,
-      #06b6d4,
-      #8b5cf6
-  );
+  display: inline-block;
+}
 
+/* "Money" - Solid color (adjust to your preference) */
+.vos-title .title-money {
+  background: linear-gradient(135deg, #009846, #009846);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  filter: drop-shadow(
-      0 15px 35px rgba(6,182,212,.25)
-  );
 }
 
+/* "GYAN" - Gradient */
+.vos-title .title-gyan {
+  background: linear-gradient(135deg, #01a0e3, #8b5cf6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 /* =========================================================
-   FOG BUTTON
+   VOS9X START BUTTON
 ========================================================= */
 
 .vos-btn-wrapper {
   position: absolute;
-  top: calc(100% + clamp(40px, 8vh, 120px));
+  top: calc(100% + clamp(36px, 6vh, 90px));
   left: 50%;
   transform: translateX(-50%);
 
-  width: 200px;
-  height: 100px;
+  width: clamp(150px, 7vw, 225px);
+  height: clamp(150px, 7vw, 225px); /*position of vos button*/
 
   display: flex;
   justify-content: center;
   align-items: center;
 
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
   cursor: pointer;
   overflow: visible;
   z-index: 10;
+  border-radius: 50%;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vos-btn-wrapper:hover {
+  transform: translateX(-50%) scale(1.06);
+}
+
+.vos-btn-wrapper:active {
+  transform: translateX(-50%) scale(0.94);
+  transition: transform 0.15s ease;
 }
 
 /* =========================================================
-   FOG / SHADER AREA
+   VOS9X GLOW BACKDROP (Ambient Aura & Fallback)
 ========================================================= */
 
-.shape-blur-container {
+.vos-btn-glow {
   position: absolute;
   inset: -15px;
-  border-radius: 999px;
+  border-radius: 50%;
   pointer-events: none;
-
-  background: radial-gradient(
-    circle,
-    rgba(248, 248, 248, 0.45) 0%,
-    rgba(2, 94, 196, 0.3) 45%,
-    rgba(139, 92, 246, 0.2) 70%,
-    transparent 85%
-  );
-  filter: blur(30px);
-  opacity: 0.9;
-
-  transition: transform 0.8s cubic-bezier(.16, 1, .3, 1), opacity 0.5s ease;
   z-index: 1;
-}
 
-.vos-hero-container.light .shape-blur-container {
   background: radial-gradient(
-    circle,
-    rgba(2, 132, 199, 0.35) 0%,
-    rgba(124, 58, 237, 0.25) 45%,
-    rgba(56, 189, 248, 0.15) 70%,
+    circle at 62% 38%,
+    rgba(255, 122, 0, 0.85) 0%,
+    rgba(255, 80, 0, 0.55) 28%,
+    rgba(0, 225, 255, 0.5) 55%,
+    rgba(0, 160, 220, 0.18) 72%,
     transparent 85%
   );
+  filter: blur(24px);
+  opacity: 0.85;
+
+  transition:
+    opacity 0.6s ease,
+    filter 0.6s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.vos-btn-wrapper:hover .shape-blur-container {
+.vos-hero-container.light .vos-btn-glow {
+  background: radial-gradient(
+    circle at 62% 38%,
+    rgba(249, 115, 22, 0.8) 0%,
+    rgba(234, 88, 12, 0.5) 28%,
+    rgba(2, 132, 199, 0.45) 55%,
+    rgba(2, 132, 199, 0.15) 72%,
+    transparent 85%
+  );
+  filter: blur(22px);
+  opacity: 0.9;
+}
+
+.vos-btn-wrapper:hover .vos-btn-glow {
   opacity: 1;
-  transform: scale(1);
+  filter: blur(28px);
+  transform: scale(1.12);
 }
 
 /* =========================================================
-   TEXT
+   VOS9X WEBGL SHADER CANVAS
 ========================================================= */
 
-.btn-text{
+.vos-btn-canvas {
+  position: absolute;
+  inset: -30px;
+  width: calc(100% + 60px);
+  height: calc(100% + 60px);
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 50%;
+  overflow: visible;
+}
 
-    position:relative;
+.vos-btn-canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  pointer-events: none;
+  border-radius: 50%;
+}
 
-    z-index:10;
+/* Legacy fallback if needed */
+.shape-blur-container {
+  display: none;
+}
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
+/* =========================================================
+   VOS9X TYPOGRAPHY
+========================================================= */
 
-    gap:10px;
+.btn-text {
+  position: relative;
+  z-index: 5;
 
-    color:#fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    font-size:.90rem;
-    font-weight:700;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: clamp(1rem, 1vw, 1rem);
+  font-weight: 500;
+  line-height: 1.25;
+  /* letter-spacing: 2rem; */
+  text-transform: uppercase;
+  user-select: none;
+  pointer-events: none;
 
-    line-height:1;
+  text-shadow:
+    0 0 16px rgba(255, 255, 255, 0.45),
+    0 0 32px rgba(0, 225, 255, 0.35);
 
-    text-transform:uppercase;
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    text-shadow 0.45s ease,
+    letter-spacing 0.45s ease,
+    color 0.35s ease;
+}
 
-    user-select:none;
+.btn-text span {
+  display: inline-block;
+  letter-spacing: 0.5rem;
+  /* width: 50%;
+  text-align: center; */
+}
 
-    text-shadow:
-        0 0 12px rgba(255,255,255,.25),
-        0 0 30px rgba(158, 156, 154, 0.15);
-
-    transition:
-        transform .45s cubic-bezier(.22,1,.36,1),
-        text-shadow .45s ease,
-        letter-spacing .45s ease,
-        color .35s ease;
+.vos-btn-wrapper:hover .btn-text {
+  transform: scale(1);
+  letter-spacing: 0.25em;
+  /* text-shadow:
+    0 0 20px rgba(255, 255, 255, 0.85),
+    0 0 38px rgba(0, 225, 255, 0.6),
+    0 0 54px rgba(255, 122, 0, 0.45); */
 }
 
 .vos-hero-container.light .btn-text {
-    color: #0f172a;
-    text-shadow:
-        0 0 12px rgba(2, 132, 199, 0.25),
-        0 0 30px rgba(124, 58, 237, 0.15);
+  color: var(--text-primary);
+  /* text-shadow:
+    0 0 14px rgba(0, 0, 0, 0.5),
+    0 0 28px rgba(2, 132, 199, 0.6); */
 }
 
 .vos-hero-container.light .vos-btn-wrapper:hover .btn-text {
-    text-shadow:
-        0 0 18px rgba(2, 132, 199, 0.55),
-        0 0 45px rgba(124, 58, 237, 0.4);
-}
-
-.btn-text span:first-child{
-
-    letter-spacing:0.85em;
-}
-
-.btn-text span:last-child{
-    padding-right: 5px;
-
-    letter-spacing:1.6em;
-
-    padding-left:.95em;
-}
-
-/* =========================================================
-   HOVER
-========================================================= */
-
-/* .vos-btn-wrapper:hover .shape-blur-container{
-
-    opacity:1;
-
-    transform:scale(1.18);
-} */
-
-.vos-btn-wrapper:hover .btn-text{
-
-    transform:translateY(-2px) scale(1.03);
-
-    text-shadow:
-        0 0 18px rgba(255,255,255,.55),
-        0 0 45px rgba(255, 255, 255, 0.935);
-}
-
-/* =========================================================
-   CLICK
-========================================================= */
-
-.vos-btn-wrapper:active .btn-text{
-    transform:scale(.85);
+  /* text-shadow:
+    0 0 20px rgba(255, 255, 255, 0.95),
+    0 0 40px rgba(2, 132, 199, 0.8); */
 }
 
 @media (max-width: 640px) {
@@ -246,7 +277,14 @@ body.welcome-locked {
     padding: 20px 16px;
   }
 
+  .vos-btn-wrapper {
+    width: 100px;
+    height: 100px;
+    top: calc(100% + clamp(24px, 5vh, 60px));
+  }
+
   .btn-text {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
   }
 }

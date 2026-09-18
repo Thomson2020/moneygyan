@@ -55,7 +55,7 @@
 }
 
 .hiw-step span {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 800;
   color: var(--primary);
@@ -73,7 +73,8 @@
 .hiw-step p {
   color: var(--text-secondary);
   line-height: 1.7;
-  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  font-weight: 550;
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
   margin: 0;
 }
 
@@ -102,8 +103,8 @@
 @media (max-width: 640px) {
   .hiw {
     padding: 0 16px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: clamp(60px, 8vw, 120px);
+    margin-bottom: clamp(60px, 8vw, 120px);
   }
 
   .hiw-header {

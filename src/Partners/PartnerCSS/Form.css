@@ -87,8 +87,8 @@
   width: 100%;
   max-width: 540px;
   background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border: 1px solid var(--card-border);
   border-radius: clamp(16px, 2vw, 24px);
   box-shadow: var(--card-shadow);
@@ -192,8 +192,8 @@
 @media (max-width: 640px) {
   .form-section {
     padding: 0 16px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: clamp(60px, 8vw, 120px);
+    margin-bottom: clamp(60px, 8vw, 120px);
   }
 
   .form-right {

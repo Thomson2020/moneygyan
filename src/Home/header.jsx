@@ -9,7 +9,6 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
   const [isDark, setIsDark] = useState(true);
-  const getAppRef = useRef(null);
 
   // Initialize theme from localStorage or default to dark
   useEffect(() => {
@@ -74,15 +73,6 @@ export default function Header() {
         paused: true,
         onReverseComplete: () => {
           setHeaderHidden(false);
-          if (getAppRef.current) {
-            gsap.to(getAppRef.current, {
-              opacity: 1,
-              y: 0,
-              duration: 0.25,
-              pointerEvents: "auto",
-              ease: "power2.out",
-            });
-          }
         },
       });
 
@@ -90,38 +80,38 @@ export default function Header() {
         .to(backdropRef.current, {
           autoAlpha: 1,
           pointerEvents: "auto",
-          duration: 0.4,
-          ease: "power3.out",
+          duration: 0.35,
+          ease: "power2.out",
         })
         .from(
           cardRef.current,
           {
-            y: -4,
-            scale: 0.96,
-            opacity: 0.1,
-            duration: 0.1,
-            ease: "power3.out",
+            y: -10,
+            scale: 0.97,
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.out",
           },
-          "<"
+          "<0.05"
         )
         .from(
           linksRef.current,
           {
-            x: -8,
+            x: -10,
             opacity: 0,
-            stagger: 0.015,
-            duration: 0.18,
-            ease: "power3.out",
+            stagger: 0.02,
+            duration: 0.24,
+            ease: "power2.out",
           },
-          "-=0.14"
+          "-=0.18"
         )
         .from(
           contactsRef.current,
           {
             opacity: 0,
-            y: 6,
-            duration: 0.16,
-            ease: "power3.out",
+            y: 8,
+            duration: 0.2,
+            ease: "power2.out",
           },
           "-=0.15"
         );
@@ -139,15 +129,6 @@ export default function Header() {
     } else {
       setMenuOpen(true);
       setHeaderHidden(true);
-      if (getAppRef.current) {
-        gsap.to(getAppRef.current, {
-          opacity: 0,
-          y: -1,
-          duration: 0.5,
-          pointerEvents: "none",
-          ease: "power2.out",
-        });
-      }
       timeline.current.timeScale(1).play();
     }
   };
@@ -164,19 +145,18 @@ export default function Header() {
       <header className={`site-header ${headerHidden ? "menu-open" : ""}`}>
         <div className="header-logo">
           <Link to="/" onClick={() => menuOpen && toggleMenu()}>
-            Money<span>GYAN</span>
+            <span className="head-money">Money</span><span>GYAN</span>
           </Link>
         </div>
         <div className="header-center-spacer"></div>
         <div className="header-right">
           <a
-            ref={getAppRef}
-            href="https://play.google.com/store/apps/details?id=com.moneygyan.app&hl=en_IN&pli=1"
+            href="https://moneygyan.investwell.app/app/#/login"
             target="_blank"
             rel="noopener noreferrer"
             className="card-get-app"
           >
-            Get App
+            <span>Sign In</span>
           </a>
           <button
             className={`menu-button ${menuOpen ? "active" : ""}`}
@@ -209,19 +189,21 @@ export default function Header() {
 
           <div ref={contactsRef} className="radiance-contacts">
             <div className="radiance-contact-links">
-              <a href="mailto:hello@moneygyan.com" className="radiance-contact-item">
+              <a href="mailto:info@moneygyan.com" className="radiance-contact-item">
                 info@moneygyan.com
               </a>
             </div>
 
             <div className="radiance-card-footer">
-              <Link
-                to="/signin"
+              <a
+                href="https://play.google.com/store/apps/details?id=com.moneygyan.app&hl=en_IN&pli=1"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="card-get-app"
                 onClick={toggleMenu}
               >
-                Sign In
-              </Link>
+                <span>Get App</span>
+              </a>
               
               {/* SINGLE THEME TOGGLE BUTTON */}
               <button

@@ -9,8 +9,8 @@
 .about-hero {
   max-width: 1240px;
   width: min(92%, 1240px);
-  margin-top: clamp(60px, 8vw, 100px);
-  margin-bottom: clamp(48px, 6vw, 80px);
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
   margin-left: auto;
   margin-right: auto;
   padding: 0 24px;
@@ -129,8 +129,8 @@
   width: 100%;
   max-width: 480px;
   background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border: 1px solid var(--card-border);
   border-radius: clamp(18px, 2.5vw, 24px);
   padding: clamp(24px, 3.5vw, 36px);
@@ -190,8 +190,8 @@
   grid-template-columns: repeat(4, 1fr);
   max-width: 1240px;
   width: min(92%, 1240px);
-  margin-top: clamp(48px, 6vw, 80px);
-  margin-bottom: clamp(48px, 6vw, 80px);
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -199,8 +199,8 @@
   border: 1px solid var(--card-border);
   border-radius: clamp(16px, 2vw, 24px);
   box-shadow: var(--card-shadow);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -254,8 +254,8 @@
 .story-section {
   max-width: 1240px;
   width: min(92%, 1240px);
-  margin-top: clamp(48px, 6vw, 80px);
-  margin-bottom: clamp(48px, 6vw, 80px);
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
   margin-left: auto;
   margin-right: auto;
   padding: 0 24px;
@@ -309,8 +309,8 @@
 .story-quote {
   background: var(--bg-card);
   border: 1px solid var(--card-border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border-radius: clamp(20px, 3vw, 28px);
   padding: clamp(32px, 4vw, 48px);
   position: relative;
@@ -356,8 +356,8 @@
 .values-section {
   max-width: 1240px;
   width: min(92%, 1240px);
-  margin-top: clamp(48px, 6vw, 80px);
-  margin-bottom: clamp(48px, 6vw, 80px);
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
   margin-left: auto;
   margin-right: auto;
   padding: 0 24px;
@@ -405,8 +405,8 @@
 .value-card {
   background: var(--bg-card);
   border: 1px solid var(--card-border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border-radius: clamp(16px, 2.5vw, 24px);
   padding: clamp(28px, 3.5vw, 36px) clamp(20px, 2.5vw, 28px);
   display: flex;
@@ -479,8 +479,8 @@
 .audience-section {
   max-width: 1240px;
   width: min(92%, 1240px);
-  margin-top: clamp(48px, 6vw, 80px);
-  margin-bottom: clamp(48px, 6vw, 80px);
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
   margin-left: auto;
   margin-right: auto;
   padding: 0 24px;
@@ -518,8 +518,8 @@
   border-radius: clamp(20px, 3vw, 28px);
   overflow: hidden;
   background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   box-shadow: var(--card-shadow);
   width: 100%;
 }
@@ -610,8 +610,8 @@
 .about-cta {
   max-width: 1240px;
   width: min(92%, 1240px);
-  margin-top: clamp(48px, 6vw, 80px);
-  margin-bottom: clamp(48px, 6vw, 80px);
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
   margin-left: auto;
   margin-right: auto;
   padding: 0 24px;
@@ -622,8 +622,8 @@
   background: var(--bg-card);
   border: 1px solid var(--card-border);
   border-radius: clamp(20px, 3vw, 28px);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   padding: clamp(32px, 4.5vw, 52px);
   display: flex;
   flex-direction: column;
@@ -752,8 +752,8 @@
   background: var(--bg-card);
   border: 1px solid var(--card-border);
   border-radius: clamp(18px, 2.5vw, 24px);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   overflow: hidden;
   box-shadow: var(--card-shadow);
   width: 100%;
@@ -869,14 +869,26 @@
 
 @media (max-width: 640px) {
   .about-hero,
+  .about-stats,
   .story-section,
   .values-section,
   .audience-section,
   .regulation-section,
-  .location-section {
-    padding: 0 16px;
-    margin-top: 48px;
-    margin-bottom: 48px;
+  .location-section,
+  .about-cta {
+    margin-top: clamp(60px, 8vw, 120px);
+    margin-bottom: clamp(60px, 8vw, 120px);
+  }
+
+  .about-hero,
+  .story-section,
+  .values-section,
+  .audience-section,
+  .regulation-section,
+  .location-section,
+  .about-cta {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .about-left,

@@ -5,7 +5,7 @@
 .privacy-section {
   width: 100%;
   min-height: 100vh;
-  padding: clamp(100px, 12vw, 140px) 24px clamp(60px, 8vw, 100px);
+  padding: clamp(60px, 8vw, 120px) 24px clamp(60px, 8vw, 120px);
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -133,8 +133,8 @@
   background: var(--bg-card);
   border: 1px solid var(--card-border);
   box-shadow: var(--card-shadow);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   transition: border-color 0.3s ease,
               transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.35s ease;
@@ -248,7 +248,15 @@
 
 @media (max-width: 768px) {
   .privacy-section {
-    padding: 100px 16px 60px;
+    padding: clamp(60px, 8vw, 120px) 16px clamp(60px, 8vw, 120px);
+  }
+
+  .privacy-container {
+    gap: clamp(28px, 6vw, 44px);
+  }
+
+  .privacy-content {
+    gap: clamp(16px, 3.5vw, 24px);
   }
 
   .privacy-card {

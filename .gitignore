@@ -10,11 +10,14 @@ lerna-debug.log*
 # Diagnostic / OS files
 .DS_Store
 Thumbs.db
+.stfolder*
+*.reapeaks
 
 # Node dependencies
 node_modules
 dist
 dist-ssr
+deploy.zip
 *.local
 
 # Environment variables

@@ -11,18 +11,19 @@ body[data-theme="dark"],
   --bg: #030812;
   --bg-primary: #030812;
   --bg-secondary: rgba(10, 18, 32, 0.75);
-  --bg-card: transparent;
+  --bg-card: linear-gradient(135deg, rgba(185, 219, 225, 0.07) 0%, rgba(175, 161, 209, 0.05) 0%);
   --bg-card-hover: rgba(18, 28, 48, 0.40);
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --text-muted: #94a3b8;
+  --app-border: #1a181844;
   --text: #ffffff;
   --muted: #94a3b8;
-  --border-color: rgba(255, 255, 255, 0.14);
+  --border-color: rgba(253, 253, 253, 0.485);
   --card-border: rgba(255, 255, 255, 0.14);
-  --card-border-color: rgba(100, 100, 100, 0.247);
+  --card-border-color: rgba(252, 252, 252, 0.423);
   --card-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.05);
-  --primary-gradient: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2));
+  --primary-gradient: linear-gradient(135deg, rgba(6, 181, 212, 0.007), rgba(138, 92, 246, 0.023));
   --primary: #06b6d4;
   --secondary: #8b5cf6;
   --btn-border: rgba(255, 255, 255, 0.18);
@@ -30,7 +31,7 @@ body[data-theme="dark"],
   --btn-bg-hover: rgba(255, 255, 255, 0.12);
   --nav-bg: rgba(10, 18, 32, 0.85);
   --nav-border: rgba(255, 255, 255, 0.14);
-  --input-bg: rgba(255, 255, 255, 0.04);
+  --input-bg: rgba(255, 255, 255, 0.4);
   --input-border: rgba(255, 255, 255, 0.18);
   --dropdown-bg: #070d18;
   --label-color: rgba(255, 255, 255, 0.6);
@@ -46,18 +47,19 @@ body.light,
   --bg: #f8fafc;
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
-  --bg-card: transparent;
+  --bg-card: linear-gradient(135deg, rgba(160, 186, 199, 0.05) 0%, rgba(179, 169, 197, 0.04) 0%);
   --bg-card-hover: rgba(15, 23, 42, 0.05);
   --text-primary: #0f172a; /* Slate 900 - crisp, high-contrast dark charcoal */
   --text-secondary: #334155; /* Slate 700 - clear readability */
   --text-muted: #64748b; /* Slate 500 */
+  --app-border: #070707b5;
   --text: #0f172a;
   --muted: #64748b;
-  --border-color: rgba(15, 23, 42, 0.12);
+  --border-color: rgba(15, 23, 42, 0.567);
   --card-border: rgba(112, 112, 112, 0.473);
   --card-border-color: rgba(100, 100, 100, 0.247);
   --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.04), 0 0 0 1px rgba(15, 23, 42, 0.06);
-  --primary-gradient: linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(124, 58, 237, 0.12));
+  --primary-gradient: linear-gradient(135deg, rgba(2, 133, 199, 0.033), rgba(124, 58, 237, 0.008));
   --primary: #0284c7;
   --secondary: #7c3aed;
   --btn-border: rgba(15, 23, 42, 0.14);
@@ -72,9 +74,37 @@ body.light,
   color-scheme: light;
 }
 
-/* Theme fade transition */
-*, *::before, *::after {
-  transition: background-color 0.7s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+/* Targeted theme transitions (replaces high-overhead universal * transition) */
+body,
+header,
+nav,
+footer,
+.site-header,
+.radiance-card,
+.feature-card-appshowcase,
+.calculator-section,
+.testimonial-card,
+.pfive,
+.calc-card,
+.vos-center-hero {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+/* Lenis smooth scroll optimization */
+html.lenis, html.lenis-smooth {
+  height: auto;
+}
+html.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 html {
@@ -97,8 +127,7 @@ body {
   background-color: transparent !important;
 }
 
-.card,
-.calculator-unified,
+/* .card,
 .calc-card,
 .calc-container,
 .feature-card,
@@ -137,7 +166,7 @@ body {
 .flip-card-front,
 .flip-card-back,
 .contact-form,
-.contact-form-card,
+.contact-form-card, */
 .hero-stat-card {
   background: transparent !important;
   border: 1px solid var(--card-border) !important;
@@ -184,6 +213,10 @@ main {
   width: 100%;
   min-height: 100vh;
   background: transparent !important;
+}
+
+main {
+  padding-top: 50px;
 }
 
 /* =========================================================
@@ -471,7 +504,8 @@ p {
 }
 
 .fund-scroll {
-  margin: 10px 0;
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
   overflow: hidden;
 }
 

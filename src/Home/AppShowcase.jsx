@@ -12,9 +12,8 @@ import { cn } from "@/lib/utils";
 
 export default function AppShowcase() {
   const phoneRef = useRef(null);
-  const [transformStyle, setTransformStyle] = useState(
-    "perspective(1000px) rotateX(0deg) rotateY(0deg)"
-  );
+  const boundsRef = useRef(null);
+  const rafIdRef = useRef(null);
 
   // Array of app screenshots located in the public/ folder
   const screenshots = [
@@ -27,32 +26,51 @@ export default function AppShowcase() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Automatically switch image every 3 seconds with swipe effect
+  // Automatically switch image every 3.5 seconds with swipe effect
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % screenshots.length);
     }, 3500);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+    };
   }, [screenshots.length]);
 
-  // 3D Mouse Tilt Tracking Math
+  // 3D Mouse Tilt Tracking with RAF and zero re-renders
+  const handleMouseEnter = () => {
+    if (phoneRef.current) {
+      boundsRef.current = phoneRef.current.getBoundingClientRect();
+    }
+  };
+
   const handleMouseMove = (e) => {
     if (!phoneRef.current) return;
-    const rect = phoneRef.current.getBoundingClientRect();
+    if (!boundsRef.current) {
+      boundsRef.current = phoneRef.current.getBoundingClientRect();
+    }
+    const rect = boundsRef.current;
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    
+
     const rotateX = (y / (rect.height / 2)) * -14;
     const rotateY = (x / (rect.width / 2)) * 14;
 
-    setTransformStyle(
-      `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.03, 1.03, 1.03)`
-    );
+    if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+    rafIdRef.current = requestAnimationFrame(() => {
+      if (phoneRef.current) {
+        phoneRef.current.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.03, 1.03, 1.03)`;
+      }
+    });
   };
 
   const handleMouseLeave = () => {
-    setTransformStyle("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
+    if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+    boundsRef.current = null;
+    if (phoneRef.current) {
+      phoneRef.current.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+    }
   };
 
   const features = [
@@ -88,12 +106,12 @@ export default function AppShowcase() {
           </div>
 
           <h2 className="app-title">
-            Your Financial Future, <br />
-            <span>In Your Pocket.</span>
+            Financial Future 
+            <span> <br /> In Your Pocket</span>
           </h2>
 
           <p className="app-subtitle">
-            Say goodbye to clunky spreadsheets and outdated dashboards. Experience seamless mutual fund execution, instant XIRR tracking, and complete control over your wealth, anytime, anywhere.
+            Forget clunky spreadsheets and outdated dashboards. Experience seamless mutual fund execution, instant XIRR tracking, and complete control over your wealth, anytime, anywhere.
           </p>
 
           <div className="app-feature-grid">
@@ -130,6 +148,7 @@ export default function AppShowcase() {
         {/* RIGHT COLUMN: Phone Mockup with Swipe Track */}
         <div 
           className="app-visual-col"
+          onMouseEnter={handleMouseEnter}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
@@ -146,7 +165,6 @@ export default function AppShowcase() {
           <div 
             ref={phoneRef}
             className="phone-mockup-frame"
-            style={{ transform: transformStyle }}
           >
             <div className="phone-notch"></div>
             

@@ -12,7 +12,13 @@ import "./index.css"; // Clean relative import
 export default function Home() {
   // 1. Lenis Smooth Scrolling (with safe cleanup)
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
+    });
     let rafId;
 
     function raf(time) {

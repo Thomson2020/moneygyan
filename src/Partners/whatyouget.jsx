@@ -54,9 +54,6 @@ export default function WhatYouGet() {
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
             </div>
-
-            <div className="feature-glow"></div>
-
           </div>
         ))}
 

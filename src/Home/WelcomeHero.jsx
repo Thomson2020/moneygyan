@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { gsap } from "gsap";
 import LineWaves from "./LineWaves";
+import VosButton from "./VosButton";
 import "./HomeCSS/WelcomeHero.css";
 import { cn } from "@/lib/utils";
 import { playWelcomeTransitionSound } from "@/lib/sound";
@@ -83,16 +84,11 @@ export default function WelcomeHero({ onStart, isLight }) {
 
       <div ref={cardRef} className="vos-center-hero" style={{ position: "relative", zIndex: 1 }}>
         <h1 className="vos-title">
-          Money<span>GYAN</span>
+          <span className="title-money">Money</span>{" "}
+          <span className="title-gyan">GYAN</span>
         </h1>
 
-        <div className="vos-btn-wrapper" onClick={handleStart}>
-          <div className="shape-blur-container"></div>
-          <div className="btn-text">
-            <span>INVEST</span>
-            <span>NOW</span>
-          </div>
-        </div>
+        <VosButton onClick={handleStart} isLight={isLight} text="INVEST NOW" />
       </div>
     </div>
   );

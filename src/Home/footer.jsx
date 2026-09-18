@@ -69,7 +69,8 @@ export default function Footer() {
         ========================================= */}
         <div className="footer-disclaimer">
           <p>
-            <strong>Disclaimer:</strong> Mutual Fund investments are subject to market risks, read all scheme related documents carefully before investing. There is no assurance or guarantee that the objective of any scheme will be achieved. We distribute regular plans only, where we earn trailing commission.
+            {/* <strong>Disclaimer:</strong> Mutual Fund investments are subject to market risks, read all scheme related documents carefully before investing. There is no assurance or guarantee that the objective of any scheme will be achieved. We distribute regular plans only, where we earn trailing commission. */}
+            <strong>Disclaimer:</strong> Mutual Funds Investments are subject to market risks and there is no assurance or guarantee that the objective of the Scheme will be achieved. <br /> Past performance of the Sponsor/AMC/Fund or that of any scheme of the fund does not indicate the future performance of the Schemes of the fund. <br /> Please read all scheme related documents carefully before investing.
           </p>
         </div>
 

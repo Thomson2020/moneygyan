@@ -6,7 +6,9 @@
 .pfive {
   position: relative;
   width: 100%;
-  padding: 120px 20px;
+  padding: 60px 20px;
+  margin-top: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(60px, 8vw, 120px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,9 +20,25 @@
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 3px;
-  color: var(--primary);
+  color: var(--text-primary);
   text-transform: uppercase;
   margin-bottom: 20px;
+}
+
+.pfive .title-money {
+  background: linear-gradient(135deg, #10b981 0%, #009846 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.pfive .title-gyan {
+  background: linear-gradient(135deg, #01a0e3, #8b5cf6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
 }
 
 /* Main Heading (H1 Fix & Gradient Text) */
@@ -28,25 +46,14 @@
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 800;
   color: var(--text-primary);
-  line-height: 1.15;
-  margin-bottom: 16px;
-  letter-spacing: -0.02em;
-}
-
-/* Text Gradient for MoneyGYAN */
-.pfive h1 .gradient {
-  background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 50%, #10b981 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /* Subheading H2 */
 .pfive h2 {
-  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 20px;
+  
 }
 
 /* Subtitle Paragraph */
@@ -55,14 +62,13 @@
   font-weight: 500;
   line-height: 1.6;
   color: var(--text-secondary);
-  max-width: 620px;
   margin-bottom: 40px;
 }
 
 /* CTA Button Group */
 .pfive .cta-group {
   display: flex;
-  gap: 18px;
+  gap: 15px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -73,7 +79,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 32px;
+  padding: 14px 15px;
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -81,7 +87,7 @@
   border: 1px solid var(--btn-border);
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.1, 1, 0.3, 1);
   box-shadow: var(--card-shadow);
 }
 
@@ -89,12 +95,12 @@
   background: var(--btn-bg-hover);
   border-color: var(--primary);
   color: var(--text-primary);
-  transform: translateY(-3px);
+  /* transform: translateY(-3px); */
   box-shadow: 0 10px 30px rgba(6, 182, 212, 0.25);
 }
 
 .pfive .secondary-btn:active {
-  transform: translateY(-1px);
+  /* transform: translateY(-1px); */
 }
 
 /* Mobile Responsive Tweaks */
@@ -109,6 +115,6 @@
   }
 
   .pfive .secondary-btn {
-    width: 100%;
+    width: 60%;
   }
 }

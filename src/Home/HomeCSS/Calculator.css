@@ -3,6 +3,10 @@
    ========================================================= */
 
 .calculator-section {
+  position: relative;
+  /* background-color: transparent; */
+  color: var(--text-primary);
+  font-family: inherit;
   padding: 0 24px;
   max-width: 1440px;
   width: min(94%, 1440px);
@@ -13,7 +17,25 @@
   box-sizing: border-box;
 }
 
+.calculator-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  /* background: radial-gradient(
+    ellipse 1200px 700px at center,
+    rgba(6, 182, 212, 0.06) 0%,
+    rgba(139, 92, 246, 0.03) 50%,
+    transparent 80%
+  ); */
+}
+
 .calculator-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,17 +47,22 @@
   align-items: center;
   text-align: center;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto clamp(0px, 2.5vw, 20px);
 }
 
 .calculator-eyebrow {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #06b6d4;
-  font-weight: 600;
-  letter-spacing: 5px;
-  margin-bottom: 20px;
+  background: linear-gradient(135deg, #10b981 0%, #009846 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
 }
 
 .calculator-header h2 {
@@ -45,7 +72,10 @@
 }
 
 .calculator-header h2 span {
-  color: #8b5cf6;
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* =========================================================
@@ -56,20 +86,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 30px;
   flex-wrap: wrap;
-  margin-bottom: 35px;
+  margin-bottom: 0px;
 }
 
 .calculator-tabs button {
-  padding: 12px 24px;
-  border-radius: 999px;
+  padding: 12px 20px;
+  border-radius: 99px;
   border: 1px solid var(--btn-border);
-  background: var(--btn-bg);
-  color: var(--text-primary);
+  /* background: var(--btn-bg); */
+  /* color: var(--text-primary); */
   font-weight: 600;
   cursor: pointer;
-  box-shadow: var(--card-shadow);
+  /* box-shadow: var(--card-shadow); */
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
@@ -80,10 +110,16 @@
 }
 
 .calculator-tabs button.active {
-  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  background: #06b6d4;
   color: #ffffff;
   border-color: transparent;
-  box-shadow: 0 0 24px rgba(6, 182, 212, 0.4);
+  /* box-shadow: 0 0 24px rgba(6, 182, 212, 0.4); */
+}
+
+.calculator-tabs {
+	gap: 10px;
+	margin-bottom: 24px;
+	width: 130%;
 }
 
 /* =========================================================
@@ -95,25 +131,24 @@
   grid-template-columns: 1.15fr 0.85fr;
   gap: 0;
   width: 100%;
-  max-width: 1360px;
+  max-width: 1500px;
   margin: 0 auto;
 
+
   background: var(--bg-card);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
   border-radius: 32px;
-  box-shadow: var(--card-shadow);
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .calculator-inputs-col {
   padding: clamp(28px, 3.5vw, 48px);
-  border-right: 1px solid var(--card-border);
+  border-right: 1px solid var(--border-color);
   transition: padding 0.35s ease, border-color 0.35s ease;
 }
 
+/* Right Chart Column */
 .calculator-chart-col {
   display: flex;
   flex-direction: column;
@@ -126,12 +161,13 @@
 .mode-hint {
   display: flex;
   justify-content: center;
+	align-content: center;
   font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
-.empty-state {
+/* .empty-state {
   padding: 1.5rem;
   text-align: center;
   font-size: 0.95rem;
@@ -139,7 +175,9 @@
   border: 1px dashed var(--border-color);
   border-radius: 16px;
   margin-top: 20px;
-}
+} */
+
+
 
 /* =========================================================
    4. INPUT ROW & VALUE BOX
@@ -368,7 +406,10 @@ html.light .calc-range-slider:active::-moz-range-thumb {
     0 0 0 7px rgba(2, 132, 199, 0.32),
     0 6px 18px rgba(2, 132, 199, 0.35);
 }
-
+.calc-value-input {
+	width: 100%;
+	min-width: 0;
+}
 /* =========================================================
    5. DONUT CHART & LEGEND
    ========================================================= */
@@ -406,8 +447,9 @@ html.light .calc-range-slider:active::-moz-range-thumb {
   stroke-width: 10;
   stroke-linecap: round;
   transition: r 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              stroke-dasharray 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              stroke-dashoffset 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+              stroke-dasharray 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              stroke-dashoffset 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.3s ease;
 }
 
 .calc-chart-gain {
@@ -417,7 +459,8 @@ html.light .calc-range-slider:active::-moz-range-thumb {
   stroke-linecap: round;
   transition: r 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               stroke-dasharray 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              stroke-dashoffset 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+              stroke-dashoffset 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.3s ease;
 }
 
 .calc-chart-center {
@@ -544,11 +587,11 @@ html.light .calc-range-slider:active::-moz-range-thumb {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.calc-mini-result:hover {
+/* .calc-mini-result:hover {
   transform: translateY(-2px);
   border-color: var(--primary);
   box-shadow: 0 10px 24px -4px rgba(6, 182, 212, 0.15);
-}
+} */
 
 .calc-mini-result span {
   color: var(--text-secondary);
@@ -582,6 +625,23 @@ html.light .calc-range-slider:active::-moz-range-thumb {
   overflow-wrap: anywhere;
 }
 
+/*PFIVE*/
+.cta-group .secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 3px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    /* background: linear-gradient(135deg, #009846, #009846); */
+    border: 1px solid var(--btn-border);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--card-shadow);
+}
+
 /* =========================================================
    RESPONSIVE BREAKPOINTS (IPAD & MOBILE)
    ========================================================= */
@@ -593,28 +653,31 @@ html.light .calc-range-slider:active::-moz-range-thumb {
   }
 
   .calculator-inputs-col {
-    padding: clamp(24px, 4vw, 36px);
+    padding: clamp(24px, 1vw, 36px);
     border-right: none;
-    border-bottom: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .calculator-chart-col {
-    padding: clamp(24px, 4vw, 36px);
+    padding: clamp(28px, 4vw, 40px);
   }
 }
 
 @media (max-width: 640px) {
   .calculator-section {
-    padding: 0 16px;
+    /* padding:inherit; */
+    margin-top: 48px;
+    /* margin-bottom: 18px; */
+	width: 100%;
   }
 
   .calculator-tabs {
     gap: 10px;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
   }
 
   .calculator-tabs button {
-    padding: 10px 18px;
+    /* padding: 10px 18px; */
     font-size: 0.88rem;
   }
 
@@ -624,7 +687,8 @@ html.light .calc-range-slider:active::-moz-range-thumb {
 
   .calculator-inputs-col,
   .calculator-chart-col {
-    padding: 20px 14px;
+    padding: 20px 10px;
+    
   }
 
   .calc-chart-circle {
@@ -674,5 +738,10 @@ html.light .calc-range-slider:active::-moz-range-thumb {
     width: 100%;
     justify-content: space-between;
   }
+
+	/* .mode-hint{
+		justify-content: center;
+		align-items:center;
+	} */
 }
 

@@ -46,10 +46,8 @@ export default function RotatingText({
         className={`gradient-pill ${className}`}
         animate={{ width }}
         transition={{
-          type: "spring",
-          stiffness: 110,
-          damping: 22,
-          mass: 0.8,
+          duration: 0.35,
+          ease: [0.16, 1, 0.3, 1],
         }}
       >
         <AnimatePresence mode="wait">

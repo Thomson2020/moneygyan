@@ -18,3 +18,10 @@ check size of radiance card
 remove the slight stutter for elements when transition
 check card blurs 
 fix mobile elements align and size
+
+
+15sep
+incraese header bottom blur size +below
+
+background: linear-gradient(135deg, #009846, #009846);
+background: linear-gradient(135deg, #01a0e3, #8b5cf6);

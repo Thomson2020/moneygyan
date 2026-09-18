@@ -1,114 +1,28 @@
 /* =========================================================
-   THEME VARIABLES (INHERITS FROM GLOBAL index.css)
-========================================================= */
+   HEADER & RADIANCE CARD - UNIFIED & NEAT DESIGN
+   ========================================================= */
 
 /* =========================================================
-   HEADER (LOGO LEFT / CENTER FREE / HAMBURGER RIGHT)
-========================================================= */
+   1. HEADER (LOGO LEFT / SPACER CENTER / ACTIONS RIGHT)
+   ========================================================= */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 24px 48px;
+  padding: 20px 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
   background: transparent;
-  transition: transform 0.35s ease, background 0.3s ease;
+  /* transition: transform 0.35s ease, background 0.3s ease; */
 }
 
-@media (max-width: 1024px) {
-  .site-header {
-    padding: 18px 28px;
-  }
-}
-
-@media (max-width: 640px) {
-  .site-header {
-    padding: 8px 14px;
-  }
-
-  .header-logo a {
-    font-size: 1.15rem;
-    letter-spacing: 0.2px;
-  }
-
-  .header-right {
-    gap: 10px;
-  }
-
-  .header-right .card-get-app {
-    padding: 5px 12px;
-    font-size: 0.72rem;
-    box-shadow: 0 2px 10px rgba(6, 182, 212, 0.2);
-  }
-
-  .menu-button {
-    width: 22px;
-    height: 15px;
-  }
-
-  .menu-button.active span:nth-child(1) {
-    transform: translateY(6.5px) rotate(45deg);
-  }
-
-  .menu-button.active span:nth-child(3) {
-    transform: translateY(-6.5px) rotate(-45deg);
-  }
-
-  .theme-toggle-btn {
-    width: 34px;
-    height: 34px;
-  }
-
-  .theme-toggle-btn svg {
-    width: 15px;
-    height: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .site-header {
-    padding: 10px 14px;
-  }
-
-  .header-logo a {
-    font-size: 1.05rem;
-  }
-
-  .header-right {
-    gap: 8px;
-  }
-
-  .header-right .card-get-app {
-    padding: 4px 10px;
-    font-size: 0.68rem;
-  }
-
-  .menu-button {
-    width: 20px;
-    height: 14px;
-  }
-
-  .menu-button.active span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
-
-  .menu-button.active span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-  }
-
-  .theme-toggle-btn {
-    width: 32px;
-    height: 32px;
-  }
-
-  .theme-toggle-btn svg {
-    width: 14px;
-    height: 14px;
-  }
+/* Header state when menu is open */
+.site-header.menu-open {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 /* 1. FAR LEFT: LOGO */
@@ -116,32 +30,34 @@
   display: flex;
   align-items: center;
   z-index: 10;
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-}
-
-/* Hide header logo and disable header blur when menu is open */
-.site-header.menu-open {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-.site-header.menu-open .header-logo {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .header-logo a {
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 800;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   color: inherit;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.25;
+  transition: opacity 0.2s ease;
+}
+
+.header-logo a:hover {
+  opacity: 0.9;
 }
 
 .header-logo span {
   background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-logo .head-money {
+  background: linear-gradient(135deg, #009846, #009846);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -151,7 +67,7 @@
   flex-grow: 1;
 }
 
-/* 3. FAR RIGHT: WHITE HAMBURGER BUTTON */
+/* 3. FAR RIGHT: BUTTONS & HAMBURGER */
 .header-right {
   display: flex;
   align-items: center;
@@ -160,316 +76,279 @@
   position: relative;
 }
 
+/* =========================================================
+   2. UNIFIED PILL BUTTON (.card-get-app)
+   ========================================================= */
 .card-get-app {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
+  background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  height: 38px;
+  padding: 0 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.25);
+  /* transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s ease; */
+}
+
+.card-get-app span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  /* transform: translateY(-1.5px); */
+}
+
+.card-get-app:hover {
+  /* transform: translateY(-1px); */
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.38);
+}
+
+.card-get-app:active {
+  /* transform: translateY(0); */
+  box-shadow: 0 2px 8px rgba(6, 182, 212, 0.2);
 }
 
 /* =========================================================
-   WHITE HAMBURGER BUTTON
-========================================================= */
+   3. UNIFIED HAMBURGER / CLOSE BUTTON
+   ========================================================= */
 .menu-button {
-  width: 32px;
-  height: 22px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background: none;
-  border: none;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: 1px solid transparent;
   cursor: pointer;
   padding: 0;
   color: var(--text-primary);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Make inner hamburger bars inherit the text color automatically */
-.menu-button span,
-.menu-button div {
-  width: 100%;
+.menu-button:hover {
+  background: var(--btn-bg);
+  border-color: var(--btn-border);
+}
+
+.menu-button:active {
+  transform: scale(0.95);
+}
+
+/* Hamburger bars */
+.menu-button span {
+  width: 20px;
   height: 2px;
-  background-color: currentColor; 
+  background-color: currentColor;
   border-radius: 2px;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               opacity 0.2s ease,
               background-color 0.3s ease;
+  transform-origin: center;
 }
 
 .menu-button.active span:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .menu-button.active span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
 .menu-button.active span:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* =========================================================
-   RADIANCE BLURRED BACKDROP
-========================================================= */
+   4. RADIANCE BLURRED BACKDROP
+   ========================================================= */
 .radiance-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(3, 8, 18, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   z-index: 999;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  padding: 20px;
+  padding: 82px 48px 24px;
+  transition: background 0.3s ease;
+}
+
+:root[data-theme="light"] .radiance-backdrop,
+html[data-theme="light"] .radiance-backdrop,
+html.light .radiance-backdrop,
+body.light .radiance-backdrop {
+  background: rgba(15, 23, 42, 0.25);
 }
 
 /* =========================================================
-   RADIANCE FLOATING RIGHT-CARD
-========================================================= */
+   5. RADIANCE FLOATING CARD
+   ========================================================= */
 .radiance-card {
   position: relative;
-  margin-top: -10px;
-  width: min(450px);
-  background: var(--bg) !important;
+  width: 380px;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100dvh - 104px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: rgba(8, 14, 26, 0.9);
   color: var(--text-primary) !important;
   border: 1px solid var(--card-border) !important;
   border-radius: 24px;
-  padding: 35px 35px 35px;
+  padding: 30px 28px 24px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  box-shadow: var(--card-shadow) !important;
-  flex-wrap: wrap;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  gap: 22px;
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.7),
+              0 0 0 1px rgba(255, 255, 255, 0.06),
+              0 0 32px rgba(6, 182, 212, 0.08);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  box-sizing: border-box;
 }
 
-@media (max-width: 640px) {
-  .radiance-backdrop {
-    padding: 10px;
-    align-items: flex-start;
-  }
-
-  .radiance-card {
-    width: 100%;
-    max-width: 100%;
-    margin-top: 0;
-    padding: 18px 16px 20px;
-    gap: 14px;
-    border-radius: 20px;
-  }
-
-  .radiance-nav {
-    padding-top: 6px;
-    padding-left: 4px;
-    gap: 10px;
-  }
-
-  .radiance-link {
-    font-size: clamp(1.15rem, 4.5vw, 1.35rem);
-    line-height: 1.25;
-  }
-
-  .radiance-contacts {
-    padding-top: 12px;
-    gap: 10px;
-  }
-
-  .radiance-contact-item {
-    font-size: 0.78rem;
-  }
-
-  .radiance-card-footer {
-    padding-top: 2px;
-  }
-
-  .radiance-card-footer .card-get-app {
-    padding: 6px 14px;
-    font-size: 0.75rem;
-  }
+:root[data-theme="light"] .radiance-card,
+html[data-theme="light"] .radiance-card,
+html.light .radiance-card,
+body.light .radiance-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.14),
+              0 0 0 1px rgba(15, 23, 42, 0.05) !important;
 }
 
-@media (max-width: 480px) {
-  .radiance-backdrop {
-    padding: 8px;
-  }
-
-  .radiance-card {
-    padding: 14px 14px 16px;
-    gap: 10px;
-    border-radius: 16px;
-  }
-
-  .radiance-nav {
-    padding-top: 4px;
-    padding-left: 2px;
-    gap: 8px;
-  }
-
-  .radiance-link {
-    font-size: 1.12rem;
-  }
-
-  .radiance-contacts {
-    padding-top: 10px;
-    gap: 8px;
-  }
-
-  .radiance-contact-item {
-    font-size: 0.74rem;
-  }
-
-  .radiance-card-footer .card-get-app {
-    padding: 5px 12px;
-    font-size: 0.7rem;
-  }
+.radiance-card::-webkit-scrollbar {
+  width: 4px;
 }
 
-/* Top Row: Get App Button + Close Button inside Menu Card */
-.radiance-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.card-get-app {
-  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
-  color: #ffffff;
-  border: none;
-  border-radius: 999px;
-  padding: 8px 18px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card-get-app:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(6, 182, 212, 0.35);
-}
-
-.radiance-close-btn {
+.radiance-card::-webkit-scrollbar-track {
   background: transparent;
-  border: none;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  color: var(--text-primary);
-  cursor: pointer;
-  padding: 10px 0;
-  text-transform: uppercase;
-  opacity: 0.85;
-  transition: opacity 0.15s ease, color 0.15s ease;
-  
-  outline: none !important;
-  box-shadow: none !important;
 }
 
-.radiance-close-btn:focus,
-.radiance-close-btn:focus-visible {
-  outline: none !important;
-  box-shadow: none !important;
+.radiance-card::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 999px;
 }
 
-.radiance-close-btn:hover {
-  opacity: 1;
-  color: var(--primary);
-}
-
+/* Navigation links */
 .radiance-nav {
-  display: grid;
+  display: flex;
   flex-direction: column;
-  padding-top: 20px;
-  padding-left: 13px;
-  gap: 20px;
-  margin: auto 0;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
   opacity: 1 !important;
   visibility: visible !important;
 }
 
 .radiance-link {
-  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
   font-weight: 600;
   color: var(--text-primary) !important;
   text-decoration: none;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   opacity: 1 !important;
   visibility: visible !important;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, color 0.2s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.2s ease,
+              opacity 0.2s ease;
+  display: inline-block;
 }
 
 .radiance-link:hover {
   color: var(--primary) !important;
-  transform: translateX(8px);
+  transform: translateX(6px);
 }
 
+/* Contacts section */
 .radiance-contacts {
   border-top: 1px solid var(--card-border);
-  padding-top: 20px;
+  padding-top: 18px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .radiance-contact-links {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .radiance-contact-item {
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-secondary) !important;
   text-decoration: none;
-  letter-spacing: 0.5px;
-  transition: color 0.1s ease, opacity 0.2s ease;
+  letter-spacing: 0.2px;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
 .radiance-contact-item:hover {
   color: var(--primary) !important;
 }
 
+/* Card footer */
 .radiance-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 6px;
+  padding-top: 4px;
 }
 
-.radiance-theme-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: var(--text-muted);
+.radiance-card-footer .card-get-app {
+  height: 38px;
+  padding: 0 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 /* =========================================================
-   THEME TOGGLE BUTTON CIRCLE
-========================================================= */
+   6. THEME TOGGLE BUTTON
+   ========================================================= */
 .theme-toggle-btn {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   overflow: hidden;
-
   background: var(--btn-bg);
   border: 1px solid var(--btn-border);
   color: var(--text-primary);
-
   cursor: pointer;
-  transition: background 0.7s ease, transform 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.25s ease,
+              transform 0.2s ease,
+              border-color 0.25s ease;
 }
 
 .theme-toggle-btn:hover {
   background: var(--btn-bg-hover);
   border-color: var(--primary);
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .theme-toggle-btn:active {
@@ -477,8 +356,8 @@
 }
 
 .theme-toggle-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   flex-shrink: 0;
 }
 
@@ -495,16 +374,16 @@
 }
 
 /* =========================================================
-   PROGRESSIVE / SEAMLESS HEADER BLUR
-========================================================= */
+   7. PROGRESSIVE / SEAMLESS HEADER BLUR
+   ========================================================= */
 .progressive-blur {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 96px;       /* Matched seamlessly to header height */
+  height: 90px;
   pointer-events: none;
-  z-index: 999;       /* Directly behind .site-header (1000) */
+  z-index: 999;
   transition: opacity 0.35s ease;
 }
 
@@ -540,27 +419,11 @@ body.light .progressive-blur::before {
   );
 }
 
-/* Seamless feathered bottom border */
-.progressive-blur::after {
-  content: "";
-  position: absolute;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--border-color, rgba(255, 255, 255, 0.12)) 20%,
-    var(--border-color, rgba(255, 255, 255, 0.12)) 80%,
-    transparent 100%
-  );
-  z-index: 2;
-  pointer-events: none;
-}
-
 .progressive-blur span {
   position: absolute;
   inset: 0;
 }
 
-/* Progressive blur: strongest blur at top (0%), smoothly fading to transparent at bottom */
 .progressive-blur span:nth-child(1) {
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px);
@@ -592,20 +455,258 @@ body.light .progressive-blur::before {
   -webkit-mask-image: linear-gradient(to bottom, transparent 65%, #000 80%, #000 90%, transparent 100%);
 }
 
+/* =========================================================
+   8. RESPONSIVE MEDIA QUERIES (CONSOLIDATED AT END)
+   ========================================================= */
+
+/* Tablet & Smaller Desktops */
 @media (max-width: 1024px) {
+  .site-header {
+    padding: 16px 28px;
+  }
+
   .progressive-blur {
-    height: 84px;
+    height: 76px;
+  }
+
+  .header-logo a {
+    font-size: 1.35rem;
+  }
+
+  .header-right {
+    gap: 14px;
+  }
+
+  .card-get-app {
+    height: 36px;
+    padding: 0 16px;
+    font-size: 0.8rem;
+  }
+
+  .card-get-app span {
+    transform: translateY(-1.2px);
+  }
+
+  .menu-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .radiance-backdrop {
+    padding: 74px 28px 20px;
+  }
+
+  .radiance-card {
+    width: 350px;
+    padding: 26px 24px 22px;
+    gap: 20px;
+  }
+
+  .radiance-link {
+    font-size: clamp(1.25rem, 2vw, 1.45rem);
+  }
+
+  .radiance-card-footer .card-get-app {
+    height: 36px;
+    padding: 0 18px;
+  }
+
+  .theme-toggle-btn {
+    width: 36px;
+    height: 36px;
   }
 }
 
+/* Mobile Devices */
 @media (max-width: 640px) {
+  .site-header {
+    padding: 12px 18px;
+  }
+
   .progressive-blur {
-    height: 56px;
+    height: 60px;
+  }
+
+  .header-logo a {
+    font-size: 1.18rem;
+    letter-spacing: -0.015em;
+  }
+
+  .header-right {
+    gap: 10px;
+  }
+
+  .card-get-app {
+    height: 32px;
+    padding: 0 13px;
+    font-size: 0.74rem;
+    box-shadow: 0 2px 10px rgba(6, 182, 212, 0.2);
+  }
+
+  .card-get-app span {
+    transform: translateY(-1px);
+  }
+
+  .menu-button {
+    width: 32px;
+    height: 32px;
+    gap: 4.5px;
+  }
+
+  .menu-button span {
+    width: 17px;
+  }
+
+  .menu-button.active span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+
+  .menu-button.active span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  .radiance-backdrop {
+    padding: 60px 14px 16px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .radiance-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 22px 18px 18px;
+    gap: 16px;
+    border-radius: 20px;
+    max-height: calc(100dvh - 76px);
+  }
+
+  .radiance-nav {
+    gap: 8px;
+  }
+
+  .radiance-link {
+    font-size: clamp(1.12rem, 3.8vw, 1.28rem);
+    line-height: 1.25;
+  }
+
+  .radiance-contacts {
+    padding-top: 14px;
+    gap: 12px;
+  }
+
+  .radiance-contact-item {
+    font-size: 0.8rem;
+  }
+
+  .radiance-card-footer {
+    padding-top: 2px;
+  }
+
+  .radiance-card-footer .card-get-app {
+    height: 34px;
+    padding: 0 16px;
+    font-size: 0.76rem;
+  }
+
+  .theme-toggle-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .theme-toggle-btn svg {
+    width: 15px;
+    height: 15px;
   }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
+  .site-header {
+    padding: 10px 14px;
+  }
+
   .progressive-blur {
-    height: 50px;
+    height: 54px;
+  }
+
+  .header-logo a {
+    font-size: 1.1rem;
+  }
+
+  .header-right {
+    gap: 8px;
+  }
+
+  .card-get-app {
+    height: 30px;
+    padding: 0 11px;
+    font-size: 0.72rem;
+  }
+
+  .card-get-app span {
+    transform: translateY(-1px);
+  }
+
+  .menu-button {
+    width: 30px;
+    height: 30px;
+    gap: 4px;
+  }
+
+  .menu-button span {
+    width: 16px;
+  }
+
+  .menu-button.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-button.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .radiance-backdrop {
+    padding: 54px 10px 14px;
+  }
+
+  .radiance-card {
+    padding: 18px 16px 16px;
+    gap: 14px;
+    border-radius: 18px;
+    max-height: calc(100dvh - 68px);
+  }
+
+  .radiance-nav {
+    gap: 6px;
+  }
+
+  .radiance-link {
+    font-size: 1.08rem;
+  }
+
+  .radiance-contacts {
+    padding-top: 12px;
+    gap: 10px;
+  }
+
+  .radiance-contact-item {
+    font-size: 0.76rem;
+  }
+
+  .radiance-card-footer .card-get-app {
+    height: 32px;
+    padding: 0 14px;
+    font-size: 0.72rem;
+  }
+
+  .theme-toggle-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .theme-toggle-btn svg {
+    width: 14px;
+    height: 14px;
   }
 }

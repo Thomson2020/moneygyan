@@ -21,7 +21,7 @@ export default function Hero() {
     <section ref={heroRef} className="hero">
 <div className="hero-content">
         <h1 ref={titleRef} className="hero-title">
-          <span className="money">Money</span>
+          <span className="moneyg">Money</span>
           <RotatingText
             text={[
               "Matters", 
