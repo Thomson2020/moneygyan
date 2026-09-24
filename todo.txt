@@ -24,4 +24,13 @@ fix mobile elements align and size
 incraese header bottom blur size +below
 
 background: linear-gradient(135deg, #009846, #009846);
-background: linear-gradient(135deg, #01a0e3, #8b5cf6);
+background: linear-gradient(135deg, #00A3E0, #8b5cf6);
+
+The exact green and blue hex codes taken directly from the MoneyGYAN wordmark text are:
+
+    Green (used for "Money"): #00A859
+
+    Blue (used for "GYAN"): #00A3E0
+
+for sept 23, check if all colors are 00a3e0 and if spacings are proper
+add the reviews

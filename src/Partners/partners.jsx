@@ -10,6 +10,7 @@ import Form from "./form";
 import Philosophy from "./Philosophy";
 import "./PartnerCSS/Partners.css";
 
+
 const PILLARS = [
   {
     tag: "Core Focus",

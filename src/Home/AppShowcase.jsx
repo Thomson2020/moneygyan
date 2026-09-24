@@ -126,23 +126,37 @@ export default function AppShowcase() {
             ))}
           </div>
 
-          <div className="store-buttons-group">
-            <button className="modern-store-btn">
-              <FaApple className="store-icon" />
-              <div className="store-text">
-                <span>GET IT ON</span>
-                <strong>App Store</strong>
-              </div>
-            </button>
+<div className="app-store-group">
+  {/* Apple App Store */}
+  <a
+    href="https://apps.apple.com/app/your-app-id"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="modern-store-btn"
+    aria-label="Download on the App Store"
+  >
+    <FaApple className="store-icon" />
+    <div className="store-text">
+      <span>Download on the</span>
+      <strong>App Store</strong>
+    </div>
+  </a>
 
-            <button className="modern-store-btn">
-              <FaGooglePlay className="store-icon" />
-              <div className="store-text">
-                <span>Download on the</span>
-                <strong>Google Play</strong>
-              </div>
-            </button>
-          </div>
+  {/* Google Play Store */}
+  <a
+    href="https://play.google.com/store/apps/details?id=com.moneygyan.app&hl=en_IN"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="modern-store-btn"
+    aria-label="Get it on Google Play"
+  >
+    <FaGooglePlay className="store-icon" />
+    <div className="store-text">
+      <span>GET IT ON</span>
+      <strong>Google Play</strong>
+    </div>
+  </a>
+</div>
         </div>
 
         {/* RIGHT COLUMN: Phone Mockup with Swipe Track */}
@@ -187,7 +201,7 @@ export default function AppShowcase() {
           <div className={cn('floating-widget', 'widget-bottom-right')}>
             <span className="widget-sub">Total Returns</span>
             <strong>+₹ 3,42,800</strong>
-            <span className="widget-tag">All-Time High 🔥</span>
+            <span className="widget-tag">All-Time High </span>
           </div>
         </div>
 

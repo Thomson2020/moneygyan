@@ -46,8 +46,8 @@
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--primary);
-  background: rgba(6, 182, 212, 0.08);
+  color: #00A859;
+  background: rgb(181 182 183 / 28%);
   border: 1px solid rgba(6, 182, 212, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -63,7 +63,7 @@
 }
 
 .disclosure-title span {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, #00A3E0, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

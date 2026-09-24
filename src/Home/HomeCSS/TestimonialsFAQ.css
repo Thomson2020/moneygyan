@@ -5,7 +5,6 @@
   width: 100%;
   margin-top: clamp(60px, 8vw, 120px);
   margin-bottom: clamp(60px, 8vw, 120px);
-  /* background: var(--bg); */
   position: relative;
   overflow: hidden;
 }
@@ -13,19 +12,18 @@
 .tf-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 10px 32px;
 }
 
 .tf-title {
   font-weight: 800;
   text-align: center;
   color: var(--text-primary);
-  margin-bottom: 100px;
   line-height: 1.2;
 }
 
 .tf-title span {
-  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  background: linear-gradient(90deg, #00A3E0, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -34,36 +32,49 @@
    TESTIMONIALS SECTION
 ========================================= */
 .testimonials-section {
-  margin-bottom: clamp(60px, 8vw, 100px);
+  margin-bottom: clamp(60px, 7vw, 100px);
 }
 
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  margin-top: 50px;
   gap: 24px;
+  align-items: start; /* Prevents unhovered sibling cards from stretching height */
 }
 
 .testimonial-card {
-  background: var(--bg-card);
+  min-height: 310px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  background: transparent;
   border: 1px solid var(--card-border);
   border-radius: 24px;
   padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  gap: 24px;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   box-shadow: var(--card-shadow);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  position: relative;
+}
+
+/* Hover safety buffer to prevent cursor-edge jitter on translateY */
+.testimonial-card::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
 }
 
 .testimonial-card:hover {
   transform: translateY(-4px);
   border-color: var(--primary);
-  box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
+  box-shadow: 0 20px 40px rgba(6, 182, 212, 0.18);
 }
 
 /* Avatar Initials */
@@ -77,6 +88,7 @@
   font-weight: 800;
   font-size: 1.1rem;
   color: #ffffff;
+  flex-shrink: 0;
 }
 
 .avatar-orange {
@@ -91,17 +103,68 @@
   background: linear-gradient(135deg, #06b6d4, #0284c7);
 }
 
+.avatar-purple {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.avatar-teal {
+  background: linear-gradient(135deg, #00A3E0, #0284c7);
+}
+
+/* Testimonial Quotes & Dynamic Expansion */
+.testimonial-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .testimonial-quote {
   font-size: 0.98rem;
   line-height: 1.7;
   color: var(--text-secondary);
   font-style: italic;
   margin: 0;
-  flex-grow: 1;
+}
+
+/* Smooth Accordion Expansion Container */
+.testimonial-expand-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.testimonial-expand-inner {
+  overflow: hidden;
+  min-height: 0; /* Prevents grid layout stutter/jitter during transition */
+}
+
+.testimonial-extra-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+  padding-top: 12px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+}
+
+/* Hover reveal action */
+.testimonial-card:hover .testimonial-expand-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.testimonial-card:hover .testimonial-extra-text {
+  opacity: 0.92;
+  transform: translateY(0);
 }
 
 .testimonial-author {
+  margin-top: auto;
   text-align: center;
+  padding-top: 8px;
 }
 
 .testimonial-author h4 {
@@ -158,7 +221,7 @@
 }
 
 .home-faq-item:hover .home-faq-header h3 {
-  color: var(--primary);
+  color: #00A3E0;
 }
 
 .home-faq-toggle-btn {
@@ -214,9 +277,9 @@
 /* =========================================
    RESPONSIVE BREAKPOINTS (IPAD & MOBILE)
 ========================================= */
-@media (max-width: 1024px) {
+@media (max-width: 960px) {
   .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 }
@@ -239,10 +302,10 @@
   .testimonial-card {
     padding: 24px 20px;
     border-radius: 18px;
+    min-height: auto;
   }
 
   .home-faq-header h3 {
     font-size: 0.95rem;
   }
 }
-

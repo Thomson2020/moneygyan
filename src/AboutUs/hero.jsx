@@ -28,10 +28,10 @@ export default function AboutHero() {
     <>
       <section className="about-hero">
         <div className="about-left">
-          <span className="about-eyebrow">ABOUT MONEYGYAN</span>
+          <span className="about-eyebrow">ABOUT Us</span>
 
           <h1>
-            Money, and <span>Gyan</span> to use it well.
+            <span>Money</span> & <span>Gyan</span> to use it well.
           </h1>
 
           <p className="about-description">
@@ -41,7 +41,7 @@ export default function AboutHero() {
           </p>
 
           <div className="about-buttons">
-            <Link to="/" className="about-primary-btn" style={{ textDecoration: "none" }}>
+            <Link to="https://moneygyan.investwell.app/app/#/login" className="about-primary-btn" style={{ textDecoration: "none" }}>
               START INVESTING →
             </Link>
 

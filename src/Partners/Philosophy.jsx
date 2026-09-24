@@ -12,7 +12,7 @@ export default function Philosophy() {
         </blockquote>
 
         <div className="philosophy-label">
-          THE MONEYGYAN PHILOSOPHY
+          THE <span className="money-color">Money</span><span>GYAN</span> PHILOSOPHY
         </div>
       </div>
     </section>

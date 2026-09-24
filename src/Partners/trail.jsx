@@ -236,7 +236,7 @@ export default function Trail() {
             Trail commissions <span>compound quietly.</span>
           </h2>
           <p className="trail-subtitle">
-            Unlike traditional sales roles with one-time payouts, mutual fund distributors earn an
+            Unlike traditional sales roles with one time payouts, mutual fund distributors earn an
             ongoing share of the total assets managed (AUM). As your clients' wealth compounds over
             time, your trailing revenue expands dynamically alongside them.
           </p>

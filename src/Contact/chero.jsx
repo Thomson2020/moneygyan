@@ -4,6 +4,7 @@ import {
   FaFacebook,
   FaYoutube,
   FaTwitter,
+  FaLinkedin,
 } from "react-icons/fa";
 import {
   MapPin,
@@ -133,7 +134,7 @@ export default function ContactHero() {
           <h1>
             Questions about wealth
             <br />
-            deserve a clear <span>answer.</span>
+            deserve a clear answer.
           </h1>
 
           <p className="contact-subtitle">
@@ -208,7 +209,10 @@ export default function ContactHero() {
                   <FaFacebook />
                 </a>
                 <a href="https://www.youtube.com/channel/UClaXqdsXU4S1hn_jwvFYDGQ" target="_blank" rel="noreferrer" aria-label="YouTube">
-                  <FaYoutube />
+                  <FaYoutube /> 
+                  </a>
+                <a href="https://www.linkedin.com/company/money-gyan/about/" target="_blank" rel="noreferrer" aria-label="YouTube">
+                  <FaLinkedin />
                 </a>
               </div>
             </div>
@@ -424,7 +428,7 @@ export default function ContactHero() {
 
           <h3>Portfolio support</h3>
           <p>
-            Already investing with us? Log in to your dashboard or call our desk directly for seamless servicing.
+            Already investing with us? <br /> Log in to your dashboard or call our desk directly for seamless servicing.
           </p>
 
           {/* <Link to="/" className="help-link">

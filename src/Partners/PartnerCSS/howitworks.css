@@ -24,7 +24,7 @@
 .hiw-tag {
   letter-spacing: 3px;
   font-size: 0.78rem;
-  color: var(--primary);
+  color: #00A859;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -58,7 +58,7 @@
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 800;
-  color: var(--primary);
+  color: #00A3E0;
   line-height: 1.2;
 }
 

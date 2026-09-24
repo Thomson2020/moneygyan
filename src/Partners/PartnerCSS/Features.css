@@ -51,9 +51,9 @@
   z-index: 0;
 } */
 
-.partner-feature-card:hover .card-ambient-glow {
+/* .partner-feature-card:hover .card-ambient-glow {
   opacity: 1;
-}
+} */
 
 .card-top-row {
   display: flex;
@@ -70,7 +70,7 @@
 .card-icon-box {
   width: 52px;
   height: 52px;
-  border-radius: 16px;
+  border-radius: 99px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,10 +78,10 @@
   box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease;
 }
-
+/* 
 .partner-feature-card:hover .card-icon-box {
   transform: scale(1.08) rotate(3deg);
-}
+} */
 
 .card-badge {
   font-size: 0.72rem;

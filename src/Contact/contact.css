@@ -30,7 +30,7 @@
 .contact-tag {
   display: inline-block;
   margin-bottom: clamp(10px, 2vw, 16px);
-  color: var(--primary);
+  color: #00A859;
   letter-spacing: 3px;
   font-size: 0.78rem;
   font-weight: 700;
@@ -83,7 +83,7 @@
 
 .contact-card-eyebrow {
   display: inline-block;
-  color: var(--primary);
+  color: #00A859;
   letter-spacing: 2px;
   font-size: 0.74rem;
   font-weight: 700;
@@ -474,7 +474,7 @@ html.light .custom-select-menu {
 }
 
 .send-btn {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, #00A3E0, #8b5cf6);
   color: #ffffff;
   border: none;
   border-radius: 12px;
@@ -483,16 +483,17 @@ html.light .custom-select-menu {
   font-size: 0.88rem;
   letter-spacing: 0.5px;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(6, 182, 212, 0.25);
+  box-shadow: 0 5px 5px rgba(6, 182, 212, 0.25);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .send-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(6, 182, 212, 0.35);
+  /* box-shadow: 0 20px 3px rgba(6, 182, 212, 0.3); */
 }
 
 .response-time-note {
@@ -634,7 +635,7 @@ html.light .custom-select-menu {
 }
 
 .office-tag {
-  color: var(--primary);
+  color: #00A859;
   letter-spacing: 3px;
   font-size: 0.78rem;
   font-weight: 700;
@@ -750,7 +751,7 @@ html.light .custom-select-menu {
 
 .contact-faq-header .contact-faq-eyebrow {
   display: inline-block;
-  color: var(--primary);
+  color: #00A859;
   letter-spacing: 3px;
   font-size: 0.78rem;
   font-weight: 700;

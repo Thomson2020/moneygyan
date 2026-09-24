@@ -33,6 +33,8 @@ export default function App() {
   
   // Update this block:
   const [isLight, setIsLight] = useState(() => {
+    const urlTheme = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("theme") : null;
+    if (urlTheme) return urlTheme === "light";
     // 1. Check local storage first
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
@@ -54,6 +56,27 @@ export default function App() {
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class", "data-theme"] });
     return () => observer.disconnect();
+  }, []);
+
+  // Automatically open external links in a new tab
+  useEffect(() => {
+    const handleExternalLinks = (e) => {
+      const anchor = e.target.closest("a");
+      if (!anchor || !anchor.href) return;
+
+      try {
+        const targetUrl = new URL(anchor.href, window.location.href);
+        if (targetUrl.origin !== window.location.origin) {
+          anchor.target = "_blank";
+          anchor.rel = "noopener noreferrer";
+        }
+      } catch {
+        // Ignore invalid URLs
+      }
+    };
+
+    document.addEventListener("click", handleExternalLinks, { capture: true });
+    return () => document.removeEventListener("click", handleExternalLinks, { capture: true });
   }, []);
 
   // Lock scrolling while the welcome screen is visible
@@ -86,15 +109,15 @@ useEffect(() => {
     inset: 0,
     zIndex: 0,
     pointerEvents: "none",
-    backgroundColor: isLight ? "#ffffff" : "var(--bg-primary)",
+    // backgroundColor: isLight ? "#ffffff" : "var(--bg-primary)",
     transition: "background-color 0.35s ease",
   }}
 >
   <div
     style={{
-      width: "100%",
-      height: "100%",
-      opacity: isLight ? 0.5 : 0.5,
+      // width: "100%",
+      // height: "100%",
+      opacity: isLight ? 0.7 : 0.7,
       // mixBlendMode: isLight ? "multiply" : "normal",
     }}
   >

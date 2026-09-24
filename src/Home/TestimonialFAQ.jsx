@@ -7,28 +7,34 @@ export default function TestimonialsFAQ() {
 
   const testimonials = [
     {
+      initial: "I",
+      avatarColor: "avatar-purple",
+      preview:
+        "\"Entrusted my entire portfolio to Wilson Esai since 2019. My investment portfolio is more than double now and has become a testimony to attain financial freedom. \"",
+      more:
+        "When I had a major operation on my ankle bone, I never realized how smoothly my hospital bills were settled via mediclaim. Even timely premium reminders are handled like family.",
+      name: "Indrashish Moulik",
+      role: "Navi Mumbai · Investor since 2019",
+    },
+    {
+      initial: "M",
+      avatarColor: "avatar-teal",
+      preview:
+        "\"Associated with MoneyGYAN since 2018. Before this, I had zero knowledge of saving/investing and was terrified of mistakes, but the team made me comfortable from day one.\"",
+      more:
+        "They explained everything without jargon, tailored options to my personal goals without any pressure, and are always patient no matter how small or silly my doubt is.",
+      name: "Long-term Investor",
+      role: "Associated since 2018",
+    },
+    {
       initial: "R",
       avatarColor: "avatar-orange",
-      quote:
-        "\"Mujhe pehle invest karna bahut complicated lagta था. MoneyGYAN ने सब आसान कर दिया। Ab ₹500 से start किया है, और returns dekh ke khushi ho rahi है!\"",
-      name: "Rohit Sharma",
-      role: "Delhi · Gig Delivery Partner",
-    },
-    {
-      initial: "P",
-      avatarColor: "avatar-green",
-      quote:
-        "\"The 60-second KYC is actually real! I set up my SIP on my lunch break. No branch, no queue, no headache. My FD money has now moved here.\"",
-      name: "Priya Nair",
-      role: "Mumbai · Freelance Designer",
-    },
-    {
-      initial: "A",
-      avatarColor: "avatar-blue",
-      quote:
-        "\"Started with ₹100 just to test. Now investing ₹3,000 every month. The calculator showed me exactly how much I was losing keeping money in a savings account.\"",
-      name: "Arun Patel",
-      role: "Ahmedabad · Small Business Owner",
+      preview:
+        "\"MoneyGYAN made wealth building completely effortless. Having all my mutual fund investments paperless, disciplined, and transparent gave me total peace of mind.\"",
+      more:
+        "The automated portfolio tracking and unbiased, fund-neutral advice helped me stay committed through market ups and downs without panicking.",
+      name: "Rajesh Sharma",
+      role: "Pune · Investor since 2020",
     },
   ];
 
@@ -82,7 +88,18 @@ export default function TestimonialsFAQ() {
                 <div className={`avatar-circle ${item.avatarColor}`}>
                   {item.initial}
                 </div>
-                <p className="testimonial-quote">{item.quote}</p>
+
+                <div className="testimonial-content">
+                  <p className="testimonial-quote">{item.preview}</p>
+                  
+                  {/* Smooth height-expanding reveal wrapper */}
+                  <div className="testimonial-expand-wrapper">
+                    <div className="testimonial-expand-inner">
+                      <p className="testimonial-extra-text">{item.more}</p>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="testimonial-author">
                   <h4>{item.name}</h4>
                   <span>{item.role}</span>
@@ -97,12 +114,12 @@ export default function TestimonialsFAQ() {
           SECTION 2: FAQ ACCORDION (HOVER TO OPEN)
       ========================================= */}
       <section className="home-faq-section">
-        <div className={cn('tf-container', 'home-faq-container')}>
+        <div className={cn("tf-container", "home-faq-container")}>
           <h2 className="tf-title">
             Questions? <br />We&apos;ve got <span>answers.</span>
           </h2>
 
-  <div className="home-faq-list">
+          <div className="home-faq-list">
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
               return (

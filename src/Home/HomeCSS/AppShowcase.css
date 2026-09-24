@@ -83,30 +83,26 @@
 }
 
 .feature-icon {
-  color: #10b981; /* Emerald green checkmark */
+  color: #00A859; /* Emerald green checkmark */
   font-size: 1.15rem;
   flex-shrink: 0;
 }
 
 /* Store Buttons */
+
+.store-btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  /* Keep your existing styling (padding, background, border, etc.) */
+}
+
 .app-store-group {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
 
-.store-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 22px;
-  border-radius: 12px;
-  border: 1px solid var(--nav-border);
-  background: var(--nav-bg);
-  color: var(--text);
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
 
 .store-btn:hover {
   border-color: var(--primary);
@@ -115,6 +111,10 @@
 }
 
 .store-icon {
+  font-size: 1.8rem;
+}
+
+.store-icon-gp {
   font-size: 1.8rem;
 }
 
@@ -188,7 +188,7 @@
 }
 
 .placeholder-header span {
-  color: #06b6d4;
+  color: #00A3E0;
 }
 
 .placeholder-card {
@@ -212,7 +212,7 @@
 
 .pill-green {
   background: rgba(16, 185, 129, 0.15);
-  color: #10b981;
+  color: #00A859;
   padding: 4px 10px;
   border-radius: 99px;
   font-size: 0.75rem;
@@ -240,9 +240,9 @@
   gap: 10px;
   padding: 8px 16px;
   border-radius: 999px;
-  background: rgba(6, 181, 212, 0.397);
-  border: 1px solid rgba(6, 182, 212, 0.25);
-  color: var(--primary);
+  background: transparent;
+  border: 1px solid rgb(6 182 212 / 60%);
+  color: #00A859;
   font-size: 0.85rem;
   font-weight: 700;
   margin-bottom: 24px;
@@ -293,8 +293,8 @@
 
 .feature-card-appshowcase {
 	position: relative;
-	background: var(--bg);
-	/* backdrop-filter: blur(30px); */
+	background: transparent;
+	backdrop-filter: blur(14px);
 	border: 1px solid var(--border-color);
 	border-radius: 20px;
 	padding: 32px 28px;
@@ -303,9 +303,9 @@
 	align-items: center;
 	gap: 16px;
 	overflow: hidden;
-	/* transition: all 0.3s ease; */
+	transition: all 0.3s ease;
 	box-shadow: var(--card-shadow);
-	/* transform: translateZ(0); */
+	transform: translateZ(0);
 }
 
 /* .feature-card-appshowcase:hover {
@@ -335,32 +335,35 @@
 }
 
 .feature-card-appshowcase p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-secondary);
   margin: 0;
   line-height: 1.5;
 }
 
 /* Modern Store Buttons */
+.app-store-group,
 .store-buttons-group {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 16px;
 }
 
 .modern-store-btn {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap:20px;
   padding: 12px 24px;
-  border-radius: 14px;
+  border-radius: 20px;
   border: 1px solid var(--btn-border);
-  /* backdrop-filter: blur(30px); */
+  backdrop-filter: blur(30px);
   color: var(--text-primary);
   cursor: pointer;
-  /* transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--card-shadow);
   background: var(--bg-card);
+  text-decoration: none;
 }
 
 .modern-store-btn:hover {
@@ -509,7 +512,7 @@
   padding: 4px 10px;
   border-radius: 99px;
   background: rgba(16, 185, 129, 0.15);
-  color: #10b981;
+  color: #00A859;
   font-size: 0.75rem;
   font-weight: 700;
   margin-top: 6px;
@@ -593,9 +596,9 @@
   z-index: 20;
   padding: 14px 18px;
   border-radius: 20px;
-  background: var(--bg-card);
-  border: 1.5px solid rgba(6, 182, 212, 0.45);
-  backdrop-filter: blur(30px);
+  background: transparent;
+  border: 1px solid rgba(6, 182, 212, 0.45);
+  backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(30px);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.45),
@@ -603,7 +606,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
   color: var(--text-primary);
   pointer-events: none;
-  animation: float-widget 4s ease-in-out infinite;
+  animation: float-widget 10s ease-in-out infinite;
 }
 
 .widget-top-left {
@@ -646,7 +649,7 @@
 .widget-info strong {
   font-size: 1rem;
   font-weight: 800;
-  color: #10b981;
+  color: #00A859;
   letter-spacing: -0.3px;
 }
 
@@ -750,7 +753,8 @@
     margin: 0 auto 32px auto;
   }
 
-  .app-store-group {
+  .app-store-group,
+  .store-buttons-group {
     justify-content: center;
     width: 100%;
   }
@@ -767,6 +771,50 @@
   .phone-mockup-frame {
     max-width: 280px;
     height: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-store-group,
+  .store-buttons-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 420px;
+    gap: 10px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .modern-store-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 12px;
+    gap: 10px;
+    justify-content: center;
+    border-radius: 16px;
+  }
+
+  .store-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .store-text {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .store-text span {
+    font-size: 0.58rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+
+  .store-text strong {
+    font-size: 0.82rem;
+    white-space: nowrap;
   }
 }
 
@@ -798,9 +846,31 @@
     font-size: 0.75rem;
   }
 
-  .store-btn {
-    width: 100%;
-    max-width: 260px;
-    justify-content: center;
+  .app-store-group,
+  .store-buttons-group {
+    gap: 8px;
+    max-width: 100%;
+  }
+
+  .modern-store-btn {
+    padding: 8px 8px;
+    gap: 7px;
+    border-radius: 14px;
+  }
+
+  .store-icon {
+    font-size: 1.85rem;
+  }
+
+	.store-icon-gp {
+  font-size: 1.515rem;
+}
+
+  .store-text span {
+    font-size: 0.52rem;
+  }
+
+  .store-text strong {
+    font-size: 0.78rem;
   }
 }

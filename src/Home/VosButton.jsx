@@ -72,7 +72,10 @@ float rand(vec2 co) {
 void main() {
     float scaledTime = uTime * uTimeScale;
     float noise = snoise(vec2(vUv.x * uScale + sin(scaledTime), vUv.y * uScale + cos(scaledTime)));
-    vec3 outputColor = mix(uColor2, uColor1, clamp(noise * 0.5 + 0.5, 0.0, 1.0));
+    float factor = clamp(noise * 0.5 + 0.5, 0.0, 1.0);
+    vec3 outputColor = factor < 0.5
+        ? mix(uColor3, uColor2, factor * 2.0)
+        : mix(uColor2, uColor1, (factor - 0.5) * 2.0);
     float noise2 = snoise(vec2(vUv.x * uScale3 + sin(scaledTime), vUv.y * uScale3 + cos(scaledTime)));
 
     // Vignette / Soft circular falloff
@@ -91,7 +94,7 @@ void main() {
     outputColor += (rand(vUv) - 0.5) * 0.055;
     outputColor = saturate(outputColor);
 
-    float alpha = (1.0 - (uColor3.x * noise2 * 0.45)) * (border * blobGroup) * uAlpha;
+    float alpha = (1.0 - (noise2 * 0.25)) * (border * blobGroup) * uAlpha;
     gl_FragColor = vec4(outputColor, clamp(alpha, 0.0, 1.0));
 }
 `;
@@ -135,13 +138,13 @@ export default function VosButton({ onClick, isLight, text = "INVEST NOW", class
       renderer.domElement.style.pointerEvents = "none";
       mount.appendChild(renderer.domElement);
 
-      const color1 = new THREE.Color(isLight ? "#00c8f8" : "#00e1ff");
-      const color2 = new THREE.Color(isLight ? "#f97316" : "#ff7a00");
-      const color3 = new THREE.Color(isLight ? "#0284c7" : "#259aa2");
+      const color1 = new THREE.Color(isLight ? "#5B5EA4" : "#ffffff");
+      const color2 = new THREE.Color(isLight ? "#88BDF2" : "#8a8a8a");
+      const color3 = new THREE.Color(isLight ? "#693efe " : "#000000");
 
       const uniforms = {
         uTime: { value: 0 },
-        uBlackPosition: { value: new THREE.Vector2(0.85, 0.85) },
+        uBlackPosition: { value: new THREE.Vector2(0.5, 0.85) },
         uBlackRadius: { value: 0.44 },
         uBlackBorderFade: { value: 0.398 },
         uBlackTimeScale: { value: 0.778 },

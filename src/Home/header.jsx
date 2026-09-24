@@ -12,7 +12,8 @@ export default function Header() {
 
   // Initialize theme from localStorage or default to dark
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "dark";
+    const urlTheme = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("theme") : null;
+    const savedTheme = urlTheme || localStorage.getItem("theme") || "dark";
     
     if (savedTheme === "light") {
       document.documentElement.setAttribute("data-theme", "light");
@@ -106,7 +107,7 @@ useEffect(() => {
         .from(
           linksRef.current,
           {
-            x: -10,
+            y: 8,
             opacity: 0,
             stagger: 0.02,
             duration: 0.24,

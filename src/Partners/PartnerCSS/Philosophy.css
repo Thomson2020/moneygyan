@@ -24,7 +24,7 @@
 }
 
 .philosophy-content blockquote {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;;
   font-size: clamp(1.5rem, 3.2vw, 2.75rem);
   line-height: 1.45;
   font-style: italic;
@@ -37,10 +37,24 @@
 }
 
 .philosophy-label {
-  color: var(--primary);
-  font-size: clamp(0.72rem, 1.2vw, 0.8rem);
+  color: var(--text-primary);
+  font-size: clamp(0.8rem, 1.2vw, 0.8rem);
   letter-spacing: 4px;
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
+}
+
+.philosophy-label span {
+  background: linear-gradient(135deg, #00A3E0, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block; /* Helps prevent rendering cut-offs in some browsers */
+}
+
+.philosophy-label .money-color {
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: #00A859;
 }

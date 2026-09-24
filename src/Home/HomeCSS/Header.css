@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 48px;
+  padding: 20px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,7 +56,7 @@
 }
 
 .header-logo .head-money {
-  background: linear-gradient(135deg, #009846, #009846);
+  background: #00A859;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -72,7 +72,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  z-index: 1002;
+  z-index: 1;
   position: relative;
 }
 
@@ -84,7 +84,7 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #00A3E0, #8b5cf6);
   color: #ffffff;
   border: none;
   border-radius: 999px;
@@ -251,9 +251,11 @@ body.light .radiance-card {
 .radiance-nav {
   display: flex;
   flex-direction: column;
+  /* align-items: flex-start; */
   gap: 12px;
-  padding: 0;
+  padding-left: 0px;
   margin: 0;
+  width: 100%;
   opacity: 1 !important;
   visibility: visible !important;
 }
@@ -265,12 +267,15 @@ body.light .radiance-card {
   text-decoration: none;
   line-height: 1.25;
   letter-spacing: -0.02em;
+  padding: 4px 0;
+  margin: 0;
   opacity: 1 !important;
   visibility: visible !important;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
               color 0.2s ease,
               opacity 0.2s ease;
   display: inline-block;
+  text-align: left;
 }
 
 .radiance-link:hover {
@@ -282,15 +287,21 @@ body.light .radiance-card {
 .radiance-contacts {
   border-top: 1px solid var(--card-border);
   padding-top: 18px;
+  gap: 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .radiance-contact-links {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 6px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .radiance-contact-item {
@@ -302,6 +313,9 @@ body.light .radiance-card {
   transition: color 0.2s ease;
   display: inline-flex;
   align-items: center;
+  text-align: left;
+  padding: 0;
+  margin: 0;
 }
 
 .radiance-contact-item:hover {
@@ -313,7 +327,9 @@ body.light .radiance-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 4px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .radiance-card-footer .card-get-app {
@@ -689,39 +705,47 @@ html.menu-open {
     max-height: calc(100dvh - 86px);
   }
 
-  /* Navigation Links: Generous spacing & touch areas */
-/* Reset containers to share the exact same left anchor */
-.radiance-nav,
-.radiance-contact-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0;
-  margin: 0;
-}
-
-/* Flush-left alignment with generous vertical tap targets */
-.radiance-link {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 10px 0; /* Keep vertical tap target, remove left/right offset */
-  margin: 0;
-}
-
-.radiance-contact-item {
-  display: inline-flex;
-  align-items: center;
-  text-align: left;
-  padding: 6px 0; /* Match left flush alignment */
-  margin: 0;
-}
-  .radiance-link:active {
-    opacity: 0.7;
-    transform: translateX(4px);
+  /* Navigation Links */
+  .radiance-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
   }
 
-  Contact Links
+  .radiance-contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+  }
+
+  .radiance-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .radiance-contact-item {
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+    padding: 6px 0;
+    margin: 0;
+  }
+
+  .radiance-link:active {
+    opacity: 0.7;
+    transform: scale(0.97);
+  }
+
+  /* Contact Links */
   .radiance-contacts {
     padding-top: 14px;
     gap: 12px;

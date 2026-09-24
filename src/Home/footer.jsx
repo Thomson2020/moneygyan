@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="footer-brand">
             <div className="footer-logo">
               <Link to="/">
-                Money<span>GYAN</span>
+                <span className="footer-logo-money">Money</span> <span>GYAN</span>
               </Link>
             </div>
 
@@ -45,23 +45,37 @@ export default function Footer() {
           </div>
 
 {/* RIGHT: Get the App (App Store / Play Store) */}
-          <div className="app-store-group">
-            <button className="store-btn">
-              <FaApple className="store-icon" />
-              <div className="store-text">
-                <span>GET IT ON</span>
-                <strong>App Store</strong>
-              </div>
-            </button>
+<div className="app-store-group">
+  {/* Apple App Store */}
+  <a
+    href="https://apps.apple.com/app/your-app-id"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="modern-store-btn"
+    aria-label="Download on the App Store"
+  >
+    <FaApple className="store-icon" />
+    <div className="store-text">
+      <span>Download on the</span>
+      <strong>App Store</strong>
+    </div>
+  </a>
 
-            <button className="store-btn">
-              <FaGooglePlay className="store-icon" />
-              <div className="store-text">
-                <span>Download on the</span>
-                <strong>Google Play</strong>
-              </div>
-            </button>
-          </div>
+  {/* Google Play Store */}
+  <a
+    href="https://play.google.com/store/apps/details?id=com.moneygyan.app&hl=en_IN"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="modern-store-btn"
+    aria-label="Get it on Google Play"
+  >
+    <FaGooglePlay className="store-icon" />
+    <div className="store-text">
+      <span>GET IT ON</span>
+      <strong>Google Play</strong>
+    </div>
+  </a>
+</div>
         </div>
 
         {/* =========================================

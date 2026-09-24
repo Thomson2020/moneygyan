@@ -16,7 +16,7 @@ export default function Howitworks() {
         <p>
           Anyone distributing mutual fund schemes in India is
           required to hold an AMFI Registration Number (ARN). <br />
-          <b style={{color: "#06b6d4" }}>We guide you through the entire process.</b>
+          <b style={{color: "#00A3E0" }}>We guide you through the entire process.</b>
         </p>
       </div>
 

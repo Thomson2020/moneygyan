@@ -24,7 +24,7 @@
 .opportunity-eyebrow {
   display: inline-block;
   margin-bottom: clamp(10px, 2vw, 16px);
-  color: var(--primary);
+  color: #00A859;
   font-size: 0.78rem;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -84,7 +84,7 @@
   font-weight: 800;
   margin: 0;
   line-height: 1.1;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: #00A3E0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

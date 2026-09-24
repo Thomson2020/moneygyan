@@ -10,18 +10,31 @@ export default function RotatingText({
 
   const [index, setIndex] = useState(0);
   const [width, setWidth] = useState(0);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth <= 640;
+    }
+    return false;
+  });
 
   const measureRef = useRef(null);
 
-  useLayoutEffect(() => {
-    const updateWidth = () => {
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 640);
       if (measureRef.current) {
         setWidth(measureRef.current.offsetWidth);
       }
     };
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useLayoutEffect(() => {
+    if (measureRef.current) {
+      setWidth(measureRef.current.offsetWidth);
+    }
   }, [index]);
 
   useEffect(() => {
@@ -44,7 +57,8 @@ export default function RotatingText({
 
       <motion.div
         className={`gradient-pill ${className}`}
-        animate={{ width }}
+        style={isMobile ? { width: "100%" } : undefined}
+        animate={isMobile ? undefined : { width }}
         transition={{
           duration: 0.35,
           ease: [0.16, 1, 0.3, 1],

@@ -36,7 +36,7 @@
 /* "Money" matching WelcomeHero exactly */
 .hero-title .moneyg {
   display: inline-block;
-  background: linear-gradient(135deg, #009846, #009846);
+  background: #00A859;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -76,16 +76,34 @@
     display: block;
     text-align: center;
   }
-}
 
-/* .money {
-  color: var(--text-primary);
-  white-space: nowrap;
-} */
+  .gradient-pill {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .rotating-word {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: auto !important;
+  }
+}
 
 /* =======================
    ROTATING TEXT (NO PILL)
 ================================ */
+.gradient-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
 .custom-rotating-text-wrapper {
   display: inline-flex;
   position: relative;

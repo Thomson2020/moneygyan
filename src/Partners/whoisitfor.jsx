@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import "./PartnerCSS/audience.css"
 
 const audiences = [
   "Investment Advisors",
@@ -53,7 +54,7 @@ export default function Whoisitfor() {
         {/* Left Side Static Content */}
         <div className="audience-left">
           <span className="audience-eyebrow">WHO THIS IS FOR</span>
-          <h2>You don't need a finance background. You need trust.</h2>
+          <h2>You don't need a finance background. <br /> You need trust.</h2>
           <p className="audience-lead">
             MoneyGYAN focuses solely on mutual funds, with zero insurance push, zero lending products, and zero cross-selling noise. The most successful partners come from relationship-driven professions:
           </p>
